@@ -1,0 +1,16 @@
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
+          name="sample_cxf_ws">
+
+    <feature name="sample_cxf_app" version="1.0">
+        <feature>cxf-http</feature>
+        <feature>cxf-jaxws</feature>
+        <feature>spring-dm</feature>
+        <bundle start-level="80">mvn:cxf.sample/sample_cxf_ws_api/1.0</bundle>
+        <bundle start-level="85">mvn:cxf.sample/sample_cxf_ws/1.0</bundle>
+        <bundle start-level="90">mvn:cxf.sample/sample_cxf_ws_client/1.0</bundle>
+        <details>CXF karaf spring example</details>
+    </feature>
+
+</features>
