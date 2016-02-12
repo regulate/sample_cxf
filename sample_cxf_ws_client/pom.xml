@@ -8,6 +8,11 @@
     <version>1.0</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <osgi.export.pkg>cxf.sample.client.*</osgi.export.pkg>
+        <osgi.import.pkg>*</osgi.import.pkg>
+    </properties>
+
     <parent>
         <groupId>cxf.sample</groupId>
         <artifactId>cxf_sample_ws_root</artifactId>

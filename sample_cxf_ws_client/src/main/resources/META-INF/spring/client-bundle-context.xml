@@ -7,24 +7,27 @@
         http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd http://www.springframework.org/schema/osgi
         http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 
-    <bean id="client" class="cxf.sample.api.HelloWorld" factory-bean="clientFactory" factory-method="create"/>
+    <import resource="client-bundle-context-osgi.xml"/>
+
+    <bean id="client" class="cxf.sample.client.HelloWorldWsClient" init-method="sayHiFromServer">
+        <property name="service" ref="helloWorldServiceProxy"/>
+    </bean>
+
+    <bean id="helloWorldServiceProxy" class="cxf.sample.api.HelloWorld" factory-bean="clientFactory" factory-method="create"/>
 
     <bean id="clientFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
         <property name="serviceClass" value="cxf.sample.api.HelloWorld"/>
-        <property name="address" value="http://localhost:8080/sample_cxf_ws/HelloWorld"/>
+        <property name="address" value="http://localhost:8181/cxf/HelloWorld"/>
         <property name="inInterceptors">
             <list>
-                <ref bean="loggingInInterceptor"/>
+                <bean class="org.apache.cxf.interceptor.LoggingInInterceptor"/>
             </list>
         </property>
         <property name="outInterceptors">
             <list>
-                <ref bean="loggingOutInterceptor"/>
+                <bean class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
             </list>
         </property>
     </bean>
-
-    <bean id="loggingInInterceptor" class="org.apache.cxf.interceptor.LoggingInInterceptor"/>
-    <bean id="loggingOutInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
 
 </beans>

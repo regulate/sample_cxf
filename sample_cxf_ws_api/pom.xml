@@ -7,6 +7,10 @@
     <version>1.0</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <osgi.export.pkg>cxf.sample.api.*</osgi.export.pkg>
+    </properties>
+
     <parent>
         <groupId>cxf.sample</groupId>
         <artifactId>cxf_sample_ws_root</artifactId>

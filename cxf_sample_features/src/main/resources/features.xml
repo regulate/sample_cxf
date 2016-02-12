@@ -1,0 +1,24 @@
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
+          name="sample_cxf_ws">
+
+    <repository>mvn:org.apache.cxf.karaf/apache-cxf/3.0.5/xml/features</repository>
+
+    <feature name="sample-cxf-client" version="${pom.version}">
+        <details>CXF Sample WS Client</details>
+        <feature>sample-cxf-ws</feature>
+        <bundle start-level="90" start="true">mvn:cxf.sample/sample_cxf_ws_client/${pom.version}</bundle>
+    </feature>
+
+    <feature name="sample-cxf-ws" version="${pom.version}">
+        <details>CXF Sample WS</details>
+        <feature>cxf-http</feature>
+        <feature>cxf-jaxws</feature>
+        <feature>spring-dm</feature>
+        <!--<bundle>mvn:</bundle>-->
+        <bundle start-level="80">mvn:cxf.sample/sample_cxf_ws_api/${pom.version}</bundle>
+        <bundle start-level="85">mvn:cxf.sample/sample_cxf_ws/${pom.version}</bundle>
+    </feature>
+
+</features>

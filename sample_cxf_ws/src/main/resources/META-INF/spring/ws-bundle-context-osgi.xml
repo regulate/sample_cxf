@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/osgi
+        http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+
+    <import resource="ws-bundle-context.xml"/>
+
+    <osgi:service id="hw_cxf_ws" ref="helloWorldService" interface="cxf.sample.api.HelloWorld">
+        <osgi:service-properties>
+            <entry key="service.type" value="ws"/>
+        </osgi:service-properties>
+    </osgi:service>
+
+</beans>

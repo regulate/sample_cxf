@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="Osmorc" url="file://$PROJECT_DIR$/sample_cxf_ws" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/sample_cxf_ws_api" />
+    <file type="Osmorc" url="file://$PROJECT_DIR$/sample_cxf_ws_client" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/cxf_sample_ws_root/pom.xml" />
+        <option value="$PROJECT_DIR$/cxf_sample_features/pom.xml" />
       </list>
     </option>
   </component>

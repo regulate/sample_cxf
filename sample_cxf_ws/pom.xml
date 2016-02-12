@@ -7,6 +7,11 @@
     <name>sample_cxf_ws</name>
     <description>Simple CXF Java-first SOAP project using Spring configuration</description>
 
+    <properties>
+        <osgi.export.pkg>cxf.sample.*</osgi.export.pkg>
+        <osgi.import.pkg>*</osgi.import.pkg>
+    </properties>
+
     <parent>
         <groupId>cxf.sample</groupId>
         <artifactId>cxf_sample_ws_root</artifactId>
@@ -32,6 +37,22 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
+<!--        <dependency>
+            <groupId>org.springframework.osgi</groupId>
+            <artifactId>spring-osgi-extender</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.osgi</groupId>
+            <artifactId>spring-osgi-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.osgi</groupId>
+            <artifactId>spring-osgi-io</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.osgi</groupId>
+            <artifactId>spring-osgi-test</artifactId>
+        </dependency>-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -46,8 +67,5 @@
         </dependency>
     </dependencies>
 
-    <build>
-
-    </build>
 
 </project>

@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>../cxf_sample_features</module>
         <module>../sample_cxf_ws</module>
         <module>../sample_cxf_ws_api</module>
         <module>../sample_cxf_ws_client</module>
@@ -20,7 +21,9 @@
         <maven.compiler.target>1.7</maven.compiler.target>
         <slf4j.version>1.7.13</slf4j.version>
         <logback.version>1.1.3</logback.version>
-        <cxf.version>3.1.4</cxf.version>
+        <cxf.version>3.0.5</cxf.version>
+        <osgi.export.pkg/>
+        <osgi.import.pkg/>
     </properties>
 
     <dependencyManagement>
@@ -46,6 +49,26 @@
                     </exclusion>
                 </exclusions>
             </dependency>
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.osgi</groupId>-->
+                <!--<artifactId>spring-osgi-core</artifactId>-->
+                <!--<version>1.2.1</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.osgi</groupId>-->
+                <!--<artifactId>spring-osgi-extender</artifactId>-->
+                <!--<version>1.2.1</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.osgi</groupId>-->
+                <!--<artifactId>spring-osgi-io</artifactId>-->
+                <!--<version>1.2.1</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.osgi</groupId>-->
+                <!--<artifactId>spring-osgi-test</artifactId>-->
+                <!--<version>1.2.1</version>-->
+            <!--</dependency>-->
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
@@ -72,21 +95,64 @@
     </dependencyManagement>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.felix</groupId>
-                    <artifactId>maven-bundle-plugin</artifactId>
-                    <version>2.5.3</version>
-                    <extensions>true</extensions>
-                </plugin>
-                <plugin>
-                    <groupId>org.eclipse.jetty</groupId>
-                    <artifactId>jetty-maven-plugin</artifactId>
-                    <version>9.2.11.v20150529</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.5.4</version>
+                <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <id>bundle-manifest</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>manifest</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!--<manifestLocation>${project.build.outputDirectory}/META-INF</manifestLocation>-->
+                    <supportedProjectTypes>
+                        <supportedProjectType>jar</supportedProjectType>
+                    </supportedProjectTypes>
+                    <instructions>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Bundle-SymbolicName>${project.artifactId}-${project.version}</Bundle-SymbolicName>
+                        <!--<Bundle-Description>${osgi.symbolic.name}</Bundle-Description>-->
+                        <Export-Package>${osgi.export.pkg}</Export-Package>
+                        <Import-Package>${osgi.import.pkg}</Import-Package>
+                        <!--<Private-Package>${osgi.private.pkg}</Private-Package>-->
+                        <!--<DynamicImport-Package>${osgi.dynamicimport.pkg}</DynamicImport-Package>-->
+                        <!--<Embed-Dependency>${osgi.embed.dependency}</Embed-Dependency>-->
+                        <!--<Bundle-NativeCode>${osgi.native}</Bundle-NativeCode>-->
+                        <!--<Bundle-Activator>${osgi.activator}</Bundle-Activator>-->
+                        <!--<Fragment-Host>${osgi.fragment.host}</Fragment-Host>-->
+                        <!--<Karaf-Info>${osgi.karaf.info}</Karaf-Info>-->
+                        <!--<_failok>${osgi.failok}</_failok>-->
+                        <!--<_versionpolicy>${bnd.version.policy}</_versionpolicy>-->
+                        <!--<_removeheaders>${osgi.removeheaders}</_removeheaders>-->
+                        <!--<_exportcontents>${osgi.exportcontents}</_exportcontents>-->
+                    </instructions>
+                    <unpackBundle>true</unpackBundle>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <archive>
+                        <!-- add the generated manifest to the jar -->
+                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+                    </archive>
+                </configuration>
+            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.eclipse.jetty</groupId>-->
+                <!--<artifactId>jetty-maven-plugin</artifactId>-->
+                <!--<version>9.2.11.v20150529</version>-->
+            <!--</plugin>-->
+        </plugins>
     </build>
 
 </project>
