@@ -6,10 +6,11 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
-    <jaxws:endpoint
-            id="helloWorld"
-            implementor="cxf.sample.HelloWorldImpl"
-            address="/HelloWorld"/>
+    <jaxws:endpoint id="helloWorld" address="/HelloWorld">
+        <jaxws:implementor>
+            <ref bean="helloWorldService"/>
+        </jaxws:implementor>
+    </jaxws:endpoint>
 
     <bean id="helloWorldService" class="cxf.sample.HelloWorldImpl"/>
 

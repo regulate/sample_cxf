@@ -6,11 +6,15 @@
         <artifactId>cxf_sample_ws_root</artifactId>
         <groupId>cxf.sample</groupId>
         <version>1.0</version>
-        <relativePath>../cxf_sample_ws_root/pom.xml</relativePath>
+        <relativePath>../cxf_sample_root/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>sample_cxf_person_rs</artifactId>
 
-    <artifactId>sample_cxf_person_rs_api</artifactId>
+    <properties>
+        <osgi.export.pkg>cxf.sample.rs.*</osgi.export.pkg>
+        <osgi.import.pkg>*</osgi.import.pkg>
+    </properties>
 
     <dependencies>
         <dependency>

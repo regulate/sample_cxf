@@ -16,7 +16,7 @@
         <groupId>cxf.sample</groupId>
         <artifactId>cxf_sample_ws_root</artifactId>
         <version>1.0</version>
-        <relativePath>../cxf_sample_ws_root</relativePath>
+        <relativePath>../cxf_sample_root</relativePath>
     </parent>
 
     <dependencies>
@@ -37,22 +37,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
-<!--        <dependency>
-            <groupId>org.springframework.osgi</groupId>
-            <artifactId>spring-osgi-extender</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.osgi</groupId>
-            <artifactId>spring-osgi-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.osgi</groupId>
-            <artifactId>spring-osgi-io</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.osgi</groupId>
-            <artifactId>spring-osgi-test</artifactId>
-        </dependency>-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

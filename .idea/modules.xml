@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/cxf_sample_features/cxf_sample_features.iml" filepath="$PROJECT_DIR$/cxf_sample_features/cxf_sample_features.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cxf_sample_ws_root/cxf_sample_ws_root.iml" filepath="$PROJECT_DIR$/cxf_sample_ws_root/cxf_sample_ws_root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cxf_sample_root/cxf_sample_root.iml" filepath="$PROJECT_DIR$/cxf_sample_root/cxf_sample_root.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample_cxf.iml" filepath="$PROJECT_DIR$/sample_cxf.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample_cxf_person_persistence/sample_cxf_person_persistence.iml" filepath="$PROJECT_DIR$/sample_cxf_person_persistence/sample_cxf_person_persistence.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample_cxf_person_rs/sample_cxf_person_rs.iml" filepath="$PROJECT_DIR$/sample_cxf_person_rs/sample_cxf_person_rs.iml" />

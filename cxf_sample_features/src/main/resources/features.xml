@@ -16,9 +16,16 @@
         <feature>cxf-http</feature>
         <feature>cxf-jaxws</feature>
         <feature>spring-dm</feature>
-        <!--<bundle>mvn:</bundle>-->
         <bundle start-level="80">mvn:cxf.sample/sample_cxf_ws_api/${pom.version}</bundle>
         <bundle start-level="85">mvn:cxf.sample/sample_cxf_ws/${pom.version}</bundle>
+    </feature>
+
+    <feature name="sample-cxf-rs" version="${pom.version}">
+        <details>CXF Sample Person RS</details>
+        <feature>cxf-http</feature>
+        <feature>cxf-jaxrs</feature>
+        <feature>spring-dm</feature>
+        <bundle start-level="80">mvn:cxf.sample/sample_cxf_person_rs/${pom.version}</bundle>
     </feature>
 
 </features>

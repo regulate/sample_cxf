@@ -15,7 +15,7 @@
         <groupId>cxf.sample</groupId>
         <artifactId>cxf_sample_ws_root</artifactId>
         <version>1.0</version>
-        <relativePath>../cxf_sample_ws_root</relativePath>
+        <relativePath>../cxf_sample_root</relativePath>
     </parent>
 
 </project>

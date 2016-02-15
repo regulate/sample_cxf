@@ -11,8 +11,13 @@
         <groupId>cxf.sample</groupId>
         <artifactId>cxf_sample_ws_root</artifactId>
         <version>1.0</version>
-        <relativePath>../cxf_sample_ws_root</relativePath>
+        <relativePath>../cxf_sample_root</relativePath>
     </parent>
+
+    <properties>
+        <osgi.export.pkg>cxf.sample.rs.persistence.*</osgi.export.pkg>
+        <osgi.import.pkg>*</osgi.import.pkg>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -77,14 +82,9 @@
                                     <name>org.jooq.util.mysql.MySQLDatabase</name>
                                     <inputSchema>cxf_sample</inputSchema>
                                 </database>
-                                <generate>
-                                    <instanceFields>true</instanceFields>
-                                    <pojos>true</pojos>
-                                    <daos>true</daos>
-                                </generate>
                                 <target>
                                     <packageName>cxf.sample.persistence.schema</packageName>
-                                    <directory>${project.basedir}/target/generated-sources/jooq-mysql</directory>
+                                    <directory>${project.basedir}/src/main/java</directory>
                                 </target>
                             </generator>
                         </configuration>

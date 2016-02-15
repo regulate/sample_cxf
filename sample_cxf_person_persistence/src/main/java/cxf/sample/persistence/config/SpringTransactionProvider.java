@@ -28,7 +28,7 @@ public class SpringTransactionProvider implements TransactionProvider{
 
     @Override
     public void begin(TransactionContext ctx) {
-        log.info("Begin transaction");
+        log.info("Beginning transaction");
 
         // This TransactionProvider behaves like jOOQ's DefaultTransactionProvider,
         // which supports nested transactions using Savepoints
@@ -38,14 +38,14 @@ public class SpringTransactionProvider implements TransactionProvider{
 
     @Override
     public void commit(TransactionContext ctx) {
-        log.info("commit transaction");
+        log.info("Committing transaction");
 
         txMgr.commit(((SpringTransaction) ctx.transaction()).tx);
     }
 
     @Override
     public void rollback(TransactionContext ctx) {
-        log.info("rollback transaction");
+        log.info("Rolling back transaction");
 
         txMgr.rollback(((SpringTransaction) ctx.transaction()).tx);
     }

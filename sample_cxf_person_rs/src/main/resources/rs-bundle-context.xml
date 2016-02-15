@@ -8,7 +8,7 @@
 
     <import resource="dataSource.xml"/>
 
-    <jaxrs:server id="persons" address="/persons">
+    <jaxrs:server id="personEndpoint" address="/persons">
         <jaxrs:serviceBeans>
             <ref bean="personService"/>
         </jaxrs:serviceBeans>
@@ -18,7 +18,7 @@
     </jaxrs:server>
 
 
-    <bean id="personService" class="cxf.sample.rs.impl.PersonServiceImpl">
+    <bean id="personRestService" class="cxf.sample.rs.impl.PersonServiceImpl">
         <property name="dsl" ref="dsl"/>
     </bean>
 

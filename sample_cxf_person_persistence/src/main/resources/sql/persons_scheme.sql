@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS 'cxf_sample';
+CREATE DATABASE IF NOT EXISTS cxf_sample;
 USE cxf_sample;
 CREATE TABLE person
 (
