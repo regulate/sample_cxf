@@ -22,14 +22,20 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="sample_cxf_person_persistence" />
+        <module name="sample_cxf_person_rs" />
+        <module name="sample_cxf_person_rs_api" />
         <module name="sample_cxf_ws" />
         <module name="sample_cxf_ws_api" />
         <module name="sample_cxf_ws_client" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cxf_sample_features" target="1.5" />
+      <module name="cxf_sample_features" target="1.7" />
       <module name="cxf_sample_ws_root" target="1.7" />
+      <module name="sample_cxf_person_persistence" target="1.7" />
+      <module name="sample_cxf_person_rs" target="1.7" />
+      <module name="sample_cxf_person_rs_api" target="1.7" />
       <module name="sample_cxf_ws" target="1.7" />
       <module name="sample_cxf_ws_api" target="1.7" />
       <module name="sample_cxf_ws_client" target="1.7" />

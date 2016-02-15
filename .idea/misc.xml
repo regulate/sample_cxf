@@ -12,7 +12,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/cxf_sample_ws_root/pom.xml" />
-        <option value="$PROJECT_DIR$/cxf_sample_features/pom.xml" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_rs_api/pom.xml" />
       </list>
     </option>
   </component>

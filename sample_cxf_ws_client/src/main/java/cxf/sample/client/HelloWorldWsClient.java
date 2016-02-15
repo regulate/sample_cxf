@@ -21,7 +21,7 @@ public class HelloWorldWsClient {
     }
 
     public void sayHiFromServer(){
-        log.info("Saying hi from server: {}", getService().sayHi("Folk"));
+        log.info("Saying hi from server: {}", getService().sayHi("Greg"));
     }
 
 }
