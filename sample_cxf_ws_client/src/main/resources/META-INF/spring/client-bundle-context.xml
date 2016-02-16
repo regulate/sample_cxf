@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:jaxws="http://cxf.apache.org/jaxws"
-       xmlns:osgi="http://www.springframework.org/schema/osgi"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd http://www.springframework.org/schema/osgi
-        http://www.springframework.org/schema/osgi/spring-osgi.xsd">
-
-    <import resource="client-bundle-context-osgi.xml"/>
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="client" class="cxf.sample.client.HelloWorldWsClient" init-method="sayHiFromServer">
         <property name="service" ref="helloWorldServiceProxy"/>
     </bean>
 
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+
     <bean id="helloWorldServiceProxy" class="cxf.sample.api.HelloWorld" factory-bean="clientFactory" factory-method="create"/>
 
     <bean id="clientFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
         <property name="serviceClass" value="cxf.sample.api.HelloWorld"/>
-        <property name="address" value="http://localhost:8181/cxf/HelloWorld"/>
+        <property name="address" value="http://localhost:8181/cxf/hello"/>
         <property name="inInterceptors">
             <list>
                 <bean class="org.apache.cxf.interceptor.LoggingInInterceptor"/>

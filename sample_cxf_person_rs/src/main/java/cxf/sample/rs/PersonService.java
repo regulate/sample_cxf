@@ -17,18 +17,17 @@ public interface PersonService {
 
     @Transactional(readOnly = false)
     @POST
-    @Path("persons")
     @Consumes(MediaType.APPLICATION_XML)
     void add(PersonDTO person);
 
     @GET
-    @Path("persons/{id}")
+    @Path("/{id}")
     Response retrieve(@PathParam("id") Long id);
 
     @Transactional(readOnly = false)
     @POST
     @Consumes(MediaType.APPLICATION_XML)
-    @Path("persons/{id}")
+    @Path("/{id}")
     Response remove (@PathParam("id") Long id);
 
     @GET

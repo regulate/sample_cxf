@@ -14,7 +14,6 @@
         <module>../sample_cxf_ws</module>
         <module>../sample_cxf_ws_api</module>
         <module>../sample_cxf_ws_client</module>
-        <module>../sample_cxf_person_persistence</module>
         <module>../sample_cxf_person_rs</module>
     </modules>
 
@@ -23,12 +22,14 @@
         <maven.compiler.target>1.7</maven.compiler.target>
         <slf4j.version>1.7.13</slf4j.version>
         <logback.version>1.1.3</logback.version>
-        <org.springframework.version>4.1.7.RELEASE</org.springframework.version>
+        <org.springframework.version>3.2.14.RELEASE</org.springframework.version>
         <jooq.version>3.6.4</jooq.version>
         <cxf.version>3.0.5</cxf.version>
         <mysql.connector.version>5.1.38</mysql.connector.version>
+        <dbcp2.version>2.0</dbcp2.version>
         <osgi.export.pkg/>
         <osgi.import.pkg/>
+        <osgi.private/>
     </properties>
 
     <dependencyManagement>
@@ -64,26 +65,11 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.osgi</groupId>-->
-                <!--<artifactId>spring-osgi-core</artifactId>-->
-                <!--<version>1.2.1</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.osgi</groupId>-->
-                <!--<artifactId>spring-osgi-extender</artifactId>-->
-                <!--<version>1.2.1</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.osgi</groupId>-->
-                <!--<artifactId>spring-osgi-io</artifactId>-->
-                <!--<version>1.2.1</version>-->
-            <!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.osgi</groupId>-->
-                <!--<artifactId>spring-osgi-test</artifactId>-->
-                <!--<version>1.2.1</version>-->
-            <!--</dependency>-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${org.springframework.version}</version>
+            </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
@@ -105,11 +91,6 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.codehaus.groovy</groupId>
-                <artifactId>groovy-all</artifactId>
-                <version>2.4.5</version>
             </dependency>
             <dependency>
                 <groupId>org.jooq</groupId>
@@ -134,7 +115,12 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-dbcp2</artifactId>
-                <version>2.0</version>
+                <version>${dbcp2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.cxf</groupId>
+                <artifactId>cxf-rt-bindings-soap</artifactId>
+                <version>${cxf.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -166,8 +152,8 @@
                         <!--<Bundle-Description>${osgi.symbolic.name}</Bundle-Description>-->
                         <Export-Package>${osgi.export.pkg}</Export-Package>
                         <Import-Package>${osgi.import.pkg}</Import-Package>
-                        <!--<Private-Package>${osgi.private.pkg}</Private-Package>-->
-                        <!--<DynamicImport-Package>${osgi.dynamicimport.pkg}</DynamicImport-Package>-->
+                        <Private-Package>${osgi.private}</Private-Package>
+                        <DynamicImport-Package>*</DynamicImport-Package>
                         <!--<Embed-Dependency>${osgi.embed.dependency}</Embed-Dependency>-->
                         <!--<Bundle-NativeCode>${osgi.native}</Bundle-NativeCode>-->
                         <!--<Bundle-Activator>${osgi.activator}</Bundle-Activator>-->
@@ -192,12 +178,6 @@
                     </archive>
                 </configuration>
             </plugin>
-
-            <!--<plugin>-->
-                <!--<groupId>org.eclipse.jetty</groupId>-->
-                <!--<artifactId>jetty-maven-plugin</artifactId>-->
-                <!--<version>9.2.11.v20150529</version>-->
-            <!--</plugin>-->
         </plugins>
     </build>
 

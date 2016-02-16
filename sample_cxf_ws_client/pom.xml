@@ -10,7 +10,7 @@
 
     <properties>
         <osgi.export.pkg>cxf.sample.client.*</osgi.export.pkg>
-        <osgi.import.pkg>*</osgi.import.pkg>
+        <!--<osgi.import.pkg>*</osgi.import.pkg>-->
     </properties>
 
     <parent>
@@ -42,10 +42,8 @@
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
         </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
     </dependencies>
+
+
 
 </project>

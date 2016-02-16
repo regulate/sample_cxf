@@ -9,7 +9,7 @@
 
     <properties>
         <osgi.export.pkg>cxf.sample.*</osgi.export.pkg>
-        <osgi.import.pkg>*</osgi.import.pkg>
+        <!--<osgi.import.pkg>*</osgi.import.pkg>-->
     </properties>
 
     <parent>

@@ -22,7 +22,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="sample_cxf_person_persistence" />
         <module name="sample_cxf_person_rs" />
         <module name="sample_cxf_person_rs_api" />
         <module name="sample_cxf_ws" />

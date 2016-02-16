@@ -8,11 +8,22 @@
     <file type="Osmorc" url="file://$PROJECT_DIR$/sample_cxf_ws_api" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/sample_cxf_ws_client" />
   </component>
+  <component name="MavenCompilerTasksManager">
+    <option name="beforeRebuildTask">
+      <set>
+        <MavenCompilerTask>
+          <option name="goal" value="org.codehaus.gmavenplus:gmavenplus-plugin:1.5:addSources" />
+          <option name="projectPath" value="$PROJECT_DIR$/sample_cxf_person_rs/pom.xml" />
+        </MavenCompilerTask>
+      </set>
+    </option>
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/cxf_sample_ws_root/pom.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_person_rs_api/pom.xml" />
+        <option value="$PROJECT_DIR$/cxf_sample_root/pom.xml" />
       </list>
     </option>
   </component>
@@ -26,7 +37,7 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="1.8.0_66" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="false" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

@@ -12,16 +12,15 @@
     <artifactId>sample_cxf_person_rs</artifactId>
 
     <properties>
-        <osgi.export.pkg>cxf.sample.rs.*</osgi.export.pkg>
-        <osgi.import.pkg>*</osgi.import.pkg>
+        <osgi.export.pkg>cxf.sample.rs</osgi.export.pkg>
+        <osgi.private>
+            cxf.sample.persistence.*,
+            cxf.sample.rs.impl
+        </osgi.private>
+        <!--<osgi.import.pkg>*</osgi.import.pkg>-->
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>cxf.sample</groupId>
-            <artifactId>sample_cxf_person_persistence</artifactId>
-            <version>${project.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
@@ -38,7 +37,75 @@
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-rt-transports-http</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-meta</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-codegen</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen-maven</artifactId>
+                <version>${jooq.version}</version>
+                <executions>
+                    <execution>
+                        <id>generate-mysql</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <jdbc>
+                                <driver>com.mysql.jdbc.Driver</driver>
+                                <url>jdbc:mysql://localhost:3306/cxf_sample</url>
+                                <user>root</user>
+                                <password>root</password>
+                            </jdbc>
+                            <generator>
+                                <database>
+                                    <name>org.jooq.util.mysql.MySQLDatabase</name>
+                                    <inputSchema>cxf_sample</inputSchema>
+                                </database>
+                                <target>
+                                    <packageName>cxf.sample.persistence.schema</packageName>
+                                    <directory>${project.basedir}/src/main/java</directory>
+                                </target>
+                            </generator>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>

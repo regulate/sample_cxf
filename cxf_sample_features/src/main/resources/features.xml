@@ -24,8 +24,14 @@
         <details>CXF Sample Person RS</details>
         <feature>cxf-http</feature>
         <feature>cxf-jaxrs</feature>
+        <feature version="3.2.14.RELEASE_1">spring-jdbc</feature>
+        <feature version="3.2.14.RELEASE_1">spring-tx</feature>
         <feature>spring-dm</feature>
-        <bundle start-level="80">mvn:cxf.sample/sample_cxf_person_rs/${pom.version}</bundle>
+        <bundle>mvn:org.codehaus.groovy/groovy-all/2.4.5</bundle>
+        <bundle>mvn:org.jooq/jooq/3.6.4</bundle>
+        <bundle>mvn:org.apache.commons/commons-dbcp2/2.0</bundle>
+        <bundle>mvn:org.apache.commons/commons-pool2/2.0</bundle>
+        <bundle>mvn:cxf.sample/sample_cxf_person_rs/${pom.version}</bundle>
     </feature>
 
 </features>

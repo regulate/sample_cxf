@@ -2,77 +2,94 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7abfe78-6eb4-46fe-bc4b-d492029e2ffb" name="Default" comment="Fixes">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_dbcp2_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_core_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_bindings_soap_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_bindings_xml_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_databinding_jaxb_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_frontend_jaxws_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_frontend_simple_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_transports_http_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_ws_addr_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_ws_policy_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_wsdl_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_cxf_person_persistence/sample_cxf_person_persistence.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/logback.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_3_2_14_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_3_2_14_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_3_2_14_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_3_2_14_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_3_2_14_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_3_2_14_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_3_2_14_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cxf_sample_root/cxf_sample_ws_root.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/dto/PersonDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/dto/PersonsCollectionDTO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_javax_ws_rs_api_2_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_38.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_dbcp2_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_core_3_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_bindings_xml_3_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_frontend_jaxrs_3_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_frontend_jaxws_3_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_frontend_simple_3_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_transports_http_3_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_ws_addr_3_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_ws_policy_3_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_wsdl_3_0_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_neethi_neethi_3_0_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ws_xmlschema_xmlschema_core_2_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_all_2_4_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_4_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jooq_jooq_3_6_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jooq_jooq_codegen_3_6_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jooq_jooq_meta_3_6_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_13.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_13.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_1_7_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_1_7_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_1_7_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_1_7_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_1_7_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_1_7_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_1_7_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__wsdl4j_wsdl4j_1_6_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xml_resolver_xml_resolver_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/sample_cxf_person_persistence.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/dto/PersonDTO.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/dto/PersonsCollectionDTO.groovy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/dataSource.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.groovy" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_3.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_2_2_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_core_2_2_11.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_2_11.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_2_11.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_javax_ws_rs_api_2_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_javax_ws_rs_api_2_0_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_38.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_38.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_frontend_jaxrs_3_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_frontend_jaxrs_3_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_neethi_neethi_3_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_neethi_neethi_3_0_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ws_xmlschema_xmlschema_core_2_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ws_xmlschema_xmlschema_core_2_2_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_all_2_4_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_all_2_4_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_4_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_4_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jooq_jooq_3_6_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jooq_jooq_3_6_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jooq_jooq_codegen_3_6_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jooq_jooq_codegen_3_6_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jooq_jooq_meta_3_6_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jooq_jooq_meta_3_6_4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_13.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_13.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_1_7_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_1_7_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_1_7_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_1_7_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_1_7_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_1_7_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_1_7_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_1_7_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_1_7_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_1_7_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_1_7_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_1_7_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_1_7_RELEASE.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_1_7_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__wsdl4j_wsdl4j_1_6_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__wsdl4j_wsdl4j_1_6_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xml_resolver_xml_resolver_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_resolver_xml_resolver_1_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_bindings_soap_3_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_bindings_soap_3_0_5.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_databinding_jaxb_3_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_databinding_jaxb_3_0_5.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cxf_sample_features/cxf_sample_features.iml" afterPath="$PROJECT_DIR$/cxf_sample_features/cxf_sample_features.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cxf_sample_features/src/main/resources/features.xml" afterPath="$PROJECT_DIR$/cxf_sample_features/src/main/resources/features.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/pom.xml" afterPath="$PROJECT_DIR$/sample_cxf_person_persistence/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/config/SpringTransactionProvider.java" afterPath="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/config/SpringTransactionProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/sql/persons_scheme.sql" afterPath="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/sql/persons_scheme.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cxf_sample_root/pom.xml" afterPath="$PROJECT_DIR$/cxf_sample_root/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_person_rs/pom.xml" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_person_rs/sample_cxf_person_rs.iml" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/sample_cxf_person_rs.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/PersonService.java" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/PersonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.groovy" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-context.xml" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-osgi-context.xml" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-osgi-context.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws/pom.xml" afterPath="$PROJECT_DIR$/sample_cxf_ws/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws/sample_cxf_ws.iml" afterPath="$PROJECT_DIR$/sample_cxf_ws/sample_cxf_ws.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/ws-bundle-context.xml" afterPath="$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/ws-bundle-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws_api/pom.xml" afterPath="$PROJECT_DIR$/sample_cxf_ws_api/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws/src/test/java/cxf/sample/HelloWorldImplTest.java" afterPath="$PROJECT_DIR$/sample_cxf_ws/src/test/java/cxf/sample/HelloWorldImplTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws_api/sample_cxf_ws_api.iml" afterPath="$PROJECT_DIR$/sample_cxf_ws_api/sample_cxf_ws_api.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws_client/pom.xml" afterPath="$PROJECT_DIR$/sample_cxf_ws_client/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws_client/sample_cxf_ws_client.iml" afterPath="$PROJECT_DIR$/sample_cxf_ws_client/sample_cxf_ws_client.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cxf_sample_ws_root/cxf_sample_ws_root.iml" afterPath="$PROJECT_DIR$/cxf_sample_root/cxf_sample_root.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cxf_sample_ws_root/pom.xml" afterPath="$PROJECT_DIR$/cxf_sample_root/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws_client/src/main/resources/META-INF/spring/client-bundle-context.xml" afterPath="$PROJECT_DIR$/sample_cxf_ws_client/src/main/resources/META-INF/spring/client-bundle-context.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/config/JOOQ2SpringExceptionTranslator.java" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/config/JOOQ2SpringExceptionTranslator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/config/SpringTransaction.java" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/config/SpringTransaction.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/config/SpringTransactionProvider.java" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/config/SpringTransactionProvider.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/db.properties" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/db.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/sql/persons_scheme.sql" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/sql/persons_scheme.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-context.xml" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/META-INF/spring/rs-bundle-context.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-osgi-context.xml" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/META-INF/spring/rs-bundle-osgi-context.xml" />
     </list>
     <ignored path="sample_cxf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -124,48 +141,7 @@
     <favorites_list name="sample_cxf" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="rs-bundle-context.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-context.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sample_cxf_person_persistence/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.576923">
-              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sample_cxf_ws/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34867257">
-              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sample_cxf_ws_client/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5769231">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -188,20 +164,12 @@
       <projects_view />
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="dummy://restClient/response7.txt" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/beans.xml" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/osgi-beans.xml" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/bundel-context-osgi.xml" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/bundle-context.xml" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/bundle-context-osgi.xml" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws_client/src/main/resources/META-INF/spring/beans.xml" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws_client/src/main/resources/META-INF/spring/bundle-context-osgi.xml" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws_client/src/main/resources/META-INF/spring/client-bundle-context-osgi.xml" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/ws-bundle-context-osgi.xml" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws/src/test/java/cxf/sample/CxfWsBundleTest.java" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws_client/src/main/resources/META-INF/spring/client-bundle-context.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/HelloWorld.java" />
         <option value="$PROJECT_DIR$/sample_cxf_ws_client/src/main/java/cxf/sample/client/HelloWorldWsClient.java" />
         <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/groovy/cxf/sample/persistence/Test.groovy" />
@@ -213,31 +181,46 @@
         <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistance/config/JOOQToSpringExceptionTransformer.java" />
         <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistance/config/SpringTransaction.java" />
         <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistance/config/SpringTransactionProvider.java" />
-        <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistance/service/PersonService.groovy" />
         <option value="$PROJECT_DIR$/cxf_sample_features/pom.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/dataSource.xml" />
         <option value="$PROJECT_DIR$/cxf_sample_ws_root/pom.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/CrudService.java" />
         <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/CXFRSPersonService.java" />
-        <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.java" />
-        <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/dto/PersonsCollectionDTO.groovy" />
-        <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/dto/PersonDTO.groovy" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/ws-bundle-context.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-osgi-context.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-context.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/sql/persons_scheme.sql" />
-        <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/PersonService.java" />
         <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/logback.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.groovy" />
-        <option value="$PROJECT_DIR$/cxf_sample_features/src/main/resources/features.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/config/SpringTransactionProvider.java" />
         <option value="$PROJECT_DIR$/.idea/modules.xml" />
-        <option value="$PROJECT_DIR$/sample_cxf_person_rs/pom.xml" />
-        <option value="$PROJECT_DIR$/sample_cxf_person_persistence/pom.xml" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws/pom.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_ws_api/pom.xml" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/db.properties" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/dto/PersonDTO.groovy" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/dto/PersonsCollectionDTO.groovy" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/groovy/cxf/sample/persistence/dto/PersonDTO.groovy" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/groovy/cxf/sample/persistence/dto/PersonsCollectionDTO.groovy" />
+        <option value="$PROJECT_DIR$/cxf_sample_features/target/classes/features.xml" />
+        <option value="$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/ws-bundle-context-osgi.xml" />
+        <option value="$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/ws-bundle-context.xml" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/META-INF/spring/dataSource.xml" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_persistence/pom.xml" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/META-INF/spring/rs-bundle-context.xml" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/META-INF/spring/rs-bundle-context.xml" />
+        <option value="$PROJECT_DIR$/cxf_sample_features/src/main/resources/features.xml" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/groovy/cxf/sample/rs/impl/PersonServiceImpl.groovy" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/groovy/cxf/sample/persistence/dto/PersonDTO.groovy" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/groovy/cxf/sample/persistence/dto/PersonsCollectionDTO.groovy" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/dto/PersonDTO.java" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/dto/PersonsCollectionDTO.java" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.java" />
+        <option value="$PROJECT_DIR$/sample_cxf_ws/pom.xml" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_rs/pom.xml" />
+        <option value="$PROJECT_DIR$/cxf_sample_root/pom.xml" />
+        <option value="$PROJECT_DIR$/sample_cxf_ws_client/src/main/resources/META-INF/spring/client-bundle-context.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_ws_client/pom.xml" />
+        <option value="$USER_HOME$/.m2/settings.xml" />
+        <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/PersonService.java" />
       </list>
     </option>
   </component>
@@ -272,7 +255,7 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="sample_cxf_person_persistence" />
+          <option name="myItemId" value="sample_cxf_person_rs" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -282,12 +265,12 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="sample_cxf_person_persistence" />
+          <option name="myItemId" value="sample_cxf_person_rs" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Lifecycle" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
+          <option name="myItemId" value="Plugins" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -319,8 +302,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1296" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -347,7 +330,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
@@ -368,72 +350,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf_ws_client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf_ws_client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf_ws" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf_person_rs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -444,17 +363,23 @@
     <property name="project.structure.side.proportion" value="0.24597701" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/MySQL/Connector.J 5.1/mysql-connector-java-5.1.38-bin.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cxf_sample_root" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\telesens\si\sample_cxf\sample_cxf_person_rs\src\main\resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\research\sample_cxf\sample_cxf_person_rs\src\main\resources" />
+      <recent name="D:\projects\research\sample_cxf\sample_cxf_person_persistence\src\main\resources" />
+      <recent name="D:\projects\research\sample_cxf\sample_cxf_person_rs\src\main\resources\META-INF\spring" />
+      <recent name="D:\projects\research\sample_cxf\sample_cxf_person_persistence\src\main\resources\META-INF\spring" />
       <recent name="D:\projects\research\sample_cxf\sample_cxf_person_persistence\src\main\java\cxf\sample\persistence\dto\schema" />
-      <recent name="D:\projects\research\sample_cxf\sample_cxf_person_persistence\src\main\java\cxf\sample\persistence\dto" />
-      <recent name="D:\projects\research\sample_cxf\cxf_sample_features\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="cxf.sample.rs.impl" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\research\sample_cxf\sample_cxf_person_persistence\src\main\resources\META-INF\spring" />
+      <recent name="E:\telesens\si\sample_cxf\sample_cxf_person_rs\src\main\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -632,6 +557,17 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
@@ -850,9 +786,6 @@
       </MavenSettings>
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -937,18 +870,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-options />
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui>bdd</ui>
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
-    </configuration>
     <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
       <method />
     </configuration>
@@ -994,6 +915,10 @@
       <workItem from="1455521308765" duration="10928000" />
       <workItem from="1455532370944" duration="18953000" />
       <workItem from="1455562965230" duration="2952000" />
+      <workItem from="1455607611536" duration="266000" />
+      <workItem from="1455607900836" duration="52000" />
+      <workItem from="1455609376489" duration="23773000" />
+      <workItem from="1455638024986" duration="2618000" />
     </task>
     <task id="LOCAL-00001" summary="Added spring support to be exported to osgi env">
       <created>1455295384947</created>
@@ -1005,26 +930,25 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59657000" />
+    <option name="totallyTimeSpent" value="86366000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.50323623" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16791044" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22860238" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17475729" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72235024" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66847235" sideWeight="0.49676377" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21108742" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21763754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1945629" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1034,10 +958,13 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="soapUI Navigator" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="soapUI Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1099,291 +1026,408 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-osgi-context.xml">
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/dto/PersonDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cxf_sample_features/src/main/resources/features.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/SpringOSGi/lib/SpringOSGi.jar!/resources/schemas/osgi/spring-osgi-1.1.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_ws/src/test/java/cxf/sample/HelloWorldImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10119048">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_client/src/main/resources/META-INF/spring/client-bundle-context-osgi.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2075472">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_client/src/main/java/cxf/sample/client/HelloWorldWsClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15758981">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_client/src/main/resources/META-INF/spring/client-bundle-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23761117">
-          <caret line="11" column="91" selection-start-line="11" selection-start-column="91" selection-end-line="11" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/maven-4.0.0.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34398034">
-          <caret line="444" column="6" selection-start-line="444" selection-start-column="6" selection-end-line="444" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/dataSource.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5679797">
-          <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_ws/src/main/java/cxf/sample/HelloWorldImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26309523">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/HelloWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14166667">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/ws-bundle-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16152018">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/ws-bundle-context-osgi.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24228029">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-osgi-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19562715">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_persistence/src/main/resources/sql/persons_scheme.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17094973">
-          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03912543">
-          <caret line="2" column="72" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7150838">
-          <caret line="96" column="52" selection-start-line="96" selection-start-column="52" selection-end-line="96" selection-end-column="52" />
-          <folding>
-            <element signature="e#28#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/dto/PersonsCollectionDTO.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36089385">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <element signature="e#36#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/dto/PersonDTO.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3039106">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="e#36#69#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/config/JOOQ2SpringExceptionTranslator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2659218">
-          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/config/SpringTransaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20893855">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/config/SpringTransactionProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81675977">
-          <caret line="47" column="27" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cxf_sample_features/src/main/resources/features.xml">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/maven-4.0.0.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44994247">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/PersonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.064638786">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cxf_sample_root/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.392">
-          <caret line="49" column="25" selection-start-line="45" selection-start-column="12" selection-end-line="49" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_persistence/src/main/java/cxf/sample/persistence/schema/tables/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.581749">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.34398034">
+          <caret line="1209" column="12" selection-start-line="1209" selection-start-column="12" selection-end-line="1209" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12917933">
-          <caret line="5" column="131" selection-start-line="5" selection-start-column="131" selection-end-line="5" selection-end-column="131" />
+        <state vertical-scroll-proportion="0.10442261">
+          <caret line="5" column="129" selection-start-line="5" selection-start-column="129" selection-end-line="5" selection-end-column="129" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-rt-frontend-jaxws/3.0.5/cxf-rt-frontend-jaxws-3.0.5.jar!/schemas/jaxws.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34398034">
+          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.060714286">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/sql/persons_scheme.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.1.7.RELEASE/spring-tx-4.1.7.RELEASE.jar!/org/springframework/transaction/config/spring-tx-4.1.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MAVEN/cxf.sample:sample_cxf_person_rs:1.0">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>cxf.sample:sample_cxf_person_rs:1.0</OriginalElement>
+          <nodes>
+            <node x="" y="">cxf.sample:sample_cxf_person_rs:1.0</node>
+            <node x="" y="">org.slf4j:jcl-over-slf4j:jar:1.7.13</node>
+            <node x="" y="">org.slf4j:jcl-over-slf4j:jar:1.7.13/org.slf4j:slf4j-api:jar:1.7.13</node>
+            <node x="" y="">ch.qos.logback:logback-classic:jar:1.1.3</node>
+            <node x="" y="">ch.qos.logback:logback-classic:jar:1.1.3/ch.qos.logback:logback-core:jar:1.1.3</node>
+            <node x="" y="">org.apache.cxf:cxf-rt-frontend-jaxrs:jar:3.0.5</node>
+            <node x="" y="">org.apache.cxf:cxf-rt-frontend-jaxrs:jar:3.0.5/org.apache.cxf:cxf-core:jar:3.0.5</node>
+            <node x="" y="">org.apache.cxf:cxf-rt-frontend-jaxrs:jar:3.0.5/org.apache.cxf:cxf-core:jar:3.0.5/org.codehaus.woodstox:woodstox-core-asl:jar:4.4.1</node>
+            <node x="" y="">org.apache.cxf:cxf-rt-frontend-jaxrs:jar:3.0.5/org.apache.cxf:cxf-core:jar:3.0.5/org.codehaus.woodstox:woodstox-core-asl:jar:4.4.1/org.codehaus.woodstox:stax2-api:jar:3.1.4</node>
+            <node x="" y="">org.apache.cxf:cxf-rt-frontend-jaxrs:jar:3.0.5/org.apache.cxf:cxf-core:jar:3.0.5/org.apache.ws.xmlschema:xmlschema-core:jar:2.2.1</node>
+            <node x="" y="">org.apache.cxf:cxf-rt-frontend-jaxrs:jar:3.0.5/javax.ws.rs:javax.ws.rs-api:jar:2.0.1</node>
+            <node x="" y="">org.apache.cxf:cxf-rt-frontend-jaxrs:jar:3.0.5/javax.annotation:javax.annotation-api:jar:1.2</node>
+            <node x="" y="">org.apache.cxf:cxf-rt-transports-http:jar:3.0.5</node>
+            <node x="" y="">org.codehaus.groovy:groovy-all:jar:2.4.5</node>
+            <node x="" y="">org.jooq:jooq:jar:3.6.4</node>
+            <node x="" y="">org.jooq:jooq-meta:jar:3.6.4</node>
+            <node x="" y="">org.jooq:jooq-codegen:jar:3.6.4</node>
+            <node x="" y="">mysql:mysql-connector-java:jar:5.1.38</node>
+            <node x="" y="">org.springframework:spring-jdbc:jar:4.2.0.RELEASE</node>
+            <node x="" y="">org.springframework:spring-jdbc:jar:4.2.0.RELEASE/org.springframework:spring-beans:jar:4.2.0.RELEASE</node>
+            <node x="" y="">org.springframework:spring-jdbc:jar:4.2.0.RELEASE/org.springframework:spring-core:jar:4.2.0.RELEASE</node>
+            <node x="" y="">org.springframework:spring-context:jar:4.2.0.RELEASE</node>
+            <node x="" y="">org.springframework:spring-context:jar:4.2.0.RELEASE/org.springframework:spring-aop:jar:4.2.0.RELEASE</node>
+            <node x="" y="">org.springframework:spring-context:jar:4.2.0.RELEASE/org.springframework:spring-aop:jar:4.2.0.RELEASE/aopalliance:aopalliance:jar:1.0</node>
+            <node x="" y="">org.springframework:spring-context:jar:4.2.0.RELEASE/org.springframework:spring-expression:jar:4.2.0.RELEASE</node>
+            <node x="" y="">org.springframework:spring-tx:jar:4.2.0.RELEASE</node>
+            <node x="" y="">org.apache.commons:commons-dbcp2:jar:2.0</node>
+            <node x="" y="">org.apache.commons:commons-dbcp2:jar:2.0/org.apache.commons:commons-pool2:jar:2.2</node>
+            <node x="" y="">org.apache.commons:commons-dbcp2:jar:2.0/commons-logging:commons-logging:jar:1.1.3</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="349.0" y="375.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>All</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/schema/tables/records/PersonRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08095238">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/schema/Tables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08095238">
+          <caret line="6" column="37" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/schema/Keys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52619046">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/schema/CxfSample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54642856">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/SpringOSGi/lib/SpringOSGi.jar!/resources/schemas/osgi/spring-osgi-1.1.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25061426">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/ws-bundle-context-osgi.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.041769043">
+          <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/config/JOOQ2SpringExceptionTranslator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24285714">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/META-INF/spring/rs-bundle-osgi-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.041769043">
+          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.2.0.RELEASE/spring-tx-4.2.0.RELEASE.jar!/org/springframework/transaction/config/spring-tx-4.1.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/config/SpringTransactionProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28214285">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/config/SpringTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16190477">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/schema/tables/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/jooq/jooq/3.6.4/jooq-3.6.4-sources.jar!/org/jooq/impl/DefaultDSLContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30357143">
+          <caret line="229" column="13" selection-start-line="229" selection-start-column="13" selection-end-line="229" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy-all/2.4.5/groovy-all-2.4.5-sources.jar!/groovy/transform/builder/Builder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.2345238">
+          <caret line="73" column="18" selection-start-line="73" selection-start-column="18" selection-end-line="73" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy-all/2.4.5/groovy-all-2.4.5-sources.jar!/groovy/transform/CompileStatic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60714287">
+          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cxf_sample_features/src/main/resources/features.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27149877">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cxf_sample_features/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36106196">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        <state vertical-scroll-proportion="-0.68917197">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/dto/PersonsCollectionDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28333333">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/persistence/dto/PersonDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2059524">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_ws/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23821656">
+          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sample_cxf_ws_api/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5115044">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.21656051">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_ws/src/main/java/cxf/sample/HelloWorldImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_ws/src/main/resources/META-INF/spring/ws-bundle-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18796068">
+          <caret line="9" column="80" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_client/src/main/java/cxf/sample/client/HelloWorldWsClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_client/src/main/resources/META-INF/spring/client-bundle-context-osgi.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cxf_sample_root/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42675158">
+          <caret line="121" column="38" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/cxf/cxf-core/3.0.5/cxf-core-3.0.5.jar!/META-INF/cxf/cxf.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.m2/settings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7746212">
+          <caret line="95" column="47" selection-start-line="95" selection-start-column="47" selection-end-line="95" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/PersonService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7364621">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.6797619">
+          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_client/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9961783">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/HelloWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10119048">
+          <caret line="7" column="79" selection-start-line="7" selection-start-column="79" selection-end-line="7" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_client/src/main/resources/META-INF/spring/client-bundle-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19440915">
+          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24070796">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.36815286">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_client/pom.xml">
+    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/META-INF/spring/rs-bundle-context.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5769231">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/rs-bundle-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_persistence/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.576923">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_ws/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34867257">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.514742">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1440,11 +1484,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring|sample_cxf_person_rs</last-edited>
+          <last-edited>sample_cxf_person_persistence</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.24597701" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
