@@ -6,11 +6,10 @@ import java.util.Collection;
 /**
  * Created by IPotapchuk on 2/16/2016.
  */
-@XmlRootElement
+@XmlRootElement(name = "persons")
 @XmlAccessorType(XmlAccessType.NONE)
 public class PersonsCollectionDTO {
 
-    @XmlElementWrapper(name = "users")
     @XmlElementRef
     private Collection<PersonDTO> persons;
 

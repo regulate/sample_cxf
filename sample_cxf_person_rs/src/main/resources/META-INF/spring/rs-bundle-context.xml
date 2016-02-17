@@ -21,19 +21,15 @@
         <jaxrs:serviceBeans>
             <ref bean="personRestService"/>
         </jaxrs:serviceBeans>
-        <jaxrs:extensionMappings>
-            <entry key="xml" value="application/xml"/>
-        </jaxrs:extensionMappings>
     </jaxrs:server>
 
     <bean id="personRestService" class="cxf.sample.rs.impl.PersonServiceImpl">
         <property name="dsl" ref="dsl"/>
     </bean>
 
-    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
-        <!-- These properties are replaced by Maven "resources" -->
-        <property name="url" value="${db.url}"/>
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${db.driver}"/>
+        <property name="url" value="${db.url}"/>
         <property name="username" value="${db.user}"/>
         <property name="password" value="${db.password}"/>
     </bean>

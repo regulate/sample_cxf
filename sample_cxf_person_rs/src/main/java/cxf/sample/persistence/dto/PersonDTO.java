@@ -1,27 +1,30 @@
 package cxf.sample.persistence.dto;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import cxf.sample.persistence.config.jaxb.DateFormatterAdapter;
+
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.sql.Date;
 
 /**
  * Created by IPotapchuk on 2/16/2016.
  */
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.NONE)
+@XmlRootElement(name="person")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class PersonDTO {
-    @XmlAttribute
+    @XmlElement
     private Long id;
-    @XmlAttribute
+    @XmlElement
     private String firstName;
-    @XmlAttribute
+    @XmlElement
     private String lastName;
-    @XmlAttribute
+    @XmlElement
     private Integer age;
-    @XmlAttribute
+    @XmlJavaTypeAdapter(DateFormatterAdapter.class)
     private Date birthDate;
+
+    public PersonDTO() {
+    }
 
     private PersonDTO(Builder builder) {
         setId(builder.id);
@@ -95,6 +98,16 @@ public class PersonDTO {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "PersonDTO{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", birthDate=" + birthDate +
+                '}';
+    }
 
     public static final class Builder {
         private Long id;

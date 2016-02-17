@@ -11,23 +11,21 @@ import javax.ws.rs.core.Response;
  * Created by IPotapchuk on 2/15/2016.
  */
 @Transactional(readOnly = true)
-@Path("persons")
-@Produces(MediaType.APPLICATION_XML)
+@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 public interface PersonService {
 
-    @Transactional(readOnly = false)
     @POST
-    @Consumes(MediaType.APPLICATION_XML)
-    void add(PersonDTO person);
+    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Transactional(readOnly = false)
+    Response add(PersonDTO person);
 
     @GET
     @Path("/{id}")
     Response retrieve(@PathParam("id") Long id);
 
-    @Transactional(readOnly = false)
     @POST
-    @Consumes(MediaType.APPLICATION_XML)
     @Path("/{id}")
+    @Transactional(readOnly = false)
     Response remove (@PathParam("id") Long id);
 
     @GET

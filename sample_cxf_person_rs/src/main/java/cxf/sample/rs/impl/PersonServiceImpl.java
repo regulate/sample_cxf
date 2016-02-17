@@ -30,14 +30,20 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public void add(PersonDTO person) {
+    public Response add(PersonDTO person) {
         log.info("Going to add {}", person);
-        dsl.insertInto(PERSON)
+        int inserted = dsl.insertInto(PERSON)
                 .set(PERSON.FIRST_NAME, person.getFirstName())
                 .set(PERSON.LAST_NAME, person.getLastName())
                 .set(PERSON.AGE, person.getAge())
                 .set(PERSON.BIRTH_DATE, person.getBirthDate())
                 .execute();
+        if(inserted==0) {
+            log.warn("Failed to add person {}", person);
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+        log.info("Person added {}", person);
+        return Response.ok().build();
     }
 
     @Override
@@ -47,7 +53,7 @@ public class PersonServiceImpl implements PersonService {
                 .where(PERSON.ID.eq(id))
                 .fetchAny();
         if (rec == null) {
-            log.info("Person with id {} was not found", id);
+            log.warn("Person with id {} was not found", id);
             return noContentResponse();
         }
         PersonDTO dto = new PersonDTO.Builder()
@@ -57,8 +63,8 @@ public class PersonServiceImpl implements PersonService {
                 .age(rec.getAge())
                 .birthDate(rec.getBirthDate())
                 .build();
-        log.info("Fetched {}", dto);
-        return Response.ok().entity(dto).build();
+        log.info("Fetched {}", dto.toString());
+        return Response.ok(dto).build();
     }
 
     @Override
@@ -67,7 +73,7 @@ public class PersonServiceImpl implements PersonService {
                 .where(PERSON.ID.eq(id))
                 .fetchAny();
         if (rec == null) {
-            log.info("Person with id {} was not found", id);
+            log.warn("Person with id {} was not found", id);
             return noContentResponse();
         }
         dsl.deleteFrom(PERSON)
@@ -100,7 +106,7 @@ public class PersonServiceImpl implements PersonService {
             return noContentResponse();
         }
         log.info("Found {} persons", personList.size());
-        return Response.ok().entity(new PersonsCollectionDTO(personList)).build();
+        return Response.ok(new PersonsCollectionDTO(personList)).build();
     }
 
     private static Response noContentResponse() {
