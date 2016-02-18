@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="cxf-sample" default="cxf-sample-install-all">
+
+    <property name="karaf.home" location="d:/apache/apache-karaf-3.0.5"/>
+    <property name="karaf.deploy" location="${karaf.home}/deploy"/>
+    <property name="depl.script" value="D:/projects/research/sample_cxf/cxf_sample_root/depl-all.txt"/>
+
+    <target name="karaf-start-clean">
+        <delete dir="${karaf.deploy}" includes="*"/>
+        <exec executable="cmd.exe" spawn="yes" osfamily="windows">
+            <arg line='/c start /MIN ${karaf.home}/bin/karaf.bat clean debug ^&amp; exit'/>
+        </exec>
+    </target>
+
+    <target name="karaf-start-restore">
+        <exec executable="cmd.exe" spawn="yes" osfamily="windows">
+            <arg line='/c start /MIN ${karaf.home}/bin/karaf.bat debug ^&amp; exit'/>
+        </exec>
+    </target>
+
+    <target name="karaf-shutdown">
+        <karaf-execute command="shutdown -f"/>
+    </target>
+
+    <target name="cxf-sample-install-all">
+        <karaf-execute command="shell:source ${depl.script}"/>
+    </target>
+
+    <macrodef name="karaf-execute">
+        <attribute name="command"/>
+        <sequential>
+            <echo>@{command}</echo>
+            <sshexec host="localhost"
+                     command="@{command}"
+                     trust="true"
+                     port="8101"
+                     username="karaf"
+                     password="karaf"/>
+        </sequential>
+    </macrodef>
+
+</project>
