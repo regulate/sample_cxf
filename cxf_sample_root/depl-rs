@@ -1,0 +1,6 @@
+version = 1.0
+groupId = 'cxf.sample'
+feature:repo-add mvn:$groupId/cxf_sample_features/$version/xml/features
+feature:install sample-cxf-rs
+bundle:watch mvn:$groupId/sample_person_persistence/$version
+bundle:watch mvn:$groupId/sample_cxf_person_rs/$version

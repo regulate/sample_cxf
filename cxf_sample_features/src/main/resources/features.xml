@@ -26,15 +26,21 @@
         <feature>cxf-http</feature>
         <feature>cxf-http-jetty</feature>
         <feature>cxf-jaxrs</feature>
-        <feature version="3.2.14.RELEASE_1">spring-jdbc</feature>
         <feature version="3.2.14.RELEASE_1">spring-tx</feature>
+        <feature>sample-person-persistence</feature>
+        <bundle>mvn:cxf.sample/sample_cxf_person_rs/${pom.version}</bundle>
+    </feature>
+
+    <feature name="sample-person-persistence" version="${pom.version}">
+        <details>JOOQ Person Persistence Module</details>
+        <feature version="3.2.14.RELEASE_1">spring-jdbc</feature>
         <feature>spring-dm</feature>
         <feature>pax-jdbc</feature>
         <feature>pax-jdbc-config</feature>
         <feature>jdbc</feature>
         <feature>pax-jdbc-mysql</feature>
         <bundle>mvn:org.jooq/jooq/3.6.4</bundle>
-        <bundle>mvn:cxf.sample/sample_cxf_person_rs/${pom.version}</bundle>
+        <bundle>mvn:cxf.sample/sample_person_persistence/${pom.version}</bundle>
     </feature>
 
     <feature name="sample-cxf-all" version="${pom.version}">

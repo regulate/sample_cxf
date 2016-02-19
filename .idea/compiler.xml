@@ -27,6 +27,7 @@
         <module name="sample_cxf_ws" />
         <module name="sample_cxf_ws_api" />
         <module name="sample_cxf_ws_client" />
+        <module name="sample_person_persistence" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -39,6 +40,7 @@
       <module name="sample_cxf_ws" target="1.7" />
       <module name="sample_cxf_ws_api" target="1.7" />
       <module name="sample_cxf_ws_client" target="1.7" />
+      <module name="sample_person_persistence" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
