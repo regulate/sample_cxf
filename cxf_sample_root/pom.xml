@@ -16,6 +16,7 @@
         <module>../sample_cxf_ws_client</module>
         <module>../sample_cxf_person_rs</module>
         <module>../sample_person_persistence</module>
+        <module>../sample_cxf_camel</module>
     </modules>
 
     <properties>
@@ -27,6 +28,7 @@
         <jooq.version>3.6.4</jooq.version>
         <cxf.version>3.0.5</cxf.version>
         <mysql.connector.version>5.1.38</mysql.connector.version>
+        <camel.version>2.15.2</camel.version>
         <osgi.export.pkg/>
         <osgi.import.pkg/>
         <osgi.private/>
@@ -142,6 +144,30 @@
                         <artifactId>commons-logging</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-core</artifactId>
+                <version>${camel.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-spring</artifactId>
+                <version>${camel.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-cxf</artifactId>
+                <version>${camel.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-cxf-transport</artifactId>
+                <version>${camel.version}</version>
             </dependency>
             <!--<dependency>-->
                 <!--<groupId>org.apache.ant</groupId>-->

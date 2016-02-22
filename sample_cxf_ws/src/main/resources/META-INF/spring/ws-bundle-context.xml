@@ -2,13 +2,26 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:cxf="http://cxf.apache.org/core"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+        http://cxf.apache.org/core
+        http://cxf.apache.org/schemas/core.xsd
+        http://cxf.apache.org/jaxws
+        http://cxf.apache.org/schemas/jaxws.xsd">
 
-    <jaxws:endpoint implementor="#helloWorldService" id="helloWorld" address="/hello"/>
+    <cxf:bus>
+        <cxf:features>
+            <cxf:logging/>
+        </cxf:features>
+    </cxf:bus>
 
-    <bean id="helloWorldService" class="cxf.sample.HelloWorldImpl"/>
+    <jaxws:endpoint id="helloWS"
+                    implementor="#helloService"
+                    implementorClass="cxf.sample.HelloServiceImpl"
+                    address="/hello"/>
+
+    <bean id="helloService" class="cxf.sample.HelloServiceImpl"/>
 
 </beans>

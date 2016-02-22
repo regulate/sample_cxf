@@ -6,7 +6,7 @@ import javax.jws.soap.SOAPBinding;
 
 @WebService
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT, use = SOAPBinding.Use.LITERAL)
-public interface HelloWorld {
+public interface HelloService {
     @WebMethod String sayHi(String name);
 }
 

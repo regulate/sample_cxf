@@ -7,12 +7,6 @@
         http://www.springframework.org/schema/osgi
         http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 
-    <import resource="ws-bundle-context.xml"/>
-
-    <osgi:service id="helloWebService" ref="helloService" interface="cxf.sample.api.HelloService">
-        <osgi:service-properties>
-            <entry key="service.type" value="ws"/>
-        </osgi:service-properties>
-    </osgi:service>
+    <import resource="camel-bundle-context.xml"/>
 
 </beans>

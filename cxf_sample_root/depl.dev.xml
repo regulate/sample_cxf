@@ -6,6 +6,7 @@
     <property name="depl-all.script" value="d:/projects/research/sample_cxf/cxf_sample_root/depl-all"/>
     <property name="depl-rs.script" value="d:/projects/research/sample_cxf/cxf_sample_root/depl-rs"/>
     <property name="depl-ws.script" value="d:/projects/research/sample_cxf/cxf_sample_root/depl-ws"/>
+    <property name="depl-camel.script" value="d:/projects/research/sample_cxf/cxf_sample_root/depl-camel"/>
 
     <target name="karaf-start-clean">
         <delete dir="${karaf.deploy}" includes="*"/>
@@ -36,9 +37,11 @@
         <karaf-exec-client command="shell:source ${depl-ws.script}"/>
     </target>
 
+    <target name="deploy-camel">
+        <karaf-exec-client command="shell:source ${depl-camel.script}"/>
+    </target>
+
     <target name="start-deploy-all" depends="karaf-start-clean">
-        <!--<sleep seconds="8"/>-->
-        <!--<karaf-execute command="shell:source ${depl.script}"/>-->
         <karaf-exec-client command="shell:source ${depl-all.script}"/>
     </target>
 

@@ -1,16 +1,16 @@
 
 package cxf.sample;
 
-import cxf.sample.api.HelloWorld;
+import cxf.sample.api.HelloService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jws.WebService;
 
-@WebService(endpointInterface = "cxf.sample.api.HelloWorld")
-public class HelloWorldImpl implements HelloWorld {
+@WebService(endpointInterface = "cxf.sample.api.HelloService")
+public class HelloServiceImpl implements HelloService {
 
-    private static final Logger log = LoggerFactory.getLogger(HelloWorldImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(HelloServiceImpl.class);
 
     @Override
     public String sayHi(String name) {

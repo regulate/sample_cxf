@@ -10,7 +10,7 @@
        http://www.springframework.org/schema/osgi
        http://www.springframework.org/schema/osgi/spring-osgi.xsd">
     
-    <jaxrs:server id="personEndpoint" address="/persons">
+    <jaxrs:server id="personRS" address="/persons">
         <jaxrs:serviceBeans>
             <ref bean="personRestService"/>
         </jaxrs:serviceBeans>

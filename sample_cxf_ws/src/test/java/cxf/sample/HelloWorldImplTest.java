@@ -9,8 +9,8 @@ public class HelloWorldImplTest {
 
     @Test
     public void testSayHi() {
-        HelloWorldImpl helloWorldImpl = new HelloWorldImpl();
+        HelloServiceImpl helloWorldImpl = new HelloServiceImpl();
         String response = helloWorldImpl.sayHi("Sam");
-        assertEquals("HelloWorldImpl not properly saying hi", "Hi Sam", response);
+        assertEquals("HelloServiceImpl not properly saying hi", "Hi Sam", response);
     }
 }
