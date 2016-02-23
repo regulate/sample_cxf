@@ -8,7 +8,7 @@
 
     <import resource="rs-bundle-context.xml"/>
 
-    <osgi:service id="personService" ref="personRestService" interface="cxf.sample.rs.PersonService">
+    <osgi:service id="personService" ref="personRestService" interface="cxf.sample.api.rs.PersonService">
         <osgi:service-properties>
             <entry key="service.type" value="rs"/>
         </osgi:service-properties>

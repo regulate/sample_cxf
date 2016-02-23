@@ -14,10 +14,10 @@
     </cxf:bus>
 
     <jaxws:client id="helloServiceClient"
-                  serviceClass="cxf.sample.api.HelloService"
+                  serviceClass="cxf.sample.api.ws.HelloService"
                   address="http://localhost:8181/cxf/hello"/>
 
-    <bean id="clientTester" class="cxf.sample.client.ClientTester" init-method="sayHiFromServer">
+    <bean id="clientTester" class="cxf.sample.ws.client.impl.ClientTester" init-method="sayHiFromServer">
         <property name="service" ref="helloServiceClient"/>
     </bean>
 

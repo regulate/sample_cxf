@@ -8,7 +8,7 @@
     <description>Simple CXF Java-first SOAP project using Spring configuration</description>
 
     <properties>
-        <osgi.export.pkg>cxf.sample.*</osgi.export.pkg>
+        <osgi.export.pkg>cxf.sample.ws.impl</osgi.export.pkg>
         <!--<osgi.import.pkg>*</osgi.import.pkg>-->
     </properties>
 
@@ -25,14 +25,10 @@
             <artifactId>sample_cxf_ws_api</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-frontend-jaxws</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.cxf</groupId>-->
+            <!--<artifactId>cxf-rt-frontend-jaxws</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>

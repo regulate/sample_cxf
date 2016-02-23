@@ -12,10 +12,7 @@
     <artifactId>sample_cxf_person_rs</artifactId>
 
     <properties>
-        <osgi.export.pkg>cxf.sample.rs</osgi.export.pkg>
-        <osgi.private>
-            cxf.sample.rs.impl
-        </osgi.private>
+        <osgi.export.pkg>cxf.sample.rs.impl</osgi.export.pkg>
         <!--<osgi.import.pkg>*</osgi.import.pkg>-->
     </properties>
 
@@ -26,6 +23,11 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+            <groupId>cxf.sample</groupId>
+            <artifactId>sample_cxf_ws_api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
         </dependency>
@@ -33,26 +35,6 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-rs-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http-jetty</artifactId>
-        </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.apache.commons</groupId>-->
-            <!--<artifactId>commons-dbcp2</artifactId>-->
-        <!--</dependency>-->
     </dependencies>
 
 </project>

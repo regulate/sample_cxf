@@ -19,9 +19,9 @@
 
     <jaxws:endpoint id="helloWS"
                     implementor="#helloService"
-                    implementorClass="cxf.sample.HelloServiceImpl"
+                    implementorClass="cxf.sample.ws.impl.HelloServiceImpl"
                     address="/hello"/>
 
-    <bean id="helloService" class="cxf.sample.HelloServiceImpl"/>
+    <bean id="helloService" class="cxf.sample.ws.impl.HelloServiceImpl"/>
 
 </beans>

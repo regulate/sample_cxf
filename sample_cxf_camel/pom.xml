@@ -18,6 +18,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>cxf.sample</groupId>
+            <artifactId>sample_cxf_ws_api</artifactId>
+            <version>${pom.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-core</artifactId>
         </dependency>

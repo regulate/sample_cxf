@@ -1,9 +1,10 @@
 package cxf.sample.rs.impl;
 
-import cxf.sample.persistence.dto.PersonDTO;
-import cxf.sample.persistence.dto.PersonsCollectionDTO;
+import cxf.sample.persistence.schema.tables.Person;
 import cxf.sample.persistence.schema.tables.records.PersonRecord;
-import cxf.sample.rs.PersonService;
+import cxf.sample.api.dto.PersonDTO;
+import cxf.sample.api.dto.PersonsCollectionDTO;
+import cxf.sample.api.rs.PersonService;
 import org.jooq.DSLContext;
 import org.jooq.RecordMapper;
 import org.slf4j.Logger;
@@ -11,8 +12,6 @@ import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.core.Response;
 import java.util.List;
-
-import static cxf.sample.persistence.schema.tables.Person.PERSON;
 
 /**
  * Created by IPotapchuk on 2/16/2016.
@@ -32,11 +31,11 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public Response add(PersonDTO person) {
         log.info("Going to add {}", person);
-        int inserted = dsl.insertInto(PERSON)
-                .set(PERSON.FIRST_NAME, person.getFirstName())
-                .set(PERSON.LAST_NAME, person.getLastName())
-                .set(PERSON.AGE, person.getAge())
-                .set(PERSON.BIRTH_DATE, person.getBirthDate())
+        int inserted = dsl.insertInto(Person.PERSON)
+                .set(Person.PERSON.FIRST_NAME, person.getFirstName())
+                .set(Person.PERSON.LAST_NAME, person.getLastName())
+                .set(Person.PERSON.AGE, person.getAge())
+                .set(Person.PERSON.BIRTH_DATE, person.getBirthDate())
                 .execute();
         if(inserted==0) {
             log.warn("Failed to add person {}", person);
@@ -49,8 +48,8 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public Response retrieve(Long id) {
         log.info("Going to fetch person with id {}", id);
-        PersonRecord rec = dsl.selectFrom(PERSON)
-                .where(PERSON.ID.eq(id))
+        PersonRecord rec = dsl.selectFrom(Person.PERSON)
+                .where(Person.PERSON.ID.eq(id))
                 .fetchAny();
         if (rec == null) {
             log.warn("Person with id {} was not found", id);
@@ -69,15 +68,15 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public Response remove(Long id) {
-        PersonRecord rec = dsl.selectFrom(PERSON)
-                .where(PERSON.ID.eq(id))
+        PersonRecord rec = dsl.selectFrom(Person.PERSON)
+                .where(Person.PERSON.ID.eq(id))
                 .fetchAny();
         if (rec == null) {
             log.warn("Person with id {} was not found", id);
             return noContentResponse();
         }
-        dsl.deleteFrom(PERSON)
-                .where(PERSON.ID.eq(id))
+        dsl.deleteFrom(Person.PERSON)
+                .where(Person.PERSON.ID.eq(id))
                 .execute();
         log.info("Removed person with id {}", id);
         return Response.ok().build();
@@ -86,8 +85,8 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public Response retrieveAll() {
         log.info("Retrieving all persons");
-        List<PersonDTO> personList = dsl.selectFrom(PERSON)
-                .orderBy(PERSON.ID)
+        List<PersonDTO> personList = dsl.selectFrom(Person.PERSON)
+                .orderBy(Person.PERSON.ID)
                 .fetch()
                 .map(new RecordMapper<PersonRecord, PersonDTO>() {
                     @Override

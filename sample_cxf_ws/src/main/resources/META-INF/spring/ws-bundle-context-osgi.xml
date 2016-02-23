@@ -9,7 +9,7 @@
 
     <import resource="ws-bundle-context.xml"/>
 
-    <osgi:service id="helloWebService" ref="helloService" interface="cxf.sample.api.HelloService">
+    <osgi:service id="helloWebService" ref="helloService" interface="cxf.sample.api.ws.HelloService">
         <osgi:service-properties>
             <entry key="service.type" value="ws"/>
         </osgi:service-properties>

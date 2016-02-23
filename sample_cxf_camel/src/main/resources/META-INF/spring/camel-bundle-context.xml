@@ -3,7 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:osgi="http://www.springframework.org/schema/osgi"
        xmlns:camel="http://camel.apache.org/schema/spring"
-       xmlns:cxf="http://camel.apache.org/schema/cxf"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:cxf="http://camel.apache.org/schema/cxf" xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/osgi
@@ -11,19 +12,47 @@
         http://camel.apache.org/schema/spring
         http://camel.apache.org/schema/spring/camel-spring.xsd
         http://camel.apache.org/schema/cxf
-        http://camel.apache.org/schema/cxf/camel-cxf.xsd">
+        http://camel.apache.org/schema/cxf/camel-cxf.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://cxf.apache.org/jaxrs
+        http://cxf.apache.org/schemas/jaxrs.xsd">
 
     <camelContext xmlns="http://camel.apache.org/schema/spring">
+        <!--<route>-->
+        <!--<from uri="timer://myTimer?fixedRate=true&amp;period=5000"/>-->
+        <!--<bean ref="myTransform" method="transform"/>-->
+        <!--<to uri="log:LogEndpoint"/>-->
+        <!--</route>-->
         <route>
-            <from uri="timer://myTimer?fixedRate=true&amp;period=10000"/>
-            <bean ref="myTransform" method="transform"/>
-            <to uri="log:ExampleRouter"/>
+            <from uri="cxfrs://http://localhost:8182/rest?resourceClasses=cxf.sample.api.rs.PersonService"/>
+            <process ref="personProcessor"/>
         </route>
     </camelContext>
 
+    <!--<cxf:rsServer id="personRestEndpoint" address="http://localhost:8182/test/"-->
+                  <!--serviceClass="cxf.sample.api.rs.PersonService"-->
+                  <!--loggingFeatureEnabled="true"/>-->
+
+    <!--<bean id="myBus" class="org.apache.camel.component.cxf.spring.SpringBusFactoryBean">-->
+        <!--<property name="cfgFiles"-->
+                  <!--value="META-INF/cxf/cxf.xml"/>-->
+        <!--<property name="includeDefaultBus" value="false"/>-->
+    <!--</bean>-->
+
+    <!--<jaxrs:server id="personRestServ" address="http://localhost:8182/test/"-->
+    <!--serviceClass="cxf.sample.api.rs.PersonService" />-->
+
+    <bean id="personProcessor" class="cxf.sample.camel.processor.PersonProcessor">
+        <property name="helloService" ref="helloWSClient"/>
+    </bean>
+
     <bean id="myTransform" class="cxf.sample.camel.MyTransform">
         <property name="prefix" value="SpringDSL"/>
-        <property name="verbose" value="true"/>
+        <property name="verbose" value="false"/>
     </bean>
+
+    <osgi:reference id="helloWSClient" interface="cxf.sample.api.ws.HelloService"/>
+    <!--<osgi:reference id="personRestService" interface="cxf.sample.api.rs.PersonService"/>-->
 
 </beans>

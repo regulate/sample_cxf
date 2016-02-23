@@ -1,6 +1,6 @@
-package cxf.sample.rs;
+package cxf.sample.api.rs;
 
-import cxf.sample.persistence.dto.PersonDTO;
+import cxf.sample.api.dto.PersonDTO;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.ws.rs.*;

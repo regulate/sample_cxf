@@ -1,6 +1,6 @@
-package cxf.sample.client;
+package cxf.sample.ws.client.impl;
 
-import cxf.sample.api.HelloService;
+import cxf.sample.api.ws.HelloService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

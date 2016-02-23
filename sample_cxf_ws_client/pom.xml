@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <osgi.export.pkg>cxf.sample.client.*</osgi.export.pkg>
+        <osgi.export.pkg>cxf.sample.ws.client.impl</osgi.export.pkg>
         <!--<osgi.import.pkg>*</osgi.import.pkg>-->
     </properties>
 
@@ -27,14 +27,6 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-frontend-jaxws</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
@@ -43,7 +35,5 @@
             <artifactId>jcl-over-slf4j</artifactId>
         </dependency>
     </dependencies>
-
-
 
 </project>

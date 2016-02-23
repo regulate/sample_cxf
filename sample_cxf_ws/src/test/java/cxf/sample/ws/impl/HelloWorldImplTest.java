@@ -1,5 +1,5 @@
 
-package cxf.sample;
+package cxf.sample.ws.impl;
 
 import org.junit.Test;
 

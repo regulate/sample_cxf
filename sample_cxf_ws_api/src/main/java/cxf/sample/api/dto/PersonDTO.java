@@ -1,6 +1,7 @@
-package cxf.sample.persistence.dto;
+package cxf.sample.api.dto;
 
-import cxf.sample.persistence.config.jaxb.DateFormatterAdapter;
+
+import cxf.sample.api.jaxb.DateFormatterAdapter;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -83,8 +84,7 @@ public class PersonDTO {
 
         if (!id.equals(personDTO.id)) return false;
         if (!firstName.equals(personDTO.firstName)) return false;
-        if (!lastName.equals(personDTO.lastName)) return false;
-        return age.equals(personDTO.age) && birthDate.equals(personDTO.birthDate);
+        return lastName.equals(personDTO.lastName) && age.equals(personDTO.age) && birthDate.equals(personDTO.birthDate);
 
     }
 

@@ -1,4 +1,4 @@
-package cxf.sample.persistence.config.jaxb;
+package cxf.sample.api.jaxb;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import java.text.SimpleDateFormat;

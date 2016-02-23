@@ -1,6 +1,3 @@
-version = 1.0
-groupId = 'cxf.sample'
-feature:repo-add mvn:$groupId/cxf_sample_features/$version/xml/features
 feature:install sample-cxf-ws-client
 bundle:watch mvn:$groupId/sample_cxf_ws_api/$version
 bundle:watch mvn:$groupId/sample_cxf_ws/$version

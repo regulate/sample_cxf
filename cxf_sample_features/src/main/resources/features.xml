@@ -25,11 +25,11 @@
     <feature name="sample-cxf-rs" version="${pom.version}">
         <details>CXF Sample Person RS</details>
         <feature>cxf-http</feature>
-        <feature>cxf-http-jetty</feature>
         <feature>cxf-jaxrs</feature>
         <feature version="3.2.14.RELEASE_1">spring-tx</feature>
+        <bundle start-level="80">mvn:cxf.sample/sample_cxf_ws_api/${pom.version}</bundle>
         <feature>sample-person-persistence</feature>
-        <bundle>mvn:cxf.sample/sample_cxf_person_rs/${pom.version}</bundle>
+        <bundle start-level="85">mvn:cxf.sample/sample_cxf_person_rs/${pom.version}</bundle>
     </feature>
 
     <feature name="sample-person-persistence" version="${pom.version}">
@@ -44,17 +44,20 @@
         <bundle>mvn:cxf.sample/sample_person_persistence/${pom.version}</bundle>
     </feature>
 
-    <feature name="sample-cxf-all" version="${pom.version}">
-        <feature>sample-cxf-ws-client</feature>
-        <feature>sample-cxf-rs</feature>
-    </feature>
 
     <feature name="sample-cxf-camel" version="${pom.version}">
-        <feature>spring-dm</feature>
+        <feature>sample-cxf-ws-client</feature>
+        <feature>sample-cxf-rs</feature>
         <feature>camel-core</feature>
         <feature>camel-spring</feature>
         <feature>camel-cxf</feature>
         <bundle>mvn:cxf.sample/sample_cxf_camel/${pom.version}</bundle>
+    </feature>
+
+    <feature name="sample-cxf-all" version="${pom.version}">
+        <feature>sample-cxf-ws-client</feature>
+        <feature>sample-cxf-rs</feature>
+        <feature>sample-cxf-camel</feature>
     </feature>
 
 </features>

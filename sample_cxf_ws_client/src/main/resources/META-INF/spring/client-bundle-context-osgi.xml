@@ -10,7 +10,7 @@
 
     <import resource="client-bundle-context.xml"/>
 
-    <osgi:service id="helloWSClient" ref="helloServiceClient" interface="cxf.sample.api.HelloService">
+    <osgi:service id="helloWSClient" ref="helloServiceClient" interface="cxf.sample.api.ws.HelloService">
         <osgi:service-properties>
             <entry key="service.type" value="ws-client"/>
         </osgi:service-properties>

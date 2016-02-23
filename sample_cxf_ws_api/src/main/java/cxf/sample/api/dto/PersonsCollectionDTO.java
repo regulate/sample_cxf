@@ -1,4 +1,4 @@
-package cxf.sample.persistence.dto;
+package cxf.sample.api.dto;
 
 import javax.xml.bind.annotation.*;
 import java.util.Collection;

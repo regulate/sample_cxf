@@ -1,4 +1,4 @@
-package cxf.sample.api;
+package cxf.sample.api.ws;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;

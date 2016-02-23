@@ -10,16 +10,15 @@ import java.util.Date;
  */
 public class MyTransform {
 
-    private static final Logger LOG = LoggerFactory.getLogger(MyTransform.class);
+    private static final Logger log = LoggerFactory.getLogger(MyTransform.class);
     private boolean verbose;
     private String prefix = "MyTransform";
 
     public Object transform(Object body) {
         String answer = prefix + " set body:  " + new Date();
-        if (verbose) {
+        if (verbose)
             System.out.println(">>>> " + answer);
-        }
-        LOG.info(">>>> " + answer);
+        log.info(">>>> " + answer);
         return answer;
     }
 
