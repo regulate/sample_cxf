@@ -6,19 +6,19 @@
     </path>
     <pathconvert targetos="unix" property="basedir.unix" refid="basedir.path"/>
 
-    <property name="karaf.home" location="d:/apache/apache-karaf-3.0.5"/>
+    <property name="karaf.version" value="3.0.5"/>
+    <property name="karaf.home" location="d:/apache/apache-karaf-${karaf.version}"/>
     <property name="karaf.deploy" location="${karaf.home}/deploy"/>
     <property name="depl-init.script" value="${basedir.unix}/depl-init"/>
-    <property name="depl-ws.script" value="${basedir.unix}/depl-ws"/>
-    <property name="depl-rs.script" value="${basedir.unix}/depl-rs"/>
-    <property name="depl-camel.script" value="${basedir.unix}/depl-camel"/>
-    <property name="depl-all.script" value="${basedir.unix}/depl-all"/>
+    <property name="start.delay" value="7"
+              description="Start delay in seconds to allow karaf to start it's features"/>
 
     <target name="karaf-start-clean">
         <delete dir="${karaf.deploy}" includes="*"/>
         <exec executable="cmd.exe" spawn="yes" osfamily="windows">
             <arg line='/c start /MIN ${karaf.home}/bin/karaf.bat clean debug ^&amp; exit'/>
         </exec>
+        <sleep seconds="${start.delay}"/>
     </target>
 
     <target name="karaf-start-restore">
@@ -32,24 +32,22 @@
     </target>
 
     <target name="deploy-all" depends="deploy-preconfig">
-        <karaf-exec-client command="shell:source ${depl-all.script}"/>
+        <karaf-exec-client command="feature:install sample-cxf-all"/>
     </target>
 
     <target name="deploy-rs" depends="deploy-preconfig">
-        <karaf-exec-client command="shell:source ${depl-rs.script}"/>
+        <karaf-exec-client command="feature:install sample-cxf-rs"/>
     </target>
 
     <target name="deploy-ws" depends="deploy-preconfig">
-        <karaf-exec-client command="shell:source ${depl-ws.script}"/>
+        <karaf-exec-client command="feature:install sample-cxf-ws-client"/>
     </target>
 
     <target name="deploy-camel" depends="deploy-preconfig">
-        <karaf-exec-client command="shell:source ${depl-camel.script}"/>
+        <karaf-exec-client command="feature:install sample-cxf-camel"/>
     </target>
 
-    <target name="start-deploy-all" depends="karaf-start-clean, deploy-preconfig">
-        <karaf-exec-client command="shell:source ${depl-all.script}"/>
-    </target>
+    <target name="start-deploy-all" depends="karaf-start-clean, deploy-all" />
 
     <target name="deploy-preconfig">
         <karaf-exec-client command="shell:source ${depl-init.script}"/>

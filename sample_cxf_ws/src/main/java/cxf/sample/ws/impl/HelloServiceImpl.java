@@ -14,7 +14,7 @@ public class HelloServiceImpl implements HelloService {
 
     @Override
     public String sayHi(String name) {
-        log.debug("sayHi() called with param \"{}\"", name);
+        log.info("sayHi() called with param \"{}\"", name);
         return "Hi " + name;
     }
 }

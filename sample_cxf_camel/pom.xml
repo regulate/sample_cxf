@@ -5,7 +5,7 @@
     <parent>
         <artifactId>cxf_sample_ws_root</artifactId>
         <groupId>cxf.sample</groupId>
-        <version>1.0</version>
+        <version>1.0-SNAPSHOT</version>
         <relativePath>../cxf_sample_root/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>

@@ -1,38 +1,36 @@
 <features xmlns="http://karaf.apache.org/xmlns/features/v1.0.0"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.0.0 http://karaf.apache.org/xmlns/features/v1.0.0"
-          name="sample_cxf">
+          name="sample-cxf-${project.version}">
 
-    <repository>mvn:org.apache.cxf.karaf/apache-cxf/3.0.5/xml/features</repository>
+    <repository>mvn:org.apache.cxf.karaf/apache-cxf/${cxf.version}/xml/features</repository>
     <repository>mvn:org.ops4j.pax.jdbc/pax-jdbc-features/LATEST/xml/features</repository>
-    <repository>mvn:org.apache.camel.karaf/apache-camel/2.15.2/xml/features</repository>
+    <repository>mvn:org.apache.camel.karaf/apache-camel/${camel.version}/xml/features</repository>
 
-    <feature name="sample-cxf-ws-client" version="${pom.version}">
+    <feature name="sample-cxf-ws-client" version="${project.version}">
         <details>CXF Sample WS Client</details>
-        <feature>sample-cxf-ws</feature>
-        <bundle start-level="90" start="true">mvn:cxf.sample/sample_cxf_ws_client/${pom.version}</bundle>
+        <feature version="${project.version}">sample-cxf-ws</feature>
+        <bundle start-level="90" start="true">mvn:cxf.sample/sample_cxf_ws_client/${project.version}</bundle>
     </feature>
 
-    <feature name="sample-cxf-ws" version="${pom.version}">
+    <feature name="sample-cxf-ws" version="${project.version}">
         <details>CXF Sample WS</details>
         <feature>cxf-http</feature>
         <feature>cxf-jaxws</feature>
         <feature>spring-dm</feature>
-        <bundle start-level="80">mvn:cxf.sample/sample_cxf_ws_api/${pom.version}</bundle>
-        <bundle start-level="85">mvn:cxf.sample/sample_cxf_ws/${pom.version}</bundle>
+        <bundle start-level="80">mvn:cxf.sample/sample_cxf_ws_api/${project.version}</bundle>
+        <bundle start-level="85">mvn:cxf.sample/sample_cxf_ws/${project.version}</bundle>
     </feature>
 
-    <feature name="sample-cxf-rs" version="${pom.version}">
+    <feature name="sample-cxf-rs" version="${project.version}">
         <details>CXF Sample Person RS</details>
         <feature>cxf-http</feature>
         <feature>cxf-jaxrs</feature>
         <feature version="3.2.14.RELEASE_1">spring-tx</feature>
-        <bundle start-level="80">mvn:cxf.sample/sample_cxf_ws_api/${pom.version}</bundle>
-        <feature>sample-person-persistence</feature>
-        <bundle start-level="85">mvn:cxf.sample/sample_cxf_person_rs/${pom.version}</bundle>
+        <bundle start-level="80">mvn:cxf.sample/sample_cxf_ws_api/${project.version}</bundle>
+        <feature version="${project.version}">sample-person-persistence</feature>
+        <bundle start-level="85">mvn:cxf.sample/sample_cxf_person_rs/${project.version}</bundle>
     </feature>
 
-    <feature name="sample-person-persistence" version="${pom.version}">
+    <feature name="sample-person-persistence" version="${project.version}">
         <details>JOOQ Person Persistence Module</details>
         <feature version="3.2.14.RELEASE_1">spring-jdbc</feature>
         <feature>spring-dm</feature>
@@ -40,24 +38,24 @@
         <feature>pax-jdbc-config</feature>
         <feature>jdbc</feature>
         <feature>pax-jdbc-mysql</feature>
-        <bundle>mvn:org.jooq/jooq/3.6.4</bundle>
-        <bundle>mvn:cxf.sample/sample_person_persistence/${pom.version}</bundle>
+        <bundle>mvn:org.jooq/jooq/${jooq.version}</bundle>
+        <bundle>mvn:cxf.sample/sample_person_persistence/${project.version}</bundle>
     </feature>
 
 
-    <feature name="sample-cxf-camel" version="${pom.version}">
-        <feature>sample-cxf-ws-client</feature>
-        <feature>sample-cxf-rs</feature>
+    <feature name="sample-cxf-camel" version="${project.version}">
+        <feature version="${project.version}">sample-cxf-ws-client</feature>
+        <feature version="${project.version}">sample-cxf-rs</feature>
         <feature>camel-core</feature>
         <feature>camel-spring</feature>
         <feature>camel-cxf</feature>
-        <bundle>mvn:cxf.sample/sample_cxf_camel/${pom.version}</bundle>
+        <bundle start-level="90">mvn:cxf.sample/sample_cxf_camel/${project.version}</bundle>
     </feature>
 
-    <feature name="sample-cxf-all" version="${pom.version}">
-        <feature>sample-cxf-ws-client</feature>
-        <feature>sample-cxf-rs</feature>
-        <feature>sample-cxf-camel</feature>
+    <feature name="sample-cxf-all" version="${project.version}">
+        <feature version="${project.version}">sample-cxf-ws-client</feature>
+        <feature version="${project.version}">sample-cxf-rs</feature>
+        <feature version="${project.version}">sample-cxf-camel</feature>
     </feature>
 
 </features>

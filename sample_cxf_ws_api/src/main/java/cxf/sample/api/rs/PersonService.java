@@ -1,6 +1,7 @@
 package cxf.sample.api.rs;
 
 import cxf.sample.api.dto.PersonDTO;
+import cxf.sample.api.dto.PersonsCollectionDTO;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.ws.rs.*;
@@ -10,25 +11,26 @@ import javax.ws.rs.core.Response;
 /**
  * Created by IPotapchuk on 2/15/2016.
  */
+@Path("/persons")
 @Transactional(readOnly = true)
 @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 public interface PersonService {
 
-    @POST
+    @PUT
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Transactional(readOnly = false)
-    Response add(PersonDTO person);
+    boolean add(PersonDTO person);
 
     @GET
     @Path("/{id}")
-    Response retrieve(@PathParam("id") Long id);
+    PersonDTO retrieve(@PathParam("id") Long id);
 
-    @POST
+    @DELETE
     @Path("/{id}")
     @Transactional(readOnly = false)
-    Response remove (@PathParam("id") Long id);
+    boolean remove(@PathParam("id") Long id);
 
     @GET
-    Response retrieveAll();
+    PersonsCollectionDTO retrieveAll();
 
 }

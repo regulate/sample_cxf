@@ -29,7 +29,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Response add(PersonDTO person) {
+    public boolean add(PersonDTO person) {
         log.info("Going to add {}", person);
         int inserted = dsl.insertInto(Person.PERSON)
                 .set(Person.PERSON.FIRST_NAME, person.getFirstName())
@@ -37,53 +37,49 @@ public class PersonServiceImpl implements PersonService {
                 .set(Person.PERSON.AGE, person.getAge())
                 .set(Person.PERSON.BIRTH_DATE, person.getBirthDate())
                 .execute();
-        if(inserted==0) {
+        if (inserted == 0) {
             log.warn("Failed to add person {}", person);
-            return Response.status(Response.Status.BAD_REQUEST).build();
+            return false;
         }
         log.info("Person added {}", person);
-        return Response.ok().build();
+        return true;
     }
 
     @Override
-    public Response retrieve(Long id) {
+    public PersonDTO retrieve(Long id) {
         log.info("Going to fetch person with id {}", id);
         PersonRecord rec = dsl.selectFrom(Person.PERSON)
                 .where(Person.PERSON.ID.eq(id))
                 .fetchAny();
-        if (rec == null) {
-            log.warn("Person with id {} was not found", id);
-            return noContentResponse();
-        }
-        PersonDTO dto = new PersonDTO.Builder()
-                .id(rec.getId())
-                .firstName(rec.getFirstName())
-                .lastName(rec.getLastName())
-                .age(rec.getAge())
-                .birthDate(rec.getBirthDate())
-                .build();
-        log.info("Fetched {}", dto.toString());
-        return Response.ok(dto).build();
+        PersonDTO dto = null;
+        if (rec != null) {
+            dto = new PersonDTO.Builder()
+                    .id(rec.getId())
+                    .firstName(rec.getFirstName())
+                    .lastName(rec.getLastName())
+                    .age(rec.getAge())
+                    .birthDate(rec.getBirthDate())
+                    .build();
+            log.info("Fetched {}", dto.toString());
+        } else log.warn("Person with id {} was not found", id);
+        return dto;
     }
 
     @Override
-    public Response remove(Long id) {
-        PersonRecord rec = dsl.selectFrom(Person.PERSON)
-                .where(Person.PERSON.ID.eq(id))
-                .fetchAny();
-        if (rec == null) {
-            log.warn("Person with id {} was not found", id);
-            return noContentResponse();
-        }
-        dsl.deleteFrom(Person.PERSON)
+    public boolean remove(Long id) {
+        int removed = dsl.deleteFrom(Person.PERSON)
                 .where(Person.PERSON.ID.eq(id))
                 .execute();
-        log.info("Removed person with id {}", id);
-        return Response.ok().build();
+        if (removed != 0) {
+            log.info("Removed person with id {}", id);
+            return true;
+        }
+        log.warn("Person with id {} was not found", id);
+        return false;
     }
 
     @Override
-    public Response retrieveAll() {
+    public PersonsCollectionDTO retrieveAll() {
         log.info("Retrieving all persons");
         List<PersonDTO> personList = dsl.selectFrom(Person.PERSON)
                 .orderBy(Person.PERSON.ID)
@@ -100,15 +96,8 @@ public class PersonServiceImpl implements PersonService {
                                 .build();
                     }
                 });
-        if (personList.isEmpty()) {
-            log.info("No persons found");
-            return noContentResponse();
-        }
-        log.info("Found {} persons", personList.size());
-        return Response.ok(new PersonsCollectionDTO(personList)).build();
+        log.info("Found {} person(s)", personList.size());
+        return new PersonsCollectionDTO(personList);
     }
 
-    private static Response noContentResponse() {
-        return Response.status(Response.Status.NO_CONTENT).build();
-    }
 }

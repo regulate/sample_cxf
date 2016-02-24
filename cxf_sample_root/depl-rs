@@ -1,4 +1,0 @@
-feature:install sample-cxf-rs
-bundle:watch mvn:$groupId/sample_cxf_ws_api/$version
-bundle:watch mvn:$groupId/sample_person_persistence/$version
-bundle:watch mvn:$groupId/sample_cxf_person_rs/$version

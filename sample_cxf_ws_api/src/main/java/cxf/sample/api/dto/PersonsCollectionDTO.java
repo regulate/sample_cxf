@@ -7,7 +7,7 @@ import java.util.Collection;
  * Created by IPotapchuk on 2/16/2016.
  */
 @XmlRootElement(name = "persons")
-@XmlAccessorType(XmlAccessType.NONE)
+@XmlAccessorType(XmlAccessType.FIELD)
 public class PersonsCollectionDTO {
 
     @XmlElementRef
