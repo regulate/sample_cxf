@@ -1,7 +1,7 @@
 package cxf.sample.rs.impl;
 
 import cxf.sample.persistence.schema.tables.Person;
-import cxf.sample.persistence.schema.tables.records.PersonRecord;
+import cxf.sample.persistence.schema.records.PersonRecord;
 import cxf.sample.api.dto.PersonDTO;
 import cxf.sample.api.dto.PersonsCollectionDTO;
 import cxf.sample.api.rs.PersonService;
@@ -10,7 +10,6 @@ import org.jooq.RecordMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.core.Response;
 import java.util.List;
 
 /**
