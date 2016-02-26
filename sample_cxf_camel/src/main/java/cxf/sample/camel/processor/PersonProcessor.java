@@ -11,8 +11,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.core.Response;
-import java.util.Arrays;
-import java.util.Collection;
 
 /**
  * Created by IPotapchuk on 2/23/2016.
@@ -72,9 +70,9 @@ public class PersonProcessor implements Processor {
                 }
                 break;
             }
-            case "add": {
+            case "addOrUpdate": {
                 PersonDTO person = exchange.getIn().getBody(PersonDTO.class);
-                boolean added = personService.add(person);
+                boolean added = personService.addOrUpdate(person);
                 if (added) {
                     greet(person);
                     exchange.getOut().setBody(Response.ok().build());

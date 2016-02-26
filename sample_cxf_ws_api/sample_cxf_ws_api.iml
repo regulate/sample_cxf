@@ -18,6 +18,20 @@
     <orderEntry type="library" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0.1" level="project" />
     <orderEntry type="library" name="Maven: javax.annotation:javax.annotation-api:1.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-transports-http:3.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxws:3.0.5" level="project" />
+    <orderEntry type="library" name="Maven: xml-resolver:xml-resolver:1.2" level="project" />
+    <orderEntry type="library" name="Maven: asm:asm:3.3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-bindings-soap:3.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-wsdl:3.0.5" level="project" />
+    <orderEntry type="library" name="Maven: wsdl4j:wsdl4j:1.6.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-databinding-jaxb:3.0.5" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-impl:2.2.11" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.xml.bind:jaxb-core:2.2.11" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-bindings-xml:3.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-frontend-simple:3.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-ws-addr:3.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.cxf:cxf-rt-ws-policy:3.0.5" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.neethi:neethi:3.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.2.14.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:3.2.14.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:3.2.14.RELEASE" level="project" />

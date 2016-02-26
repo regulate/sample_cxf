@@ -4,9 +4,15 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="gwt" url="file://$PROJECT_DIR$/vaadin_example/vaadin_example-production" />
+    <file type="gwt" url="file://$PROJECT_DIR$/vaadin_example/vaadin_example-ui" />
+    <file type="gwt" url="file://$PROJECT_DIR$/vaadin_example/vaadin_example-widgetset" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/sample_cxf_ws" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/sample_cxf_ws_api" />
     <file type="Osmorc" url="file://$PROJECT_DIR$/sample_cxf_ws_client" />
+    <file type="web" url="file://$PROJECT_DIR$/sample_person_ui" />
+    <file type="web" url="file://$PROJECT_DIR$/vaadin_example/vaadin_example-production" />
+    <file type="web" url="file://$PROJECT_DIR$/vaadin_example/vaadin_example-ui" />
   </component>
   <component name="MavenCompilerTasksManager">
     <option name="beforeRebuildTask">
@@ -24,7 +30,13 @@
         <option value="$PROJECT_DIR$/cxf_sample_ws_root/pom.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_person_rs_api/pom.xml" />
         <option value="$PROJECT_DIR$/cxf_sample_root/pom.xml" />
+        <option value="$PROJECT_DIR$/vaadin_example/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/vaadin_example/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">

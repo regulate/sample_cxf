@@ -1,10 +1,10 @@
 package cxf.sample.rs.impl;
 
-import cxf.sample.persistence.schema.tables.Person;
-import cxf.sample.persistence.schema.records.PersonRecord;
 import cxf.sample.api.dto.PersonDTO;
 import cxf.sample.api.dto.PersonsCollectionDTO;
 import cxf.sample.api.rs.PersonService;
+import cxf.sample.persistence.schema.tables.Person;
+import cxf.sample.persistence.schema.tables.records.PersonRecord;
 import org.jooq.DSLContext;
 import org.jooq.RecordMapper;
 import org.slf4j.Logger;
@@ -28,19 +28,35 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public boolean add(PersonDTO person) {
-        log.info("Going to add {}", person);
-        int inserted = dsl.insertInto(Person.PERSON)
-                .set(Person.PERSON.FIRST_NAME, person.getFirstName())
-                .set(Person.PERSON.LAST_NAME, person.getLastName())
-                .set(Person.PERSON.AGE, person.getAge())
-                .set(Person.PERSON.BIRTH_DATE, person.getBirthDate())
-                .execute();
-        if (inserted == 0) {
-            log.warn("Failed to add person {}", person);
-            return false;
+    public boolean addOrUpdate(PersonDTO person) {
+        if (person.getId() == null) {
+            log.info("Going to add {}", person);
+            int inserted = dsl.insertInto(Person.PERSON)
+                    .set(Person.PERSON.FIRST_NAME, person.getFirstName())
+                    .set(Person.PERSON.LAST_NAME, person.getLastName())
+                    .set(Person.PERSON.AGE, person.getAge())
+                    .set(Person.PERSON.BIRTH_DATE, person.getBirthDate())
+                    .execute();
+            if (inserted == 0) {
+                log.warn("Failed to add person {}", person);
+                return false;
+            }
+            log.info("Person added {}", person);
+        } else {
+            log.info("Going to update person with id={}", person.getId());
+            int updated = dsl.update(Person.PERSON)
+                    .set(Person.PERSON.FIRST_NAME, person.getFirstName())
+                    .set(Person.PERSON.LAST_NAME, person.getLastName())
+                    .set(Person.PERSON.AGE, person.getAge())
+                    .set(Person.PERSON.BIRTH_DATE, person.getBirthDate())
+                    .where(Person.PERSON.ID.eq(person.getId()))
+                    .execute();
+            if(updated == 0){
+                log.warn("Failed to update person with id={}", person.getId());
+                return false;
+            }
+            log.info("Person updated {}", person);
         }
-        log.info("Person added {}", person);
         return true;
     }
 

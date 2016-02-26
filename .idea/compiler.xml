@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AjcSettings">
+    <option name="ajcPath" value="$MAVEN_REPOSITORY$/org/aspectj/aspectjtools/1.8.2/aspectjtools-1.8.2.jar" />
+    <option name="cmdLineParams" value="-Xlint:ignore" />
+    <option name="delegateToJavac" value="true" />
+  </component>
   <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="ajc" />
     <resourceExtensions />
     <wildcardResourcePatterns>
       <entry name="!?*.java" />
@@ -29,6 +35,7 @@
         <module name="sample_cxf_ws_api" />
         <module name="sample_cxf_ws_client" />
         <module name="sample_person_persistence" />
+        <module name="sample_person_ui" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -43,6 +50,12 @@
       <module name="sample_cxf_ws_api" target="1.7" />
       <module name="sample_cxf_ws_client" target="1.7" />
       <module name="sample_person_persistence" target="1.7" />
+      <module name="sample_person_ui" target="1.7" />
+      <module name="vaadin_example" target="1.7" />
+      <module name="vaadin_example-backend" target="1.7" />
+      <module name="vaadin_example-production" target="1.7" />
+      <module name="vaadin_example-ui" target="1.7" />
+      <module name="vaadin_example-widgetset" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -19,7 +19,7 @@ public interface PersonService {
     @PUT
     @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     @Transactional(readOnly = false)
-    boolean add(PersonDTO person);
+    boolean addOrUpdate(PersonDTO person);
 
     @GET
     @Path("/{id}")

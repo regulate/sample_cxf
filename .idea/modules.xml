@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/sample_cxf_ws_api/sample_cxf_ws_api.iml" filepath="$PROJECT_DIR$/sample_cxf_ws_api/sample_cxf_ws_api.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample_cxf_ws_client/sample_cxf_ws_client.iml" filepath="$PROJECT_DIR$/sample_cxf_ws_client/sample_cxf_ws_client.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample_person_persistence/sample_person_persistence.iml" filepath="$PROJECT_DIR$/sample_person_persistence/sample_person_persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sample_person_ui/sample_person_ui.iml" filepath="$PROJECT_DIR$/sample_person_ui/sample_person_ui.iml" />
     </modules>
   </component>
 </project>

@@ -10,7 +10,7 @@ import java.sql.Date;
 /**
  * Created by IPotapchuk on 2/16/2016.
  */
-@XmlRootElement(name="person")
+@XmlRootElement(name = "person")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class PersonDTO {
     @XmlElement
@@ -57,6 +57,10 @@ public class PersonDTO {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 
     public Integer getAge() {
