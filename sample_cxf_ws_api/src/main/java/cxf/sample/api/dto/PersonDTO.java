@@ -94,10 +94,9 @@ public class PersonDTO {
 
     @Override
     public int hashCode() {
-        int result = id.hashCode();
+        int result = 0;
         result = 31 * result + firstName.hashCode();
         result = 31 * result + lastName.hashCode();
-        result = 31 * result + age.hashCode();
         result = 31 * result + birthDate.hashCode();
         return result;
     }

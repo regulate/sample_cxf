@@ -8,14 +8,6 @@
 
     <context:component-scan base-package="cxf.sample.ui"/>
 
-    <!--<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
-        <!--<property name="basename" value="classpath:/locales/messages"/>-->
-        <!--&lt;!&ndash; Do not use System Locale file as default. Windows & Linux could have different default locale &ndash;&gt;-->
-        <!--<property name="fallbackToSystemLocale" value="false" />-->
-    <!--</bean>-->
-
-    <!--<bean class="ru.xpoft.vaadin.VaadinMessageSource" />-->
-
     <!--<osgi:reference id="personService" interface="cxf.sample.api.rs.PersonService" />-->
 
 </beans>

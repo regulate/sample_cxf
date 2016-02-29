@@ -1,69 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7abfe78-6eb4-46fe-bc4b-d492029e2ffb" name="Default" comment="Writing vaadin example">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/sample_person_ui_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/sample_person_ui_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/vaadin_example_production_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/vaadin_example_production_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/vaadin_example_ui_GWT.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/vaadin_example_ui_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/vaadin_example_ui_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/vaadin_example_widgetset_GWT.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_atmosphere_atmosphere_runtime_2_2_7_vaadin1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_flute_flute_1_3_0_gg2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_guava_16_0_1_vaadin1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_slf4j_vaadin_slf4j_jdk14_1_6_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_streamhtmlparser_streamhtmlparser_jsilver_0_0_10_vaadin1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_vaadin_client_7_6_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_vaadin_client_compiled_7_6_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_vaadin_push_7_6_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_vaadin_sass_compiler_0_9_13.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_vaadin_server_7_6_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_vaadin_shared_7_6_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_vaadin_themes_7_6_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_yahoo_platform_yui_yuicompressor_2_4_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_0_0_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_sources_1_0_0_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_8_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_3_2_14_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_w3c_css_sac_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__rhino_js_1_7R2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ru_xpoft_vaadin_spring_vaadin_integration_3_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_persistence/src/main/java/cxf/sample/persistence/schema/CxfSample.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_persistence/src/main/java/cxf/sample/persistence/schema/Keys.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_persistence/src/main/java/cxf/sample/persistence/schema/Tables.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_persistence/src/main/java/cxf/sample/persistence/schema/tables/Person.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/sample_person_ui.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/MyUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonServiceMock.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/resources/logback.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/webapp/WEB-INF/applicationContext.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/webapp/WEB-INF/web.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sample_person_persistence/src/main/java/cxf/sample/persistence/schema/records/PersonRecord.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+    <list default="true" id="b7abfe78-6eb4-46fe-bc4b-d492029e2ffb" name="Default" comment="Adapting vaadin example for person">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/img/archetype-login-bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonForm.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonsGrid.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonsView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/addons.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/mytheme.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/styles.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cxf_sample_features/pom.xml" afterPath="$PROJECT_DIR$/cxf_sample_features/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cxf_sample_root/pom.xml" afterPath="$PROJECT_DIR$/cxf_sample_root/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_camel/sample_cxf_camel.iml" afterPath="$PROJECT_DIR$/sample_cxf_camel/sample_cxf_camel.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_camel/src/main/java/cxf/sample/camel/processor/PersonProcessor.java" afterPath="$PROJECT_DIR$/sample_cxf_camel/src/main/java/cxf/sample/camel/processor/PersonProcessor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_person_rs/sample_cxf_person_rs.iml" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/sample_cxf_person_rs.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.java" afterPath="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws/pom.xml" afterPath="$PROJECT_DIR$/sample_cxf_ws/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws/sample_cxf_ws.iml" afterPath="$PROJECT_DIR$/sample_cxf_ws/sample_cxf_ws.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws_api/pom.xml" afterPath="$PROJECT_DIR$/sample_cxf_ws_api/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws_api/sample_cxf_ws_api.iml" afterPath="$PROJECT_DIR$/sample_cxf_ws_api/sample_cxf_ws_api.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/dto/PersonDTO.java" afterPath="$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/dto/PersonDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/rs/PersonService.java" afterPath="$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/rs/PersonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws_client/pom.xml" afterPath="$PROJECT_DIR$/sample_cxf_ws_client/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_cxf_ws_client/sample_cxf_ws_client.iml" afterPath="$PROJECT_DIR$/sample_cxf_ws_client/sample_cxf_ws_client.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_rs_client_3_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_cxf_cxf_rt_rs_client_3_0_4.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/MyUI.java" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/MyUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonServiceMock.java" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonServiceMock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sample_person_ui/src/main/webapp/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/sample_person_ui/src/main/webapp/WEB-INF/applicationContext.xml" />
     </list>
     <ignored path="sample_cxf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -105,49 +57,19 @@
     <option name="SORT_POSITIONED" value="false" />
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - cxf_sample@localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="person" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="sample_cxf" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="MyUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/MyUI.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="mytheme.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/mytheme.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#643#860#0" expanded="true" />
-                <element signature="e#859#860#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonServiceMock.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonServiceMock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.33207548">
+              <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -160,6 +82,7 @@
         <option value="Interface" />
         <option value="spring-beans.schema" />
         <option value="Class" />
+        <option value="VaadinCustomComponent" />
       </list>
     </option>
   </component>
@@ -183,12 +106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sample_cxf_person_rs/pom.xml" />
-        <option value="$PROJECT_DIR$/sample_person_persistence/pom.xml" />
-        <option value="$PROJECT_DIR$/cxf_sample_root/depl-ws" />
-        <option value="$PROJECT_DIR$/cxf_sample_root/depl-init" />
-        <option value="$PROJECT_DIR$/cxf_sample_features/src/main/resources/features.xml" />
-        <option value="$PROJECT_DIR$/cxf_sample_root/depl.dev.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_camel/src/main/java/cxf/sample/camel/processor/PersonProcessor.java" />
         <option value="$PROJECT_DIR$/sample_cxf_camel/src/main/resources/META-INF/spring/camel-bundle-context.xml" />
         <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonListUI.java" />
@@ -206,7 +123,6 @@
         <option value="$PROJECT_DIR$/vaadin_example/pom.xml" />
         <option value="$PROJECT_DIR$/vaadin_example/vaadin_example-ui/pom.xml" />
         <option value="$PROJECT_DIR$/vaadin_example/vaadin_example-widgetset/src/main/java/cxf/sample/client/samples/ResetButtonForTextFieldConnector.java" />
-        <option value="$PROJECT_DIR$/cxf_sample_root/pom.xml" />
         <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/layouts/ErrorView.java" />
         <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/crud/CollectionToStringConverter.java" />
         <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/crud/ProductGrid.java" />
@@ -216,10 +132,7 @@
         <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/crud/ProductForm.java" />
         <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/crud/ProductFormDesign.java" />
         <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/crud/PersonFormDesign.java" />
-        <option value="$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/dto/PersonDTO.java" />
         <option value="$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/rs/PersonService.java" />
-        <option value="$PROJECT_DIR$/sample_person_ui/src/main/webapp/WEB-INF/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/sample_person_ui/pom.xml" />
         <option value="$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.java" />
         <option value="$PROJECT_DIR$/vaadin_example/vaadin_example-ui/src/main/java/cxf/sample/MyUI.java" />
         <option value="$PROJECT_DIR$/sample_person_ui/src/main/resources/cxf/sample/ui/crud/ProductFormDesign.html" />
@@ -232,10 +145,24 @@
         <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/layouts/MainScreen.java" />
         <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/crud/PersonForm.java" />
         <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/crud/SampleCrudView.java" />
-        <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/MyUI.java" />
+        <option value="$PROJECT_DIR$/sample_person_ui/src/main/webapp/WEB-INF/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/cxf_sample_root/pom.xml" />
+        <option value="$PROJECT_DIR$/sample_person_ui/pom.xml" />
+        <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonTable.java" />
+        <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonsCrudView.java" />
+        <option value="$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/dto/PersonDTO.java" />
+        <option value="$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/mytheme.scss" />
         <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonServiceMock.java" />
+        <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/MyUI.java" />
+        <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonsGrid.java" />
+        <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonForm.java" />
+        <option value="$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonsView.java" />
       </list>
     </option>
+  </component>
+  <component name="JsBowerSettings">
+    <exe-path />
+    <config-path />
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsBuildToolPackageJson" detection-done="true" />
@@ -257,12 +184,6 @@
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
-    </option>
-    <option name="enabledProfiles">
-      <list>
-        <option value="production" />
-        <option value="vaadin-prerelease" />
-      </list>
     </option>
   </component>
   <component name="MavenProjectNavigator">
@@ -287,26 +208,8 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Plugins" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="sample_person_ui" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="Plugins" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="jetty" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
+          <option name="myItemId" value="Lifecycle" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -331,16 +234,73 @@
             <id />
           </State>
           <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>CDI(Contexts and Dependency Injection) issues</id>
+          </State>
+          <State>
             <id>Code style issuesJavaScript</id>
           </State>
           <State>
             <id>Control flow issuesJava</id>
           </State>
           <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>Dependency issuesJava</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Inheritance issuesJava</id>
+          </State>
+          <State>
+            <id>Initialization issuesJava</id>
+          </State>
+          <State>
+            <id>JBoss Seam issues</id>
+          </State>
+          <State>
             <id>Java</id>
           </State>
           <State>
             <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Maven</id>
+          </State>
+          <State>
+            <id>Modularization issuesJava</id>
+          </State>
+          <State>
+            <id>OSGi</id>
+          </State>
+          <State>
+            <id>Packaging issuesJava</id>
+          </State>
+          <State>
+            <id>Performance issuesJava</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring CoreSpring</id>
+          </State>
+          <State>
+            <id>TestNGJava</id>
+          </State>
+          <State>
+            <id>XMLSpring CoreSpring</id>
           </State>
         </expanded-state>
         <selected-state>
@@ -376,9 +336,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -407,100 +364,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sample_person_ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_person_ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_person_ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_person_ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample_cxf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="cxf_sample_root" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -525,29 +401,30 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="808" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="SearchEverywhereHistoryKey" value="Pers&#9;FILE&#9;file://D:/projects/research/sample_cxf/sample_cxf_ws_api/src/main/java/cxf/sample/api/dto/PersonDTO.java" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="cxf.sample.rs.impl" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\projects\research\sample_cxf\sample_person_ui\src\main\resources" />
-      <recent name="D:\projects\research\sample_cxf\sample_person_ui\src\main\java\cxf\sample\ui\widgetset" />
-      <recent name="D:\projects\research\sample_cxf\sample_person_ui\src\main\java\cxf\sample\ui" />
-      <recent name="D:\projects\research\sample_cxf\sample_person_ui\src\main\java\cxf\sample\ui\layouts" />
-      <recent name="D:\projects\research\sample_cxf\sample_person_ui\src\main\webapp\WEB-INF" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cxf.sample.ui.crud" />
-      <recent name="cxf.sample.ui.layouts" />
-      <recent name="cxf.sample.ui" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\projects\research\sample_cxf\sample_person_ui\src\main\resources\cxf\sample\ui\crud" />
       <recent name="D:\projects\research\sample_cxf\sample_cxf_camel\src\main\resources\META-INF" />
       <recent name="D:\projects\research\sample_cxf\sample_person_persistence\src\main\resources\META-INF\spring\cxf\sample\persistence" />
       <recent name="D:\projects\research\sample_cxf\sample_person_persistence\src\main\resources\META-INF\spring" />
       <recent name="D:\projects\research\sample_cxf\sample_cxf_person_rs\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="cxf.sample.rs.impl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cxf.sample.ui.crud" />
+      <recent name="cxf.sample.ui.layouts" />
+      <recent name="cxf.sample.ui" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\research\sample_cxf\sample_person_ui\src\main\webapp" />
+      <recent name="D:\projects\research\sample_cxf\sample_person_ui\src\main\resources" />
+      <recent name="D:\projects\research\sample_cxf\sample_person_ui\src\main\java\cxf\sample\ui\widgetset" />
+      <recent name="D:\projects\research\sample_cxf\sample_person_ui\src\main\java\cxf\sample\ui" />
+      <recent name="D:\projects\research\sample_cxf\sample_person_ui\src\main\java\cxf\sample\ui\layouts" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -2008,7 +1885,8 @@
       <workItem from="1456413592266" duration="1686000" />
       <workItem from="1456471722456" duration="3204000" />
       <workItem from="1456474990206" duration="5356000" />
-      <workItem from="1456481097521" duration="16574000" />
+      <workItem from="1456481097521" duration="16607000" />
+      <workItem from="1456730476504" duration="27714000" />
     </task>
     <task id="LOCAL-00001" summary="Added spring support to be exported to osgi env">
       <created>1455295384947</created>
@@ -2064,11 +1942,17 @@
       <option name="project" value="LOCAL" />
       <updated>1456327012638</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Writing vaadin example">
+      <created>1456504026238</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1456504026238</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="279374000" />
+    <option name="totallyTimeSpent" value="307121000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2088,19 +1972,20 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328341" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3513825" sideWeight="0.5080906" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12783171" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.328341" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57718897" sideWeight="0.49190938" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5138249" sideWeight="0.51132685" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21896552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55184335" sideWeight="0.48867315" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6751152" sideWeight="0.49676377" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24190938" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24433658" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19417475" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16423948" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2109,7 +1994,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="soapUI Navigator" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16909385" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -2173,7 +2057,8 @@
     <MESSAGE value="Simplified build scripts, completed camel example" />
     <MESSAGE value="Misplaced package" />
     <MESSAGE value="Writing vaadin example" />
-    <option name="LAST_COMMIT_MESSAGE" value="Writing vaadin example" />
+    <MESSAGE value="Adapting vaadin example for person" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adapting vaadin example for person" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2221,146 +2106,10 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/ui/TextField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/ui/declarative/Design.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4857143">
-          <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/data/fieldgroup/BeanFieldGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10119048">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/dto/PersonDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44523808">
-          <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
-          <folding>
-            <element signature="e#1311#1312#0" expanded="false" />
-            <element signature="e#1360#1361#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/rs/PersonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30357143">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/ui/Notification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="65" column="68" selection-start-line="65" selection-start-column="68" selection-end-line="65" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/resources/META-INF/spring/rs-bundle-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.083538085">
-          <caret line="4" column="62" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/resources/logback.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_cxf_person_rs/src/main/java/cxf/sample/rs/impl/PersonServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2547619">
-          <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64675325">
-          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/3.2.14.RELEASE/spring-core-3.2.14.RELEASE-sources.jar!/org/springframework/core/NestedRuntimeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.8918915">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#1934#1935#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.14.RELEASE/spring-web-3.2.14.RELEASE.jar!/org/springframework/web/context/ContextLoader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40707964">
-          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/3.2.14.RELEASE/spring-context-3.2.14.RELEASE-sources.jar!/org/springframework/context/support/AbstractApplicationContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75782883">
-          <caret line="496" column="0" selection-start-line="496" selection-start-column="0" selection-end-line="496" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.2.14.RELEASE/spring-beans-3.2.14.RELEASE-sources.jar!/org/springframework/beans/factory/support/AbstractBeanFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40950227">
-          <caret line="349" column="0" selection-start-line="349" selection-start-column="0" selection-end-line="349" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.2.14.RELEASE/spring-beans-3.2.14.RELEASE-sources.jar!/org/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4366516">
-          <caret line="525" column="0" selection-start-line="525" selection-start-column="0" selection-end-line="525" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.2.14.RELEASE/spring-beans-3.2.14.RELEASE-sources.jar!/org/springframework/beans/factory/annotation/InitDestroyAnnotationBeanPostProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35972852">
-          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.2.14.RELEASE/spring-beans-3.2.14.RELEASE-sources.jar!/org/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3325792">
           <caret line="241" column="0" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2368,7 +2117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37104073">
           <caret line="297" column="0" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2376,7 +2124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8325792">
           <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2384,9 +2131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7307692">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="e#1042#1043#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2394,9 +2138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3325792">
           <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="e#1291#1292#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2412,7 +2153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3642857">
           <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2459,44 +2199,181 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cxf_sample_root/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.777385">
-          <caret line="293" column="45" selection-start-line="293" selection-start-column="45" selection-end-line="293" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/util/CurrentInstance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-          <folding>
-            <element signature="e#2378#3074#0" expanded="false" />
-            <element signature="e#3073#3074#0" expanded="false" />
-          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sample_person_ui/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4363636">
-          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$MAVEN_REPOSITORY$/com/vaadin/vaadin-client/7.6.0/vaadin-client-7.6.0.pom">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.032197">
           <caret line="116" column="24" selection-start-line="116" selection-start-column="24" selection-end-line="116" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/ui/AbstractComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32380953">
+          <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/ui/AbstractSingleComponentContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30357143">
+          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/ui/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="106" column="22" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/navigator/Navigator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/ru/xpoft/vaadin/spring-vaadin-integration/3.2/spring-vaadin-integration-3.2-sources.jar!/ru/xpoft/vaadin/DiscoveryNavigator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14166667">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/vaadin/addons/number-field/1.0.3/number-field-1.0.3.jar!/it/portus/addon/numberfield/SpinnerNumberField.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14637147">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0.jar!/com/vaadin/data/Property.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/data/Property.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/vaadin/addons/numberfield/0.5.1/numberfield-0.5.1.jar!/de/essendi/vaadin/ui/component/numberfield/NumberField.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14637147">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.1.6.RELEASE/spring-core-4.1.6.RELEASE.jar!/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_cxf_ws/src/test/java/cxf/sample/ws/impl/HelloWorldImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1534296">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/ui/VerticalLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.425">
+          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+          <folding>
+            <element signature="e#1116#1117#0" expanded="false" />
+            <element signature="e#1148#1149#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cxf_sample_root/depl.dev.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45945945">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/webapp/WEB-INF/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20884521">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/ru/xpoft/vaadin/spring-vaadin-integration/3.2/spring-vaadin-integration-3.2.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35503685">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.14.RELEASE/spring-web-3.2.14.RELEASE-sources.jar!/org/springframework/web/context/support/WebApplicationContextUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44523808">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/ru/xpoft/vaadin/spring-vaadin-integration/3.2/spring-vaadin-integration-3.2-sources.jar!/ru/xpoft/vaadin/SpringVaadinServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.86190474">
+          <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16707617">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MAVEN/cxf.sample:cxf_sample_ws_root:1.0-SNAPSHOT">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>cxf.sample:cxf_sample_ws_root:1.0-SNAPSHOT</OriginalElement>
+          <nodes>
+            <node x="" y="">cxf.sample:cxf_sample_ws_root:1.0-SNAPSHOT</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="69.0" y="15.0" />
+          <SelectedNodes />
+          <Categories />
+          <VISIBILITY>All</VISIBILITY>
         </state>
       </provider>
     </entry>
@@ -2597,80 +2474,166 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="0.8261802575107294" x="554.4467532467534" y="2133.9376623376625" />
+          <settings layout="Hierarchic Group" zoom="0.34892703862660945" x="473.7232472324722" y="935.0" />
           <SelectedNodes />
           <Categories />
           <VISIBILITY>All</VISIBILITY>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/webapp/WEB-INF/applicationContext.xml">
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/img/archetype-login-bg.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_65/src.zip!/java/sql/Date.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16707617">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.33248731">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/ui/AbstractComponent.java">
+    <entry file="file://$PROJECT_DIR$/sample_cxf_ws_api/src/main/java/cxf/sample/api/dto/PersonDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32380953">
-          <caret line="74" column="22" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.42397138">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonServiceMock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6880952">
+          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-themes/7.6.0/vaadin-themes-7.6.0.jar!/VAADIN/themes/valo/util/bourbon/css3/_transform.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/ui/AbstractSingleComponentContainer.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-themes/7.6.0/vaadin-themes-7.6.0.jar!/VAADIN/themes/valo/util/bourbon/css3/_transition.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30357143">
-          <caret line="39" column="23" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.10442261">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/ui/UI.java">
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/addons.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="106" column="22" selection-start-line="106" selection-start-column="22" selection-end-line="106" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.15947467">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/vaadin/vaadin-server/7.6.0/vaadin-server-7.6.0-sources.jar!/com/vaadin/navigator/Navigator.java">
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.41463414">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/ru/xpoft/vaadin/spring-vaadin-integration/3.2/spring-vaadin-integration-3.2-sources.jar!/ru/xpoft/vaadin/DiscoveryNavigator.java">
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/styles.scss.cache">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14166667">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cxf_sample_root/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54522294">
+          <caret line="270" column="32" selection-start-line="270" selection-start-column="32" selection-end-line="270" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3210191">
+          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonsGrid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5785714">
+          <caret line="78" column="5" selection-start-line="66" selection-start-column="43" selection-end-line="78" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35238096">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3265#3266#0" expanded="true" />
+            <element signature="e#3292#3293#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonsView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.275">
+          <caret line="63" column="11" selection-start-line="63" selection-start-column="11" selection-end-line="63" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1092#1261#0" expanded="true" />
+            <element signature="e#1260#1261#0" expanded="true" />
+            <element signature="e#1311#2005#0" expanded="true" />
+            <element signature="e#2004#2005#0" expanded="true" />
+            <element signature="e#2927#3132#0" expanded="true" />
+            <element signature="e#3131#3132#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/MyUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.52619046">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#643#860#0" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/java/cxf/sample/ui/PersonServiceMock.java">
+    <entry file="file://$PROJECT_DIR$/sample_person_ui/src/main/webapp/VAADIN/themes/mytheme/mytheme.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.33207548">
+          <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
