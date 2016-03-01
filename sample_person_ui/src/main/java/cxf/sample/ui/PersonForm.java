@@ -22,7 +22,7 @@ import javax.annotation.PostConstruct;
 @Scope("prototype")
 public class PersonForm extends CssLayout {
 
-    private static final Logger log = LoggerFactory.getLogger(PersonForm.class);
+    private static final Logger log        = LoggerFactory.getLogger(PersonForm.class);
     private static final String SHOW_STYLE = "visible";
 
     private BeanFieldGroup<PersonDTO> fGroup;

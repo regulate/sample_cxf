@@ -15,7 +15,6 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Field;
-import org.jooq.Identity;
 import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
@@ -35,7 +34,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Person extends TableImpl<PersonRecord> {
 
-	private static final long serialVersionUID = -743016459;
+	private static final long serialVersionUID = 1335169094;
 
 	/**
 	 * The reference instance of <code>cxf_sample.person</code>
@@ -95,14 +94,6 @@ public class Person extends TableImpl<PersonRecord> {
 
 	private Person(String alias, Table<PersonRecord> aliased, Field<?>[] parameters) {
 		super(alias, CxfSample.CXF_SAMPLE, aliased, parameters, "");
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public Identity<PersonRecord, Long> getIdentity() {
-		return Keys.IDENTITY_PERSON;
 	}
 
 	/**

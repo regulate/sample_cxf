@@ -18,8 +18,8 @@ import java.util.concurrent.atomic.AtomicLong;
 @Service
 public class PersonServiceMock implements PersonService {
 
-    private List<PersonDTO> persons = new ArrayList<>();
-    private static AtomicLong id = new AtomicLong(0);
+    private        List<PersonDTO> persons = new ArrayList<>();
+    private static AtomicLong      id      = new AtomicLong(0);
 
     @PostConstruct
     public void init() {

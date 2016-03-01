@@ -25,9 +25,8 @@ import javax.annotation.PostConstruct;
 @Scope("prototype")
 public class PersonsView extends CssLayout implements View {
 
-    private static final Logger log = LoggerFactory.getLogger(PersonsView.class);
-
-    public static final String VIEW_NAME = "Persons";
+    private static final Logger log       = LoggerFactory.getLogger(PersonsView.class);
+    public  static final String VIEW_NAME = "Persons";
 
     @Autowired
     private PersonsGrid grid;
