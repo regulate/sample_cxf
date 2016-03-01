@@ -25,6 +25,11 @@
             <param-name>beanName</param-name>
             <param-value>myUI</param-value>
         </init-param>
+        <init-param>
+            <description>Widgetset</description>
+            <param-name>widgetset</param-name>
+            <param-value>cxf.sample.ui.MyWidgetset</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>

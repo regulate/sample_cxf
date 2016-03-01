@@ -6,6 +6,7 @@ import cxf.sample.api.jaxb.DateFormatterAdapter;
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by IPotapchuk on 2/16/2016.
@@ -59,10 +60,6 @@ public class PersonDTO {
         this.lastName = lastName;
     }
 
-    public String getFullName() {
-        return firstName + " " + lastName;
-    }
-
     public Integer getAge() {
         return age;
     }
@@ -86,17 +83,20 @@ public class PersonDTO {
 
         PersonDTO personDTO = (PersonDTO) o;
 
-        if (!id.equals(personDTO.id)) return false;
+        if (id != null ? !id.equals(personDTO.id) : personDTO.id != null) return false;
         if (!firstName.equals(personDTO.firstName)) return false;
-        return lastName.equals(personDTO.lastName) && age.equals(personDTO.age) && birthDate.equals(personDTO.birthDate);
+        if (!lastName.equals(personDTO.lastName)) return false;
+        if (age != null ? !age.equals(personDTO.age) : personDTO.age != null) return false;
+        return birthDate.equals(personDTO.birthDate);
 
     }
 
     @Override
     public int hashCode() {
-        int result = 0;
+        int result = id != null ? id.hashCode() : 0;
         result = 31 * result + firstName.hashCode();
         result = 31 * result + lastName.hashCode();
+        result = 31 * result + (age != null ? age.hashCode() : 0);
         result = 31 * result + birthDate.hashCode();
         return result;
     }

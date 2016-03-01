@@ -10,6 +10,8 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import cxf.sample.api.dto.PersonDTO;
 import cxf.sample.api.rs.PersonService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -22,6 +24,8 @@ import javax.annotation.PostConstruct;
 @Component
 @Scope("prototype")
 public class PersonsView extends CssLayout implements View {
+
+    private static final Logger log = LoggerFactory.getLogger(PersonsView.class);
 
     public static final String VIEW_NAME = "Persons";
 
@@ -39,22 +43,32 @@ public class PersonsView extends CssLayout implements View {
         setSizeFull();
         addStyleName("crud-view");
 
+        initFormListeners();
+
+        addComponent(gridWithBar());
+        addComponent(form);
+
+        showPersons();
+    }
+
+    public void initFormListeners() {
         form.getCancelButton().addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 cancelPerson();
             }
         });
-
         form.getSaveButton().addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 try {
-                    form.getfGroup().commit();
-                    PersonDTO person = form.getfGroup().getItemDataSource().getBean();
+                    form.getFieldGroup().commit();
+                    PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
                     service.addOrUpdate(person);
                     grid.refresh(person);
+                    form.toggle();
                 } catch (FieldGroup.CommitException e) {
+                    log.error("Validation error", e);
                     Notification n = new Notification(
                             "Please re-check the fields", Notification.Type.ERROR_MESSAGE);
                     n.setDelayMsec(500);
@@ -62,63 +76,93 @@ public class PersonsView extends CssLayout implements View {
                 }
             }
         });
-
-        HorizontalLayout filter = createTopBar();
-
-        VerticalLayout barAndGridLayout = new VerticalLayout();
-        barAndGridLayout.addComponent(filter);
-        barAndGridLayout.addComponent(grid);
-        barAndGridLayout.setMargin(true);
-        barAndGridLayout.setSpacing(true);
-        barAndGridLayout.setSizeFull();
-        barAndGridLayout.setExpandRatio(grid, 1);
-        barAndGridLayout.setStyleName("crud-main-layout");
-
-        addComponent(barAndGridLayout);
-        addComponent(form);
-
-        grid.setPersons(service.retrieveAll().getPersons());
+        form.getDeleteButton().addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent event) {
+                PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
+                grid.remove(person);
+                service.remove(person.getId());
+            }
+        });
     }
 
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent event) {
-
+        String personId = event.getParameters();
+        if (personId != null && !personId.isEmpty()) {
+            if (personId.equals("new")) {
+                createPerson();
+            } else {
+                try {
+                    long pid = Long.parseLong(personId);
+                    PersonDTO person = service.retrieve(pid);
+                    selectRow(person);
+                } catch (NumberFormatException e) {
+                    log.error("Failed to parse long value from string", e);
+                }
+            }
+        }
     }
 
-    public HorizontalLayout createTopBar() {
-        TextField filter = new TextField();
-        filter.setStyleName("filter-textfield");
+    public void selectRow(PersonDTO row) {
+        ((Grid.SelectionModel.Single) grid.getSelectionModel()).select(row);
+    }
+
+    private VerticalLayout gridWithBar() {
+        VerticalLayout gridWithBar = new VerticalLayout();
+        gridWithBar.addComponent(topBar());
+        gridWithBar.addComponent(grid);
+        gridWithBar.setMargin(true);
+        gridWithBar.setSpacing(true);
+        gridWithBar.setSizeFull();
+        gridWithBar.setExpandRatio(grid, 1);
+        gridWithBar.setStyleName("crud-main-layout");
+        return gridWithBar;
+    }
+
+    private HorizontalLayout topBar() {
+        final TextField filter = new TextField();
         filter.setInputPrompt("Filter");
         filter.setImmediate(true);
         filter.addTextChangeListener(new FieldEvents.TextChangeListener() {
             @Override
             public void textChange(FieldEvents.TextChangeEvent event) {
+                if (form.isShown()) form.toggle();
                 grid.setFilter(event.getText());
             }
         });
+        filter.setStyleName("filter-textfield");
 
-        Button newPerson = new Button("New person");
-        newPerson.addStyleName(ValoTheme.BUTTON_PRIMARY);
-        newPerson.setIcon(FontAwesome.PLUS_CIRCLE);
-        newPerson.addClickListener(new Button.ClickListener() {
+        filter.addFocusListener(new FieldEvents.FocusListener() {
             @Override
-            public void buttonClick(Button.ClickEvent event) {
-                newPerson();
+            public void focus(FieldEvents.FocusEvent event) {
+                if(form.isShown()) form.toggle();
             }
         });
 
-        HorizontalLayout topLayout = new HorizontalLayout();
-        topLayout.setSpacing(true);
-        topLayout.setWidth("100%");
-        topLayout.addComponent(filter);
-        topLayout.addComponent(newPerson);
-        topLayout.setComponentAlignment(filter, Alignment.MIDDLE_LEFT);
-        topLayout.setExpandRatio(filter, 1);
-        topLayout.setStyleName("top-bar");
-        return topLayout;
+        Button newPersonBtn = new Button("Add Person");
+        newPersonBtn.addStyleName(ValoTheme.BUTTON_PRIMARY);
+        newPersonBtn.setIcon(FontAwesome.PLUS_CIRCLE);
+        newPersonBtn.addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent event) {
+                createPerson();
+            }
+        });
+
+        HorizontalLayout topBar = new HorizontalLayout();
+        topBar.setSpacing(true);
+        topBar.setWidth("100%");
+        topBar.addComponent(filter);
+        topBar.addComponent(newPersonBtn);
+        topBar.setComponentAlignment(filter, Alignment.MIDDLE_LEFT);
+        topBar.setExpandRatio(filter, 1);
+        topBar.setStyleName("top-bar");
+
+        return topBar;
     }
 
-    public void newPerson() {
+    public void createPerson() {
         grid.getSelectionModel().reset();
         setFragmentParameter("new");
         editPerson(new PersonDTO());
@@ -133,19 +177,16 @@ public class PersonsView extends CssLayout implements View {
         }
 
         Page page = UI.getCurrent().getPage();
-        page.setUriFragment("!" + VIEW_NAME + "/"
-                + fragmentParameter, false);
+        page.setUriFragment(VIEW_NAME.toLowerCase() + "/" + fragmentParameter, false);
     }
 
     public void editPerson(PersonDTO person) {
-        if (person != null) {
-            form.addStyleName("visible");
-            form.setEnabled(true);
-        } else {
-            form.removeStyleName("visible");
-            form.setEnabled(false);
-        }
-        form.editProduct(person);
+        form.toggle();
+        form.editPerson(person);
+    }
+
+    public void showPersons() {
+        grid.setPersons(service.retrieveAll().getPersons());
     }
 
     public void cancelPerson() {

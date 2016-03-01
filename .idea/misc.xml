@@ -4,6 +4,7 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="gwt" url="file://$PROJECT_DIR$/sample_person_ui" />
     <file type="gwt" url="file://$PROJECT_DIR$/vaadin_example/vaadin_example-production" />
     <file type="gwt" url="file://$PROJECT_DIR$/vaadin_example/vaadin_example-ui" />
     <file type="gwt" url="file://$PROJECT_DIR$/vaadin_example/vaadin_example-widgetset" />

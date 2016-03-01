@@ -9,7 +9,9 @@ import java.sql.Date;
  */
 public class DateFormatterAdapter extends XmlAdapter<String, Date> {
 
-    private final SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, MMM d, yyyy");
+    public static final String DATE_PATTERN = "EEE, MMM d, yyyy";
+
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat(DATE_PATTERN);
 
     @Override
     public Date unmarshal(String v) throws Exception {
