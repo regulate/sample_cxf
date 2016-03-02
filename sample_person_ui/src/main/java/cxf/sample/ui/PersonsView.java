@@ -2,6 +2,7 @@ package cxf.sample.ui;
 
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.event.FieldEvents;
+import com.vaadin.event.SelectionEvent;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.FontAwesome;
@@ -25,33 +26,28 @@ import javax.annotation.PostConstruct;
 @Scope("prototype")
 public class PersonsView extends CssLayout implements View {
 
-    private static final Logger log = LoggerFactory.getLogger(PersonsView.class);
+    private static final Logger log       = LoggerFactory.getLogger(PersonsView.class);
+    public  static final String VIEW_NAME = "Persons";
 
-    public static final String VIEW_NAME = "Persons";
-
-    @Autowired
-    private PersonsGrid grid;
-
-    @Autowired
-    private PersonForm form;
-
-    @Autowired
-    private PersonService service;
+    @Autowired private PersonsGrid   grid;
+    @Autowired private PersonForm    form;
+    @Autowired private PersonService service;
 
     @PostConstruct
     public void init() {
-        setSizeFull();
-        addStyleName("crud-view");
-
-        initFormListeners();
-
-        addComponent(gridWithBar());
-        addComponent(form);
-
+        setupAppearance();
+        setupListeners();
         showPersons();
     }
 
-    public void initFormListeners() {
+    private void setupAppearance(){
+        setSizeFull();
+        addStyleName("crud-view");
+        addComponent(buildGridWithBar());
+        addComponent(form);
+    }
+
+    private void setupListeners() {
         form.getCancelButton().addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
@@ -70,8 +66,8 @@ public class PersonsView extends CssLayout implements View {
                 } catch (FieldGroup.CommitException e) {
                     log.error("Validation error", e);
                     Notification n = new Notification(
-                            "Please re-check the fields", Notification.Type.ERROR_MESSAGE);
-                    n.setDelayMsec(500);
+                            "Some fields contain errors. Check them Try again!", Notification.Type.ERROR_MESSAGE);
+                    n.setDelayMsec(800);
                     n.show(getUI().getPage());
                 }
             }
@@ -80,37 +76,31 @@ public class PersonsView extends CssLayout implements View {
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
+                cancelPerson();
                 grid.remove(person);
                 service.remove(person.getId());
+            }
+        });
+        grid.addSelectionListener(new SelectionEvent.SelectionListener() {
+            @Override
+            public void select(SelectionEvent event) {
+                PersonDTO person = grid.getSelectedRow();
+                if (person != null)
+                    editPerson(person);
+                else
+                    grid.getSelectionModel().reset();
             }
         });
     }
 
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent event) {
-        String personId = event.getParameters();
-        if (personId != null && !personId.isEmpty()) {
-            if (personId.equals("new")) {
-                createPerson();
-            } else {
-                try {
-                    long pid = Long.parseLong(personId);
-                    PersonDTO person = service.retrieve(pid);
-                    selectRow(person);
-                } catch (NumberFormatException e) {
-                    log.error("Failed to parse long value from string", e);
-                }
-            }
-        }
+//        nothing to add
     }
 
-    public void selectRow(PersonDTO row) {
-        ((Grid.SelectionModel.Single) grid.getSelectionModel()).select(row);
-    }
-
-    private VerticalLayout gridWithBar() {
+    private VerticalLayout buildGridWithBar() {
         VerticalLayout gridWithBar = new VerticalLayout();
-        gridWithBar.addComponent(topBar());
+        gridWithBar.addComponent(buildTopBar());
         gridWithBar.addComponent(grid);
         gridWithBar.setMargin(true);
         gridWithBar.setSpacing(true);
@@ -120,7 +110,7 @@ public class PersonsView extends CssLayout implements View {
         return gridWithBar;
     }
 
-    private HorizontalLayout topBar() {
+    private HorizontalLayout buildTopBar() {
         final TextField filter = new TextField();
         filter.setInputPrompt("Filter");
         filter.setImmediate(true);
@@ -128,7 +118,7 @@ public class PersonsView extends CssLayout implements View {
             @Override
             public void textChange(FieldEvents.TextChangeEvent event) {
                 if (form.isShown()) form.toggle();
-                grid.setFilter(event.getText());
+                grid.addFilter(event.getText());
             }
         });
         filter.setStyleName("filter-textfield");
@@ -136,7 +126,7 @@ public class PersonsView extends CssLayout implements View {
         filter.addFocusListener(new FieldEvents.FocusListener() {
             @Override
             public void focus(FieldEvents.FocusEvent event) {
-                if(form.isShown()) form.toggle();
+                if (form.isShown()) form.toggle();
             }
         });
 
@@ -162,27 +152,28 @@ public class PersonsView extends CssLayout implements View {
         return topBar;
     }
 
-    public void createPerson() {
-        grid.getSelectionModel().reset();
-        setFragmentParameter("new");
-        editPerson(new PersonDTO());
-    }
-
-    private void setFragmentParameter(String personId) {
-        String fragmentParameter;
-        if (personId == null || personId.isEmpty()) {
-            fragmentParameter = "";
-        } else {
-            fragmentParameter = personId;
-        }
+    private void setUrlFragment(String urlFragment) {
+        if (urlFragment == null) urlFragment = "";
 
         Page page = UI.getCurrent().getPage();
-        page.setUriFragment(VIEW_NAME.toLowerCase() + "/" + fragmentParameter, false);
+        page.setUriFragment(VIEW_NAME.toLowerCase() + "/" + urlFragment, false);
+    }
+
+    public void createPerson() {
+        grid.getSelectionModel().reset();
+        setUrlFragment("new");
+        form.getDeleteButton().setEnabled(false);
+        form.getSaveButton().setCaption("Add");
+        form.createOrEditPerson(null);
+        if (!form.isShown()) form.toggle();
     }
 
     public void editPerson(PersonDTO person) {
-        form.toggle();
-        form.editPerson(person);
+        setUrlFragment(person.getId().toString());
+        form.getDeleteButton().setEnabled(true);
+        form.getSaveButton().setCaption("Edit");
+        form.createOrEditPerson(person);
+        if (!form.isShown()) form.toggle();
     }
 
     public void showPersons() {
@@ -190,9 +181,9 @@ public class PersonsView extends CssLayout implements View {
     }
 
     public void cancelPerson() {
-        setFragmentParameter("");
-        grid.getSelectionModel().reset();
-        editPerson(null);
+        setUrlFragment("");
+        form.createOrEditPerson(null);
+        form.toggle();
     }
 
 }

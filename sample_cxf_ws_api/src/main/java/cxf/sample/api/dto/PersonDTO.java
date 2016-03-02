@@ -76,6 +76,10 @@ public class PersonDTO {
         this.birthDate = birthDate;
     }
 
+    public String fullName(){
+        return lastName+" "+firstName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -83,7 +87,7 @@ public class PersonDTO {
 
         PersonDTO personDTO = (PersonDTO) o;
 
-        if (id != null ? !id.equals(personDTO.id) : personDTO.id != null) return false;
+        if (id  != null ? !id.equals(personDTO.id)   : personDTO.id  != null) return false;
         if (!firstName.equals(personDTO.firstName)) return false;
         if (!lastName.equals(personDTO.lastName)) return false;
         if (age != null ? !age.equals(personDTO.age) : personDTO.age != null) return false;
@@ -103,21 +107,21 @@ public class PersonDTO {
 
     @Override
     public String toString() {
-        return "PersonDTO{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                ", birthDate=" + birthDate +
-                '}';
+        return "PersonDTO{"    +
+               "id="           + id        +
+               ", firstName='" + firstName + '\'' +
+               ", lastName='"  + lastName  + '\'' +
+               ", age="        + age       +
+               ", birthDate="  + birthDate +
+               '}';
     }
 
     public static final class Builder {
-        private Long id;
-        private String firstName;
-        private String lastName;
+        private Long    id;
+        private String  firstName;
+        private String  lastName;
         private Integer age;
-        private Date birthDate;
+        private Date    birthDate;
 
         public Builder() {
         }

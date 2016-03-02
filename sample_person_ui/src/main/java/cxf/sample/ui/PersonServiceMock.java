@@ -3,6 +3,8 @@ package cxf.sample.ui;
 import cxf.sample.api.dto.PersonDTO;
 import cxf.sample.api.dto.PersonsCollectionDTO;
 import cxf.sample.api.rs.PersonService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -18,8 +20,10 @@ import java.util.concurrent.atomic.AtomicLong;
 @Service
 public class PersonServiceMock implements PersonService {
 
-    private List<PersonDTO> persons = new ArrayList<>();
-    private static AtomicLong id = new AtomicLong(0);
+    private static final Logger log = LoggerFactory.getLogger(PersonServiceMock.class);
+
+    private        List<PersonDTO> persons = new ArrayList<>();
+    private static AtomicLong      id      = new AtomicLong(0);
 
     @PostConstruct
     public void init() {
@@ -48,9 +52,13 @@ public class PersonServiceMock implements PersonService {
 
     @Override
     public boolean addOrUpdate(PersonDTO person) {
-        person.setId(getNextId());
-        person.setAge(calcAge(person.getBirthDate()));
-        persons.add(person);
+        if (person.getId() == null) {
+            person.setId(getNextId());
+            person.setAge(calcAge(person.getBirthDate()));
+            persons.add(person);
+        } else {
+            persons.set(persons.indexOf(retrieve(person.getId())), person);
+        }
         return true;
     }
 

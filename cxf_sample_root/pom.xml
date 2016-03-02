@@ -298,7 +298,7 @@
                 <configuration>
                     <stopPort>9966</stopPort>
                     <stopKey>sample</stopKey>
-                    <scanIntervalSeconds>1</scanIntervalSeconds>
+                    <scanIntervalSeconds>0</scanIntervalSeconds>
                     <connectors>
                         <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
                             <port>9090</port>

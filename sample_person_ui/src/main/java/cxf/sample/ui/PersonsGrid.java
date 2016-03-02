@@ -4,7 +4,6 @@ import com.vaadin.data.Container;
 import com.vaadin.data.util.BeanItem;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.data.util.MethodProperty;
-import com.vaadin.data.util.converter.Converter;
 import com.vaadin.data.util.converter.StringToDateConverter;
 import com.vaadin.data.util.filter.Or;
 import com.vaadin.data.util.filter.SimpleStringFilter;
@@ -31,19 +30,25 @@ public class PersonsGrid extends Grid {
 
     private static final Logger log = LoggerFactory.getLogger(PersonsGrid.class);
 
+    FooterRow footer;
+
     @PostConstruct
     public void init() {
+        setupAppearance();
+        setupConverters();
+        setupListeners();
+    }
+
+    private void setupAppearance(){
         setSizeFull();
-
         setSelectionMode(SelectionMode.SINGLE);
-
-        BeanItemContainer<PersonDTO> container = new BeanItemContainer<>(
-                PersonDTO.class);
-
+        BeanItemContainer<PersonDTO> container = new BeanItemContainer<>(PersonDTO.class);
         setContainerDataSource(container);
-
         setColumnOrder("id", "firstName", "lastName", "age", "birthDate");
+        footer = prependFooterRow();
+    }
 
+    private void setupConverters(){
         getColumn("birthDate").setConverter(new StringToDateConverter() {
             private SimpleDateFormat sdf = new SimpleDateFormat(DateFormatterAdapter.DATE_PATTERN);
 
@@ -67,7 +72,30 @@ public class PersonsGrid extends Grid {
         });
     }
 
-    public void setFilter(String filterString) {
+    private void setupListeners(){
+        getContainer().addItemSetChangeListener(new Container.ItemSetChangeListener() {
+            @Override
+            public void containerItemSetChange(Container.ItemSetChangeEvent event) {
+                refreshFooter();
+            }
+        });
+    }
+
+    private void refreshFooter(){
+        footer.getCell("id").setHtml("<b>Total: " + getContainer().size() + "</b>");
+        footer.getCell("age").setHtml("<b>Average: "+avgAge());
+    }
+
+    private String avgAge(){
+        List<PersonDTO> persons = getContainer().getItemIds();
+        int sum = 0;
+        for(PersonDTO p : persons){
+            sum += p.getAge();
+        }
+        return String.format("%.1f",(double) sum/persons.size());
+    }
+
+    public void addFilter(String filterString) {
         getContainer().removeAllContainerFilters();
         if (filterString.length() > 0) {
             List<Container.Filter> filters = new ArrayList<>();
