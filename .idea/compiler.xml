@@ -6,7 +6,7 @@
     <option name="delegateToJavac" value="true" />
   </component>
   <component name="CompilerConfiguration">
-    <option name="DEFAULT_COMPILER" value="ajc" />
+    <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions />
     <wildcardResourcePatterns>
       <entry name="!?*.java" />
@@ -41,21 +41,13 @@
     <bytecodeTargetLevel>
       <module name="cxf_sample_features" target="1.7" />
       <module name="cxf_sample_root" target="1.7" />
-      <module name="cxf_sample_ws_root" target="1.7" />
       <module name="sample_cxf_camel" target="1.7" />
-      <module name="sample_cxf_person_persistence" target="1.7" />
       <module name="sample_cxf_person_rs" target="1.7" />
-      <module name="sample_cxf_person_rs_api" target="1.7" />
       <module name="sample_cxf_ws" target="1.7" />
       <module name="sample_cxf_ws_api" target="1.7" />
       <module name="sample_cxf_ws_client" target="1.7" />
       <module name="sample_person_persistence" target="1.7" />
       <module name="sample_person_ui" target="1.7" />
-      <module name="vaadin_example" target="1.7" />
-      <module name="vaadin_example-backend" target="1.7" />
-      <module name="vaadin_example-production" target="1.7" />
-      <module name="vaadin_example-ui" target="1.7" />
-      <module name="vaadin_example-widgetset" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

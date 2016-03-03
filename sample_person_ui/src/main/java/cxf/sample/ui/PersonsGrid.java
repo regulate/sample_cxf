@@ -30,7 +30,8 @@ public class PersonsGrid extends Grid {
 
     private static final Logger log = LoggerFactory.getLogger(PersonsGrid.class);
 
-    FooterRow footer;
+    private FooterRow                    footer;
+    private BeanItemContainer<PersonDTO> container;
 
     @PostConstruct
     public void init() {
@@ -42,7 +43,7 @@ public class PersonsGrid extends Grid {
     private void setupAppearance() {
         setSizeFull();
         setSelectionMode(SelectionMode.SINGLE);
-        BeanItemContainer<PersonDTO> container = new BeanItemContainer<>(PersonDTO.class);
+        container = new BeanItemContainer<>(PersonDTO.class);
         setContainerDataSource(container);
         setColumnOrder("id", "firstName", "lastName", "age", "birthDate");
         footer = prependFooterRow();
@@ -109,7 +110,7 @@ public class PersonsGrid extends Grid {
     }
 
     private BeanItemContainer<PersonDTO> getContainer() {
-        return (BeanItemContainer<PersonDTO>) super.getContainerDataSource();
+        return container;
     }
 
     @Override
@@ -126,7 +127,7 @@ public class PersonsGrid extends Grid {
         // We avoid updating the whole table through the backend here so we can
         // get a partial update for the grid
         log.debug("Incoming person: {}", person);
-        BeanItem<PersonDTO> item = findItem(person.getId());
+        BeanItem<PersonDTO> item = getContainer().getItem(person);
         boolean found = item != null;
         log.debug("Item found in container: {}", found);
         if (found) {
@@ -138,20 +139,6 @@ public class PersonsGrid extends Grid {
             log.debug("Adding new person to container: {}", person);
             getContainer().addBean(person);
         }
-    }
-
-    private BeanItem<PersonDTO> findItem(Long id) {
-        BeanItem<PersonDTO> target = null;
-        List<PersonDTO> model = getContainer().getItemIds();
-        for (PersonDTO p : model) {
-            if (Objects.equals(p.getId(), id)) {
-                log.debug("Found ItemId {}", p);
-                target = getContainer().getItem(p);
-                log.debug("Target BeanItem instance: {}", target);
-                break;
-            }
-        }
-        return target;
     }
 
     public void remove(PersonDTO person) {

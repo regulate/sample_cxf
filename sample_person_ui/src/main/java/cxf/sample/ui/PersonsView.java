@@ -108,7 +108,7 @@ public class PersonsView extends CssLayout implements View {
             public void select(SelectionEvent event) {
                 PersonDTO person = grid.getSelectedRow();
                 if (person != null)
-                    save(person, SaveMode.EDIT);
+                    prepareSaving(person, SaveMode.EDIT);
                 else
                     grid.getSelectionModel().reset();
             }
@@ -148,7 +148,7 @@ public class PersonsView extends CssLayout implements View {
         filter.addFocusListener(new FieldEvents.FocusListener() {
             @Override
             public void focus(FieldEvents.FocusEvent event) {
-                form.toggleIf(false);
+                form.toggleIf(true);
             }
         });
 
@@ -158,7 +158,7 @@ public class PersonsView extends CssLayout implements View {
         newPersonBtn.addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
-                save(null, SaveMode.ADD);
+                prepareSaving(null, SaveMode.ADD);
             }
         });
 
@@ -181,7 +181,7 @@ public class PersonsView extends CssLayout implements View {
         page.setUriFragment(VIEW_NAME.toLowerCase() + "/" + urlFragment, false);
     }
 
-    public void save(PersonDTO person, SaveMode mode) {
+    public void prepareSaving(PersonDTO person, SaveMode mode) {
         final String fragment = (person == null) ? "new" : person.getId().toString();
         switch (mode) {
             case ADD:
@@ -199,7 +199,7 @@ public class PersonsView extends CssLayout implements View {
         form.toggleIf(false);
     }
 
-    public void refresh(PersonDTO person) {
+    private void refresh(PersonDTO person) {
         grid.refresh(person);
         grid.scrollTo(person);
     }
