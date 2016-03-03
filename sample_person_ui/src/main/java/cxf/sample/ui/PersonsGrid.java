@@ -4,7 +4,6 @@ import com.vaadin.data.Container;
 import com.vaadin.data.util.BeanItem;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.data.util.MethodProperty;
-import com.vaadin.data.util.converter.Converter;
 import com.vaadin.data.util.converter.StringToDateConverter;
 import com.vaadin.data.util.filter.Or;
 import com.vaadin.data.util.filter.SimpleStringFilter;
@@ -31,19 +30,25 @@ public class PersonsGrid extends Grid {
 
     private static final Logger log = LoggerFactory.getLogger(PersonsGrid.class);
 
+    FooterRow footer;
+
     @PostConstruct
     public void init() {
+        setupAppearance();
+        setupConverters();
+        setupListeners();
+    }
+
+    private void setupAppearance() {
         setSizeFull();
-
         setSelectionMode(SelectionMode.SINGLE);
-
-        BeanItemContainer<PersonDTO> container = new BeanItemContainer<>(
-                PersonDTO.class);
-
+        BeanItemContainer<PersonDTO> container = new BeanItemContainer<>(PersonDTO.class);
         setContainerDataSource(container);
-
         setColumnOrder("id", "firstName", "lastName", "age", "birthDate");
+        footer = prependFooterRow();
+    }
 
+    private void setupConverters() {
         getColumn("birthDate").setConverter(new StringToDateConverter() {
             private SimpleDateFormat sdf = new SimpleDateFormat(DateFormatterAdapter.DATE_PATTERN);
 
@@ -67,7 +72,30 @@ public class PersonsGrid extends Grid {
         });
     }
 
-    public void setFilter(String filterString) {
+    private void setupListeners() {
+        getContainer().addItemSetChangeListener(new Container.ItemSetChangeListener() {
+            @Override
+            public void containerItemSetChange(Container.ItemSetChangeEvent event) {
+                refreshFooter();
+            }
+        });
+    }
+
+    private void refreshFooter() {
+        footer.getCell("id").setHtml("<b>Total: " + getContainer().size() + "</b>");
+        footer.getCell("age").setHtml("<b>Average: " + avgAge());
+    }
+
+    private String avgAge() {
+        List<PersonDTO> persons = getContainer().getItemIds();
+        int sum = 0;
+        for (PersonDTO p : persons) {
+            sum += p.getAge();
+        }
+        return String.format("%.1f", (double) sum / persons.size());
+    }
+
+    public void addFilter(String filterString) {
         getContainer().removeAllContainerFilters();
         if (filterString.length() > 0) {
             List<Container.Filter> filters = new ArrayList<>();
@@ -94,18 +122,36 @@ public class PersonsGrid extends Grid {
         getContainer().addAll(persons);
     }
 
-    public void refresh(PersonDTO product) {
+    public void refresh(PersonDTO person) {
         // We avoid updating the whole table through the backend here so we can
         // get a partial update for the grid
-        BeanItem<PersonDTO> item = getContainer().getItem(product);
-        if (item != null) {
-            // Updated product
+        log.debug("Incoming person: {}", person);
+        BeanItem<PersonDTO> item = findItem(person.getId());
+        boolean found = item != null;
+        log.debug("Item found in container: {}", found);
+        if (found) {
+            log.debug("Updating person in a grid: {}", person);
             MethodProperty p = (MethodProperty) item.getItemProperty("id");
             p.fireValueChange();
         } else {
-            // New product
-            getContainer().addBean(product);
+            // New person
+            log.debug("Adding new person to container: {}", person);
+            getContainer().addBean(person);
         }
+    }
+
+    private BeanItem<PersonDTO> findItem(Long id) {
+        BeanItem<PersonDTO> target = null;
+        List<PersonDTO> model = getContainer().getItemIds();
+        for (PersonDTO p : model) {
+            if (Objects.equals(p.getId(), id)) {
+                log.debug("Found ItemId {}", p);
+                target = getContainer().getItem(p);
+                log.debug("Target BeanItem instance: {}", target);
+                break;
+            }
+        }
+        return target;
     }
 
     public void remove(PersonDTO person) {

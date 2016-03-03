@@ -131,7 +131,7 @@ $v-layout-spacing-horizontal: round($v-unit-size / 1.8) !default;
     @include transform(translatex(100%));
   }
 
-   //Enables animation for opening CRUD editor
+  //Enables animation for opening CRUD editor
   .visible {
     @include transform(none);
     @include box-shadow($editor-shadow);

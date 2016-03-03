@@ -1,7 +1,10 @@
 package cxf.sample.ui;
 
+import static cxf.sample.ui.Style.*;
+
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.event.FieldEvents;
+import com.vaadin.event.SelectionEvent;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.FontAwesome;
@@ -25,117 +28,127 @@ import javax.annotation.PostConstruct;
 @Scope("prototype")
 public class PersonsView extends CssLayout implements View {
 
-    private static final Logger log       = LoggerFactory.getLogger(PersonsView.class);
-    public  static final String VIEW_NAME = "Persons";
+    private static final Logger log = LoggerFactory.getLogger(PersonsView.class);
+    public static final String VIEW_NAME = "Persons";
 
     @Autowired
     private PersonsGrid grid;
-
     @Autowired
     private PersonForm form;
-
     @Autowired
     private PersonService service;
 
+    public enum SaveMode {
+        EDIT, ADD;
+    }
+
     @PostConstruct
     public void init() {
-        setSizeFull();
-        addStyleName("crud-view");
-
-        initFormListeners();
-
-        addComponent(gridWithBar());
-        addComponent(form);
-
+        setupAppearance();
+        setupListeners();
         showPersons();
     }
 
-    public void initFormListeners() {
+    private void setupAppearance() {
+        setSizeFull();
+        addStyleName(CRUD_VIEW());
+        addComponent(buildGridWithBar());
+        addComponent(form);
+    }
+
+    private void setupListeners() {
+
         form.getCancelButton().addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
-                cancelPerson();
+                cancel();
             }
         });
+
+        form.getFieldGroup().addCommitHandler(new FieldGroup.CommitHandler() {
+            @Override
+            public void preCommit(FieldGroup.CommitEvent commitEvent) throws FieldGroup.CommitException {
+                //nothing to add
+            }
+
+            @Override
+            public void postCommit(FieldGroup.CommitEvent commitEvent) throws FieldGroup.CommitException {
+                PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
+                service.addOrUpdate(person);
+                refresh(person);
+            }
+        });
+
         form.getSaveButton().addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 try {
                     form.getFieldGroup().commit();
-                    PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
-                    service.addOrUpdate(person);
-                    grid.refresh(person);
-                    form.toggle();
+                    form.toggleIf(true);
                 } catch (FieldGroup.CommitException e) {
                     log.error("Validation error", e);
                     Notification n = new Notification(
-                            "Please re-check the fields", Notification.Type.ERROR_MESSAGE);
-                    n.setDelayMsec(500);
+                            "Some of fields contain errors!", Notification.Type.ERROR_MESSAGE);
+                    n.setDelayMsec(1800);
                     n.show(getUI().getPage());
                 }
             }
         });
+
         form.getDeleteButton().addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
-                grid.remove(person);
-                service.remove(person.getId());
+                remove(person);
+            }
+        });
+
+        grid.addSelectionListener(new SelectionEvent.SelectionListener() {
+            @Override
+            public void select(SelectionEvent event) {
+                PersonDTO person = grid.getSelectedRow();
+                if (person != null)
+                    save(person, SaveMode.EDIT);
+                else
+                    grid.getSelectionModel().reset();
             }
         });
     }
 
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent event) {
-        String personId = event.getParameters();
-        if (personId != null && !personId.isEmpty()) {
-            if (personId.equals("new")) {
-                createPerson();
-            } else {
-                try {
-                    long pid = Long.parseLong(personId);
-                    PersonDTO person = service.retrieve(pid);
-                    selectRow(person);
-                } catch (NumberFormatException e) {
-                    log.error("Failed to parse long value from string", e);
-                }
-            }
-        }
+//        nothing to add
     }
 
-    public void selectRow(PersonDTO row) {
-        ((Grid.SelectionModel.Single) grid.getSelectionModel()).select(row);
-    }
-
-    private VerticalLayout gridWithBar() {
+    private VerticalLayout buildGridWithBar() {
         VerticalLayout gridWithBar = new VerticalLayout();
-        gridWithBar.addComponent(topBar());
+        gridWithBar.addComponent(buildTopBar());
         gridWithBar.addComponent(grid);
         gridWithBar.setMargin(true);
         gridWithBar.setSpacing(true);
         gridWithBar.setSizeFull();
         gridWithBar.setExpandRatio(grid, 1);
-        gridWithBar.setStyleName("crud-main-layout");
+        gridWithBar.setStyleName(CRUD_MAIN_LAYOUT());
         return gridWithBar;
     }
 
-    private HorizontalLayout topBar() {
+    private HorizontalLayout buildTopBar() {
         final TextField filter = new TextField();
         filter.setInputPrompt("Filter");
         filter.setImmediate(true);
         filter.addTextChangeListener(new FieldEvents.TextChangeListener() {
             @Override
             public void textChange(FieldEvents.TextChangeEvent event) {
-                if (form.isShown()) form.toggle();
-                grid.setFilter(event.getText());
+                form.toggleIf(true);
+                grid.addFilter(event.getText());
             }
         });
-        filter.setStyleName("filter-textfield");
+        filter.setStyleName(FILTER_TEXTFIELD());
 
         filter.addFocusListener(new FieldEvents.FocusListener() {
             @Override
             public void focus(FieldEvents.FocusEvent event) {
-                if(form.isShown()) form.toggle();
+                form.toggleIf(false);
             }
         });
 
@@ -145,7 +158,7 @@ public class PersonsView extends CssLayout implements View {
         newPersonBtn.addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
-                createPerson();
+                save(null, SaveMode.ADD);
             }
         });
 
@@ -156,42 +169,55 @@ public class PersonsView extends CssLayout implements View {
         topBar.addComponent(newPersonBtn);
         topBar.setComponentAlignment(filter, Alignment.MIDDLE_LEFT);
         topBar.setExpandRatio(filter, 1);
-        topBar.setStyleName("top-bar");
+        topBar.setStyleName(TOP_BAR());
 
         return topBar;
     }
 
-    public void createPerson() {
-        grid.getSelectionModel().reset();
-        setFragmentParameter("new");
-        editPerson(new PersonDTO());
-    }
-
-    private void setFragmentParameter(String personId) {
-        String fragmentParameter;
-        if (personId == null || personId.isEmpty()) {
-            fragmentParameter = "";
-        } else {
-            fragmentParameter = personId;
-        }
+    private void setUriFragment(String urlFragment) {
+        if (urlFragment == null) urlFragment = "";
 
         Page page = UI.getCurrent().getPage();
-        page.setUriFragment(VIEW_NAME.toLowerCase() + "/" + fragmentParameter, false);
+        page.setUriFragment(VIEW_NAME.toLowerCase() + "/" + urlFragment, false);
     }
 
-    public void editPerson(PersonDTO person) {
-        form.toggle();
-        form.editPerson(person);
+    public void save(PersonDTO person, SaveMode mode) {
+        final String fragment = (person == null) ? "new" : person.getId().toString();
+        switch (mode) {
+            case ADD:
+                grid.getSelectionModel().reset();
+                form.getDeleteButton().setEnabled(false);
+                form.getSaveButton().setCaption("Add");
+                break;
+            case EDIT:
+                form.getDeleteButton().setEnabled(true);
+                form.getSaveButton().setCaption("Edit");
+                break;
+        }
+        form.preparePerson(person);
+        setUriFragment(fragment);
+        form.toggleIf(false);
+    }
+
+    public void refresh(PersonDTO person) {
+        grid.refresh(person);
+        grid.scrollTo(person);
     }
 
     public void showPersons() {
         grid.setPersons(service.retrieveAll().getPersons());
     }
 
-    public void cancelPerson() {
-        setFragmentParameter("");
-        grid.getSelectionModel().reset();
-        editPerson(null);
+    public void cancel() {
+        form.preparePerson(null);
+        setUriFragment("");
+        form.toggleIf(true);
+    }
+
+    public void remove(PersonDTO person) {
+        cancel();
+        grid.remove(person);
+        service.remove(person.getId());
     }
 
 }
