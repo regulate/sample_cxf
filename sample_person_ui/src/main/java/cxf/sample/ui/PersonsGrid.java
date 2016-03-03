@@ -39,7 +39,7 @@ public class PersonsGrid extends Grid {
         setupListeners();
     }
 
-    private void setupAppearance(){
+    private void setupAppearance() {
         setSizeFull();
         setSelectionMode(SelectionMode.SINGLE);
         BeanItemContainer<PersonDTO> container = new BeanItemContainer<>(PersonDTO.class);
@@ -48,7 +48,7 @@ public class PersonsGrid extends Grid {
         footer = prependFooterRow();
     }
 
-    private void setupConverters(){
+    private void setupConverters() {
         getColumn("birthDate").setConverter(new StringToDateConverter() {
             private SimpleDateFormat sdf = new SimpleDateFormat(DateFormatterAdapter.DATE_PATTERN);
 
@@ -72,7 +72,7 @@ public class PersonsGrid extends Grid {
         });
     }
 
-    private void setupListeners(){
+    private void setupListeners() {
         getContainer().addItemSetChangeListener(new Container.ItemSetChangeListener() {
             @Override
             public void containerItemSetChange(Container.ItemSetChangeEvent event) {
@@ -81,18 +81,18 @@ public class PersonsGrid extends Grid {
         });
     }
 
-    private void refreshFooter(){
+    private void refreshFooter() {
         footer.getCell("id").setHtml("<b>Total: " + getContainer().size() + "</b>");
-        footer.getCell("age").setHtml("<b>Average: "+avgAge());
+        footer.getCell("age").setHtml("<b>Average: " + avgAge());
     }
 
-    private String avgAge(){
+    private String avgAge() {
         List<PersonDTO> persons = getContainer().getItemIds();
         int sum = 0;
-        for(PersonDTO p : persons){
+        for (PersonDTO p : persons) {
             sum += p.getAge();
         }
-        return String.format("%.1f",(double) sum/persons.size());
+        return String.format("%.1f", (double) sum / persons.size());
     }
 
     public void addFilter(String filterString) {
@@ -122,18 +122,36 @@ public class PersonsGrid extends Grid {
         getContainer().addAll(persons);
     }
 
-    public void refresh(PersonDTO product) {
+    public void refresh(PersonDTO person) {
         // We avoid updating the whole table through the backend here so we can
         // get a partial update for the grid
-        BeanItem<PersonDTO> item = getContainer().getItem(product);
-        if (item != null) {
-            // Updated product
+        log.debug("Incoming person: {}", person);
+        BeanItem<PersonDTO> item = findItem(person.getId());
+        boolean found = item != null;
+        log.debug("Item found in container: {}", found);
+        if (found) {
+            log.debug("Updating person in a grid: {}", person);
             MethodProperty p = (MethodProperty) item.getItemProperty("id");
             p.fireValueChange();
         } else {
-            // New product
-            getContainer().addBean(product);
+            // New person
+            log.debug("Adding new person to container: {}", person);
+            getContainer().addBean(person);
         }
+    }
+
+    private BeanItem<PersonDTO> findItem(Long id) {
+        BeanItem<PersonDTO> target = null;
+        List<PersonDTO> model = getContainer().getItemIds();
+        for (PersonDTO p : model) {
+            if (Objects.equals(p.getId(), id)) {
+                log.debug("Found ItemId {}", p);
+                target = getContainer().getItem(p);
+                log.debug("Target BeanItem instance: {}", target);
+                break;
+            }
+        }
+        return target;
     }
 
     public void remove(PersonDTO person) {

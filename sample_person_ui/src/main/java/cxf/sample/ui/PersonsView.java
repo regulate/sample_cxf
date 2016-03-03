@@ -1,5 +1,7 @@
 package cxf.sample.ui;
 
+import static cxf.sample.ui.Style.*;
+
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.event.FieldEvents;
 import com.vaadin.event.SelectionEvent;
@@ -26,12 +28,19 @@ import javax.annotation.PostConstruct;
 @Scope("prototype")
 public class PersonsView extends CssLayout implements View {
 
-    private static final Logger log       = LoggerFactory.getLogger(PersonsView.class);
-    public  static final String VIEW_NAME = "Persons";
+    private static final Logger log = LoggerFactory.getLogger(PersonsView.class);
+    public static final String VIEW_NAME = "Persons";
 
-    @Autowired private PersonsGrid   grid;
-    @Autowired private PersonForm    form;
-    @Autowired private PersonService service;
+    @Autowired
+    private PersonsGrid grid;
+    @Autowired
+    private PersonForm form;
+    @Autowired
+    private PersonService service;
+
+    public enum SaveMode {
+        EDIT, ADD;
+    }
 
     @PostConstruct
     public void init() {
@@ -40,53 +49,66 @@ public class PersonsView extends CssLayout implements View {
         showPersons();
     }
 
-    private void setupAppearance(){
+    private void setupAppearance() {
         setSizeFull();
-        addStyleName("crud-view");
+        addStyleName(CRUD_VIEW());
         addComponent(buildGridWithBar());
         addComponent(form);
     }
 
     private void setupListeners() {
+
         form.getCancelButton().addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
-                cancelPerson();
+                cancel();
             }
         });
+
+        form.getFieldGroup().addCommitHandler(new FieldGroup.CommitHandler() {
+            @Override
+            public void preCommit(FieldGroup.CommitEvent commitEvent) throws FieldGroup.CommitException {
+                //nothing to add
+            }
+
+            @Override
+            public void postCommit(FieldGroup.CommitEvent commitEvent) throws FieldGroup.CommitException {
+                PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
+                service.addOrUpdate(person);
+                refresh(person);
+            }
+        });
+
         form.getSaveButton().addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 try {
                     form.getFieldGroup().commit();
-                    PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
-                    service.addOrUpdate(person);
-                    grid.refresh(person);
-                    form.toggle();
+                    form.toggleIf(true);
                 } catch (FieldGroup.CommitException e) {
                     log.error("Validation error", e);
                     Notification n = new Notification(
-                            "Some fields contain errors. Check them Try again!", Notification.Type.ERROR_MESSAGE);
-                    n.setDelayMsec(800);
+                            "Some of fields contain errors!", Notification.Type.ERROR_MESSAGE);
+                    n.setDelayMsec(1800);
                     n.show(getUI().getPage());
                 }
             }
         });
+
         form.getDeleteButton().addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
-                cancelPerson();
-                grid.remove(person);
-                service.remove(person.getId());
+                remove(person);
             }
         });
+
         grid.addSelectionListener(new SelectionEvent.SelectionListener() {
             @Override
             public void select(SelectionEvent event) {
                 PersonDTO person = grid.getSelectedRow();
                 if (person != null)
-                    editPerson(person);
+                    save(person, SaveMode.EDIT);
                 else
                     grid.getSelectionModel().reset();
             }
@@ -106,7 +128,7 @@ public class PersonsView extends CssLayout implements View {
         gridWithBar.setSpacing(true);
         gridWithBar.setSizeFull();
         gridWithBar.setExpandRatio(grid, 1);
-        gridWithBar.setStyleName("crud-main-layout");
+        gridWithBar.setStyleName(CRUD_MAIN_LAYOUT());
         return gridWithBar;
     }
 
@@ -117,16 +139,16 @@ public class PersonsView extends CssLayout implements View {
         filter.addTextChangeListener(new FieldEvents.TextChangeListener() {
             @Override
             public void textChange(FieldEvents.TextChangeEvent event) {
-                if (form.isShown()) form.toggle();
+                form.toggleIf(true);
                 grid.addFilter(event.getText());
             }
         });
-        filter.setStyleName("filter-textfield");
+        filter.setStyleName(FILTER_TEXTFIELD());
 
         filter.addFocusListener(new FieldEvents.FocusListener() {
             @Override
             public void focus(FieldEvents.FocusEvent event) {
-                if (form.isShown()) form.toggle();
+                form.toggleIf(false);
             }
         });
 
@@ -136,7 +158,7 @@ public class PersonsView extends CssLayout implements View {
         newPersonBtn.addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
-                createPerson();
+                save(null, SaveMode.ADD);
             }
         });
 
@@ -147,43 +169,55 @@ public class PersonsView extends CssLayout implements View {
         topBar.addComponent(newPersonBtn);
         topBar.setComponentAlignment(filter, Alignment.MIDDLE_LEFT);
         topBar.setExpandRatio(filter, 1);
-        topBar.setStyleName("top-bar");
+        topBar.setStyleName(TOP_BAR());
 
         return topBar;
     }
 
-    private void setUrlFragment(String urlFragment) {
+    private void setUriFragment(String urlFragment) {
         if (urlFragment == null) urlFragment = "";
 
         Page page = UI.getCurrent().getPage();
         page.setUriFragment(VIEW_NAME.toLowerCase() + "/" + urlFragment, false);
     }
 
-    public void createPerson() {
-        grid.getSelectionModel().reset();
-        setUrlFragment("new");
-        form.getDeleteButton().setEnabled(false);
-        form.getSaveButton().setCaption("Add");
-        form.createOrEditPerson(null);
-        if (!form.isShown()) form.toggle();
+    public void save(PersonDTO person, SaveMode mode) {
+        final String fragment = (person == null) ? "new" : person.getId().toString();
+        switch (mode) {
+            case ADD:
+                grid.getSelectionModel().reset();
+                form.getDeleteButton().setEnabled(false);
+                form.getSaveButton().setCaption("Add");
+                break;
+            case EDIT:
+                form.getDeleteButton().setEnabled(true);
+                form.getSaveButton().setCaption("Edit");
+                break;
+        }
+        form.preparePerson(person);
+        setUriFragment(fragment);
+        form.toggleIf(false);
     }
 
-    public void editPerson(PersonDTO person) {
-        setUrlFragment(person.getId().toString());
-        form.getDeleteButton().setEnabled(true);
-        form.getSaveButton().setCaption("Edit");
-        form.createOrEditPerson(person);
-        if (!form.isShown()) form.toggle();
+    public void refresh(PersonDTO person) {
+        grid.refresh(person);
+        grid.scrollTo(person);
     }
 
     public void showPersons() {
         grid.setPersons(service.retrieveAll().getPersons());
     }
 
-    public void cancelPerson() {
-        setUrlFragment("");
-        form.createOrEditPerson(null);
-        form.toggle();
+    public void cancel() {
+        form.preparePerson(null);
+        setUriFragment("");
+        form.toggleIf(true);
+    }
+
+    public void remove(PersonDTO person) {
+        cancel();
+        grid.remove(person);
+        service.remove(person.getId());
     }
 
 }

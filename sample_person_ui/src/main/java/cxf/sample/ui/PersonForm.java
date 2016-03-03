@@ -1,5 +1,7 @@
 package cxf.sample.ui;
 
+import static cxf.sample.ui.Style.*;
+
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.data.util.BeanItem;
 import com.vaadin.data.validator.DateRangeValidator;
@@ -26,21 +28,20 @@ import java.util.Date;
 public class PersonForm extends CssLayout {
 
     private static final Logger  log           = LoggerFactory.getLogger(PersonForm.class);
-    private static final String  SHOW_STYLE    = "visible";
 
     private BeanFieldGroup<PersonDTO> fGroup;
     private Button cancel, save, delete;
 
     @PostConstruct
     public void init() {
-        addStyleName("person-form-wrapper");
-        addStyleName("person-form");
+        addStyleName(PERSON_FORM_WRAPPER());
+        addStyleName(PERSON_FORM());
 
         PersonDTO person = new PersonDTO();
 
         VerticalLayout root = new VerticalLayout();
         root.setSpacing(true);
-        root.addStyleName("form-layout");
+        root.addStyleName(FORM_LAYOUT());
 
         StringLengthValidator validator = new StringLengthValidator("Must be 3-25 characters", 3, 25, false);
 
@@ -68,7 +69,6 @@ public class PersonForm extends CssLayout {
         birthDate.setRequiredError("Must be specified");
         birthDate.setResolution(Resolution.DAY);
         birthDate.setTextFieldEnabled(false);
-        Calendar c = Calendar.getInstance();
         birthDate.addValidator(birthDateValidator());
         birthDate.setSizeFull();
 
@@ -124,8 +124,13 @@ public class PersonForm extends CssLayout {
         return delete;
     }
 
-    public void createOrEditPerson(PersonDTO person) {
-        if (person == null) person = new PersonDTO();
+    public void preparePerson(PersonDTO person) {
+        if (person == null){
+            person = new PersonDTO();
+            log.debug("Preparing new person");
+        } else {
+            log.debug("Going to edit existed person: {}", person);
+        }
         fGroup.setItemDataSource(new BeanItem<>(person));
         // Scroll to the top
         // As this is not a Panel, using JavaScript
@@ -134,18 +139,24 @@ public class PersonForm extends CssLayout {
         Page.getCurrent().getJavaScript().execute(scrollScript);
     }
 
-    public void toggle() {
+    private void toggle() {
         if (isShown()) {
-            removeStyleName(SHOW_STYLE);
+            removeStyleName(VISIBLE());
             setEnabled(false);
+            log.debug("Toggling form, it's hidden now");
         } else {
-            addStyleName(SHOW_STYLE);
+            addStyleName(VISIBLE());
             setEnabled(true);
+            log.debug("Toggling form, it's shown now");
         }
     }
 
+    public void toggleIf(boolean shown){
+        if(shown == isShown()) toggle();
+    }
+
     public boolean isShown() {
-        return getStyleName().contains(SHOW_STYLE);
+        return getStyleName().contains(VISIBLE());
     }
 
 }
