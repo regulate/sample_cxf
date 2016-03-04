@@ -1,10 +1,11 @@
-package cxf.sample.ui;
+package cxf.sample.ui.mock;
 
 import cxf.sample.api.dto.PersonDTO;
 import cxf.sample.api.dto.PersonsCollectionDTO;
 import cxf.sample.api.rs.PersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -18,6 +19,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * Created by IPotapchuk on 2/26/2016.
  */
 @Service
+@Qualifier("rsMock")
 public class PersonServiceMock implements PersonService {
 
     private static final Logger log = LoggerFactory.getLogger(PersonServiceMock.class);

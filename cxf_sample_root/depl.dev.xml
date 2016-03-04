@@ -47,6 +47,10 @@
         <karaf-exec-client command="feature:install sample-cxf-camel"/>
     </target>
 
+    <target name="deploy-person-ui" depends="deploy-preconfig">
+        <karaf-exec-client command="feature:install sample-person-ui"/>
+    </target>
+
     <target name="start-deploy-all" depends="karaf-start-clean, deploy-all" />
 
     <target name="deploy-preconfig">

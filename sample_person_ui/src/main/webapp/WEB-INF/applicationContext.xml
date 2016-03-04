@@ -3,11 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:osgi="http://www.springframework.org/schema/osgi"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/osgi
+        http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 
     <context:component-scan base-package="cxf.sample.ui"/>
 
-    <!--<osgi:reference id="personService" interface="cxf.sample.api.rs.PersonService" />-->
+    <osgi:reference id="helloServiceClient" interface="cxf.sample.api.ws.HelloService"
+                    filter="(service.type=ws-client)"/>
+    <osgi:reference id="personService" interface="cxf.sample.api.rs.PersonService"/>
 
 </beans>

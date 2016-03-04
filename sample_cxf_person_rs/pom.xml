@@ -12,7 +12,7 @@
     <artifactId>sample_cxf_person_rs</artifactId>
 
     <properties>
-        <osgi.export.pkg>cxf.sample.rs.impl</osgi.export.pkg>
+        <osgi.export>cxf.sample.rs.impl</osgi.export>
         <!--<osgi.import.pkg>*</osgi.import.pkg>-->
     </properties>
 

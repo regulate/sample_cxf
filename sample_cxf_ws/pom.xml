@@ -7,7 +7,7 @@
     <description>Simple CXF Java-first SOAP project using Spring configuration</description>
 
     <properties>
-        <osgi.export.pkg>cxf.sample.ws.impl</osgi.export.pkg>
+        <osgi.export>cxf.sample.ws.impl</osgi.export>
         <!--<osgi.import.pkg>*</osgi.import.pkg>-->
     </properties>
 

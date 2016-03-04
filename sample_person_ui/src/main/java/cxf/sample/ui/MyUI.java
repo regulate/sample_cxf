@@ -2,6 +2,7 @@ package cxf.sample.ui;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Viewport;
+import com.vaadin.annotations.Widgetset;
 import com.vaadin.server.Responsive;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;

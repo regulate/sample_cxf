@@ -3,10 +3,12 @@ package cxf.sample.api.dto;
 
 import cxf.sample.api.jaxb.DateFormatterAdapter;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 
 /**
  * Created by IPotapchuk on 2/16/2016.
@@ -14,16 +16,11 @@ import java.text.SimpleDateFormat;
 @XmlRootElement(name = "person")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class PersonDTO {
-    @XmlElement
-    private Long id;
-    @XmlElement
-    private String firstName;
-    @XmlElement
-    private String lastName;
-    @XmlElement
-    private Integer age;
-    @XmlJavaTypeAdapter(DateFormatterAdapter.class)
-    private Date birthDate;
+    @XmlElement private Long    id;
+    @XmlElement private String  firstName;
+    @XmlElement private String  lastName;
+    @XmlElement private Integer age;
+    @XmlJavaTypeAdapter(DateFormatterAdapter.class) private Date birthDate;
 
     public PersonDTO() {
     }
@@ -77,7 +74,7 @@ public class PersonDTO {
     }
 
     public String fullName(){
-        return lastName+" "+firstName;
+        return firstName+" "+lastName;
     }
 
     @Override

@@ -10,6 +10,7 @@ import com.vaadin.event.ShortcutAction;
 import com.vaadin.server.Page;
 import com.vaadin.shared.ui.datefield.Resolution;
 import com.vaadin.ui.*;
+import com.vaadin.ui.themes.ValoTheme;
 import cxf.sample.api.dto.PersonDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,10 +28,10 @@ import java.util.Date;
 @Scope("prototype")
 public class PersonForm extends CssLayout {
 
-    private static final Logger  log           = LoggerFactory.getLogger(PersonForm.class);
+    private static final Logger                    log    = LoggerFactory.getLogger(PersonForm.class);
+    private              BeanFieldGroup<PersonDTO> fGroup;
 
-    private BeanFieldGroup<PersonDTO> fGroup;
-    private Button cancel, save, delete;
+    private Button cancel, save, delete, greet;
 
     @PostConstruct
     public void init() {
@@ -79,20 +80,23 @@ public class PersonForm extends CssLayout {
         fGroup.bind(birthDate, "birthDate");
 
         cancel = new Button("Cancel");
-        cancel.addStyleName("cancel");
         cancel.setClickShortcut(ShortcutAction.KeyCode.ESCAPE);
 
         save = new Button();
         save.addStyleName("primary");
 
         delete = new Button("Delete");
-        delete.addStyleName("danger");
+        delete.addStyleName(ValoTheme.BUTTON_DANGER);
+
+        greet = new Button("Greet");
+        greet.addStyleName(ValoTheme.BUTTON_FRIENDLY);
 
         root.addComponent(firstName);
         root.addComponent(lastName);
         root.addComponent(birthDate);
         root.addComponent(save);
         root.addComponent(delete);
+        root.addComponent(greet);
         root.addComponent(cancel);
 
         addComponent(root);
@@ -122,6 +126,10 @@ public class PersonForm extends CssLayout {
 
     public Button getDeleteButton() {
         return delete;
+    }
+
+    public Button getGreetButton() {
+        return greet;
     }
 
     public void preparePerson(PersonDTO person) {

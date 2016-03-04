@@ -13,7 +13,7 @@
     <artifactId>sample_cxf_camel</artifactId>
 
     <properties>
-        <osgi.export.pkg>cxf.sample.camel</osgi.export.pkg>
+        <osgi.export>cxf.sample.camel</osgi.export>
     </properties>
 
     <dependencies>

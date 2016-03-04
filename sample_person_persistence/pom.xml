@@ -13,7 +13,7 @@
     <artifactId>sample_person_persistence</artifactId>
 
     <properties>
-        <osgi.export.pkg>cxf.sample.persistence.*</osgi.export.pkg>
+        <osgi.export>cxf.sample.persistence.*</osgi.export>
         <!--<osgi.import.pkg>*</osgi.import.pkg>-->
     </properties>
 

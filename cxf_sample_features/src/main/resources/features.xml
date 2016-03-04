@@ -42,7 +42,6 @@
         <bundle>mvn:cxf.sample/sample_person_persistence/${project.version}</bundle>
     </feature>
 
-
     <feature name="sample-cxf-camel" version="${project.version}">
         <feature version="${project.version}">sample-cxf-ws-client</feature>
         <feature version="${project.version}">sample-cxf-rs</feature>
@@ -52,10 +51,31 @@
         <bundle start-level="90">mvn:cxf.sample/sample_cxf_camel/${project.version}</bundle>
     </feature>
 
+    <feature name="sample-person-ui" version="${project.version}">
+        <feature version="${project.version}">sample-cxf-ws-client</feature>
+        <feature version="3.2.14.RELEASE_1">spring-web</feature>
+        <feature version="${project.version}">sample-cxf-rs</feature>
+        <feature>war</feature>
+        <bundle>mvn:com.vaadin.external.google/guava/16.0.1.vaadin1</bundle>
+        <bundle>mvn:com.vaadin.external.streamhtmlparser/streamhtmlparser-jsilver/0.0.10.vaadin1</bundle>
+        <bundle>mvn:com.vaadin.external.flute/flute/1.3.0.gg2</bundle>
+        <bundle>mvn:com.vaadin.external.json/json/0.0.20080701</bundle>
+        <bundle>mvn:com.vaadin.external.atmosphere/atmosphere-runtime/2.2.7.vaadin1</bundle>
+        <bundle>mvn:com.vaadin/vaadin-shared/${vaadin.version}</bundle>
+        <bundle>mvn:com.vaadin/vaadin-server/${vaadin.version}</bundle>
+        <bundle>mvn:com.vaadin/vaadin-client/${vaadin.version}</bundle>
+        <bundle>mvn:com.vaadin/vaadin-themes/${vaadin.version}</bundle>
+        <bundle>mvn:com.vaadin/vaadin-push/${vaadin.version}</bundle>
+        <bundle>mvn:org.jsoup/jsoup/1.8.1</bundle>
+        <bundle>mvn:ru.xpoft.vaadin/spring-vaadin-integration/3.2</bundle>
+        <bundle>mvn:cxf.sample/sample_person_ui/${project.version}/war</bundle>
+    </feature>
+
     <feature name="sample-cxf-all" version="${project.version}">
         <feature version="${project.version}">sample-cxf-ws-client</feature>
         <feature version="${project.version}">sample-cxf-rs</feature>
         <feature version="${project.version}">sample-cxf-camel</feature>
+        <feature version="${project.version}">sample-cxf-person-ui</feature>
     </feature>
 
 </features>
