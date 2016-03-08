@@ -7,6 +7,7 @@
           <element id="module-output" name="sample_person_ui" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.vaadin:vaadin-client-compiled:7.6.0" />
           <element id="archive" name="sample_cxf_ws_api-1.0-SNAPSHOT.jar">
             <element id="module-output" name="sample_cxf_ws_api" />
           </element>
@@ -49,7 +50,6 @@
           <element id="library" level="project" name="Maven: com.vaadin.external.streamhtmlparser:streamhtmlparser-jsilver:0.0.10.vaadin1" />
           <element id="library" level="project" name="Maven: com.vaadin.external.google:guava:16.0.1.vaadin1" />
           <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.8.3" />
-          <element id="library" level="project" name="Maven: com.vaadin:vaadin-client-compiled:7.6.0" />
           <element id="library" level="project" name="Maven: com.vaadin:vaadin-client:7.6.0" />
           <element id="library" level="project" name="Maven: javax.validation:validation-api:1.0.0.GA" />
           <element id="library" level="project" name="Maven: javax.validation:validation-api:sources:1.0.0.GA" />

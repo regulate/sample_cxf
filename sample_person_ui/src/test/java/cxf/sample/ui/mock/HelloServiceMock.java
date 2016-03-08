@@ -2,6 +2,7 @@ package cxf.sample.ui.mock;
 
 import cxf.sample.api.ws.HelloService;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Qualifier("wsMock")
+@Profile("test")
 public class HelloServiceMock implements HelloService {
 
     @Override

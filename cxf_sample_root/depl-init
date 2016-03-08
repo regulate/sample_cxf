@@ -1,4 +1,4 @@
-version = 1.0-SNAPSHOT
+version = '1.0-SNAPSHOT'
 groupId = 'cxf.sample'
 feature:repo-add mvn:$groupId/cxf_sample_features/$version/xml/features
 bundle:watch --start *

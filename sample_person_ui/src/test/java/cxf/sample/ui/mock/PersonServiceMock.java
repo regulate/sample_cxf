@@ -6,6 +6,7 @@ import cxf.sample.api.rs.PersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -20,6 +21,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 @Service
 @Qualifier("rsMock")
+@Profile("test")
 public class PersonServiceMock implements PersonService {
 
     private static final Logger log = LoggerFactory.getLogger(PersonServiceMock.class);

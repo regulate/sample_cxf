@@ -33,10 +33,10 @@ public class PersonsView extends CssLayout implements View {
     private static final Logger log       = LoggerFactory.getLogger(PersonsView.class);
     public  static final String VIEW_NAME = "Persons";
 
-    @Autowired                     private PersonsGrid   grid;
-    @Autowired                     private PersonForm    form;
-    @Autowired @Qualifier("helloServiceClient") PersonService personService;
-    @Autowired @Qualifier("personService")      HelloService  helloService;
+    @Autowired private PersonsGrid   grid;
+    @Autowired private PersonForm    form;
+    @Autowired private PersonService personService;
+    @Autowired private HelloService  helloService;
 
     public enum SaveMode {
         EDIT("Edit"), ADD("Add");

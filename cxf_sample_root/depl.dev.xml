@@ -6,14 +6,18 @@
     </path>
     <pathconvert targetos="unix" property="basedir.unix" refid="basedir.path"/>
 
-    <property name="karaf.version" value="3.0.5"/>
-    <property name="karaf.home" location="d:/apache/apache-karaf-${karaf.version}"/>
+    <property environment="env"/>
+    <property name="karaf.home" value="${env.KARAF_HOME}"/>
     <property name="karaf.deploy" location="${karaf.home}/deploy"/>
     <property name="depl-init.script" value="${basedir.unix}/depl-init"/>
     <property name="start.delay" value="7"
               description="Start delay in seconds to allow karaf to start it's features"/>
 
-    <target name="karaf-start-clean">
+    <target name="check-props">
+        <fail unless="env.KARAF_HOME">KARAF_HOME must be set</fail>
+    </target>
+
+    <target name="karaf-start-clean" depends="check-props">
         <delete dir="${karaf.deploy}" includes="*"/>
         <exec executable="cmd.exe" spawn="yes" osfamily="windows">
             <arg line='/c start /MIN ${karaf.home}/bin/karaf.bat clean debug ^&amp; exit'/>
@@ -21,7 +25,7 @@
         <sleep seconds="${start.delay}"/>
     </target>
 
-    <target name="karaf-start-restore">
+    <target name="karaf-start-restore" depends="check-props">
         <exec executable="cmd.exe" spawn="yes" osfamily="windows">
             <arg line='/c start /MIN ${karaf.home}/bin/karaf.bat debug ^&amp; exit'/>
         </exec>
