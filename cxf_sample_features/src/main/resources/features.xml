@@ -33,6 +33,7 @@
     <feature name="sample-person-persistence" version="${project.version}">
         <details>JOOQ Person Persistence Module</details>
         <feature version="3.2.14.RELEASE_1">spring-jdbc</feature>
+        <feature version="3.2.14.RELEASE_1">spring-tx</feature>
         <feature>spring-dm</feature>
         <feature>pax-jdbc</feature>
         <feature>pax-jdbc-config</feature>

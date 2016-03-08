@@ -12,13 +12,11 @@ import javax.ws.rs.core.Response;
  * Created by IPotapchuk on 2/15/2016.
  */
 @Path("/persons")
-@Transactional(readOnly = true)
 @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+@Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 public interface PersonService {
 
     @PUT
-    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    @Transactional(readOnly = false)
     boolean addOrUpdate(PersonDTO person);
 
     @GET
@@ -27,7 +25,6 @@ public interface PersonService {
 
     @DELETE
     @Path("/{id}")
-    @Transactional(readOnly = false)
     boolean remove(@PathParam("id") Long id);
 
     @GET

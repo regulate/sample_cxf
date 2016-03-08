@@ -9,12 +9,14 @@ import org.jooq.DSLContext;
 import org.jooq.RecordMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
  * Created by IPotapchuk on 2/16/2016.
  */
+@Transactional(readOnly = true)
 public class PersonServiceImpl implements PersonService {
     private DSLContext dsl;
     private static final Logger log = LoggerFactory.getLogger(PersonServiceImpl.class);
@@ -28,6 +30,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
+    @Transactional(readOnly = false)
     public boolean addOrUpdate(PersonDTO person) {
         if (person.getId() == null) {
             log.info("Going to add {}", person);
@@ -81,6 +84,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
+    @Transactional(readOnly = false)
     public boolean remove(Long id) {
         int removed = dsl.deleteFrom(Person.PERSON)
                 .where(Person.PERSON.ID.eq(id))

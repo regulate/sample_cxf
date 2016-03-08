@@ -59,7 +59,7 @@ hs_err_pid*
 *target/
 
 #project specific
-# *schema/
+ #*schema/
 
 
 
