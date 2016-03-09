@@ -34,6 +34,7 @@
         <dbcp.version>1.4</dbcp.version>
         <vaadin.version>7.6.0</vaadin.version>
         <spring.vaadin.version>3.2</spring.vaadin.version>
+        <spring.osgi.version>1.2.1</spring.osgi.version>
         <jetty.version>8.1.15.v20140411</jetty.version>
         <servlet.version>2.5</servlet.version>
         <osgi.export/>
@@ -128,6 +129,30 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-tx</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.osgi</groupId>
+                <artifactId>spring-osgi-web</artifactId>
+                <version>${spring.osgi.version}</version>
+                <type>bundle</type>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>org.springframework.core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>org.springframework.context</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>org.springframework.aop</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>org.springframework.beans</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!-- SPRING END -->
 
@@ -242,7 +267,6 @@
                 <groupId>org.ow2.asm</groupId>
                 <artifactId>asm</artifactId>
                 <version>${asm.version}</version>
-                <scope>compile</scope>
             </dependency>
             <!-- OTHER END -->
 

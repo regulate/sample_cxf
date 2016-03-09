@@ -12,6 +12,7 @@ import com.vaadin.shared.ui.datefield.Resolution;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import cxf.sample.api.dto.PersonDTO;
+import cxf.sample.ui.entity.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
@@ -29,7 +30,7 @@ import java.util.Date;
 public class PersonForm extends CssLayout {
 
     private static final Logger                    log    = LoggerFactory.getLogger(PersonForm.class);
-    private              BeanFieldGroup<PersonDTO> fGroup;
+    private              BeanFieldGroup<Person> fGroup;
 
     private Button cancel, save, delete, greet;
 
@@ -73,7 +74,7 @@ public class PersonForm extends CssLayout {
         birthDate.addValidator(birthDateValidator());
         birthDate.setSizeFull();
 
-        fGroup = new BeanFieldGroup<>(PersonDTO.class);
+        fGroup = new BeanFieldGroup<>(Person.class);
         fGroup.setItemDataSource(new BeanItem<>(person));
         fGroup.bind(firstName, "firstName");
         fGroup.bind(lastName, "lastName");
@@ -112,7 +113,7 @@ public class PersonForm extends CssLayout {
         return new DateRangeValidator(errorMsg, min.getTime(), max.getTime(), Resolution.YEAR);
     }
 
-    public BeanFieldGroup<PersonDTO> getFieldGroup() {
+    public BeanFieldGroup<Person> getFieldGroup() {
         return fGroup;
     }
 

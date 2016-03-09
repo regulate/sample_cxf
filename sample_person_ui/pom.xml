@@ -42,6 +42,12 @@
                     <artifactId>spring-web</artifactId>
                     <scope>provided</scope>
                 </dependency>
+                <dependency>
+                    <groupId>org.springframework.osgi</groupId>
+                    <artifactId>spring-osgi-web</artifactId>
+                    <scope>provided</scope>
+                    <type>bundle</type>
+                </dependency>
                 <!-- SPRING END -->
                 <!-- VAADIN -->
                 <dependency>
@@ -82,13 +88,6 @@
                     <scope>provided</scope>
                 </dependency>
                 <!-- LOGGING END -->
-                <!-- OTHER -->
-                <dependency>
-                    <groupId>org.ow2.asm</groupId>
-                    <artifactId>asm</artifactId>
-                    <scope>compile</scope>
-                </dependency>
-                <!-- OTHER END -->
             </dependencies>
         </profile>
 
@@ -149,13 +148,6 @@
                     <artifactId>logback-classic</artifactId>
                 </dependency>
                 <!-- LOGGING END -->
-                <!-- OTHER -->
-                <dependency>
-                    <groupId>org.ow2.asm</groupId>
-                    <artifactId>asm</artifactId>
-                    <scope>compile</scope>
-                </dependency>
-                <!-- OTHER END -->
             </dependencies>
 
             <build>
@@ -219,7 +211,6 @@
                                     <maxIdleTime>60000</maxIdleTime>
                                 </connector>
                             </connectors>
-                            <webAppSourceDirectory>src/main/webapp</webAppSourceDirectory>
                             <war>${project.build.directory}/${project.build.finalName}</war>
                         </configuration>
                     </plugin>
@@ -243,6 +234,12 @@
             <artifactId>vaadin-client-compiled</artifactId>
         </dependency>
         <!-- VAADIN END -->
+        <!-- OTHER -->
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+        </dependency>
+        <!-- OTHER END -->
     </dependencies>
 
     <build>
@@ -307,9 +304,9 @@
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Web-ContextPath>test</Web-ContextPath>
                         <Bundle-ClassPath>.,WEB-INF/classes</Bundle-ClassPath>
-                        <Embed-Directory>WEB-INF/lib</Embed-Directory>
-                        <Embed-Dependency>*;scope=runtime</Embed-Dependency>
-                        <Embed-Transitive>false</Embed-Transitive>
+                        <!--<Embed-Directory>WEB-INF/lib</Embed-Directory>-->
+                        <!--<Embed-Dependency>*;scope=compile|runtime;inline=false;artifactId=!asm</Embed-Dependency>-->
+                        <!--<Embed-Transitive>false</Embed-Transitive>-->
                         <Implementation-Version>${project.version}</Implementation-Version>
                         <_failok></_failok>
                         <_removeheaders></_removeheaders>

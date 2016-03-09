@@ -9,17 +9,21 @@ import com.vaadin.data.util.filter.Or;
 import com.vaadin.data.util.filter.SimpleStringFilter;
 import com.vaadin.ui.Grid;
 import cxf.sample.api.dto.PersonDTO;
+import cxf.sample.api.dto.PersonsCollectionDTO;
 import cxf.sample.api.jaxb.DateFormatterAdapter;
+import cxf.sample.ui.entity.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.lang.reflect.Field;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 /**
  * Created by IPotapchuk on 2/29/2016.
@@ -31,7 +35,7 @@ public class PersonsGrid extends Grid {
     private static final Logger log = LoggerFactory.getLogger(PersonsGrid.class);
 
     private FooterRow                    footer;
-    private BeanItemContainer<PersonDTO> container;
+    private BeanItemContainer<Person> container;
 
     @PostConstruct
     public void init() {
@@ -43,9 +47,9 @@ public class PersonsGrid extends Grid {
     private void setupAppearance() {
         setSizeFull();
         setSelectionMode(SelectionMode.SINGLE);
-        container = new BeanItemContainer<>(PersonDTO.class);
+        container = new BeanItemContainer<>(Person.class);
         setContainerDataSource(container);
-        setColumnOrder("id", "firstName", "lastName", "age", "birthDate");
+        setColumnOrder("id", "firstName", "lastName", "birthDate", "age");
         footer = prependFooterRow();
     }
 
@@ -84,50 +88,42 @@ public class PersonsGrid extends Grid {
 
     private void refreshFooter() {
         footer.getCell("id").setHtml("<b>Total: " + getContainer().size() + "</b>");
-        footer.getCell("age").setHtml("<b>Average: " + avgAge());
-    }
-
-    private String avgAge() {
-        List<PersonDTO> persons = getContainer().getItemIds();
-        int sum = 0;
-        for (PersonDTO p : persons) {
-            sum += p.getAge();
-        }
-        return String.format("%.1f", (double) sum / persons.size());
+        footer.getCell("age").setHtml("<b>Average: " + PersonViewUtils.avgAge(getContainer().getItemIds()));
     }
 
     public void addFilter(String filterString) {
         getContainer().removeAllContainerFilters();
         if (filterString.length() > 0) {
             List<Container.Filter> filters = new ArrayList<>();
-            for (Field field : getContainer().getBeanType().getDeclaredFields()) {
-                filters.add(new SimpleStringFilter(field.getName(), filterString, true, false));
+            for (String field : getContainer().getContainerPropertyIds()) {
+                filters.add(new SimpleStringFilter(field, filterString, true, false));
             }
             getContainer().addContainerFilter(
                     new Or(filters.toArray(new Container.Filter[filters.size()])));
         }
-
     }
 
-    private BeanItemContainer<PersonDTO> getContainer() {
+    private BeanItemContainer<Person> getContainer() {
         return container;
     }
 
     @Override
-    public PersonDTO getSelectedRow() throws IllegalStateException {
-        return (PersonDTO) super.getSelectedRow();
+    public Person getSelectedRow() throws IllegalStateException {
+        return (Person) super.getSelectedRow();
     }
 
-    public void setPersons(Collection<PersonDTO> persons) {
+    public void setPersons(PersonsCollectionDTO persons) {
         getContainer().removeAllItems();
-        getContainer().addAll(persons);
+        for(PersonDTO p : persons.getPersons()){
+            getContainer().addBean(new Person(p));
+        }
     }
 
-    public void refresh(PersonDTO person) {
+    public void refresh(Person person) {
         // We avoid updating the whole table through the backend here so we can
         // get a partial update for the grid
         log.debug("Incoming person: {}", person);
-        BeanItem<PersonDTO> item = getContainer().getItem(person);
+        BeanItem<Person> item = getContainer().getItem(person);
         boolean found = item != null;
         log.debug("Item found in container: {}", found);
         if (found) {
@@ -141,7 +137,7 @@ public class PersonsGrid extends Grid {
         }
     }
 
-    public void remove(PersonDTO person) {
+    public void remove(Person person) {
         getContainer().removeItem(person);
     }
 }

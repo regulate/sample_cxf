@@ -15,6 +15,7 @@ import java.util.List;
 import javax.annotation.Generated;
 
 import org.jooq.Field;
+import org.jooq.Identity;
 import org.jooq.Table;
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
@@ -34,7 +35,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Person extends TableImpl<PersonRecord> {
 
-	private static final long serialVersionUID = 1335169094;
+	private static final long serialVersionUID = 1427226867;
 
 	/**
 	 * The reference instance of <code>cxf_sample.person</code>
@@ -65,11 +66,6 @@ public class Person extends TableImpl<PersonRecord> {
 	public final TableField<PersonRecord, String> LAST_NAME = createField("last_name", org.jooq.impl.SQLDataType.VARCHAR.length(25).nullable(false), this, "");
 
 	/**
-	 * The column <code>cxf_sample.person.age</code>.
-	 */
-	public final TableField<PersonRecord, Integer> AGE = createField("age", org.jooq.impl.SQLDataType.INTEGER.nullable(false), this, "");
-
-	/**
 	 * The column <code>cxf_sample.person.birth_date</code>.
 	 */
 	public final TableField<PersonRecord, Date> BIRTH_DATE = createField("birth_date", org.jooq.impl.SQLDataType.DATE.nullable(false), this, "");
@@ -94,6 +90,14 @@ public class Person extends TableImpl<PersonRecord> {
 
 	private Person(String alias, Table<PersonRecord> aliased, Field<?>[] parameters) {
 		super(alias, CxfSample.CXF_SAMPLE, aliased, parameters, "");
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Identity<PersonRecord, Long> getIdentity() {
+		return Keys.IDENTITY_PERSON;
 	}
 
 	/**

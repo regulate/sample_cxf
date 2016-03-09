@@ -10,7 +10,7 @@
     <property name="karaf.home" value="${env.KARAF_HOME}"/>
     <property name="karaf.deploy" location="${karaf.home}/deploy"/>
     <property name="depl-init.script" value="${basedir.unix}/depl-init"/>
-    <property name="start.delay" value="7"
+    <property name="start.delay" value="5"
               description="Start delay in seconds to allow karaf to start it's features"/>
 
     <target name="check-props">

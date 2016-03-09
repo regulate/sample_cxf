@@ -37,7 +37,6 @@ public class PersonServiceImpl implements PersonService {
             int inserted = dsl.insertInto(Person.PERSON)
                     .set(Person.PERSON.FIRST_NAME, person.getFirstName())
                     .set(Person.PERSON.LAST_NAME, person.getLastName())
-                    .set(Person.PERSON.AGE, person.getAge())
                     .set(Person.PERSON.BIRTH_DATE, person.getBirthDate())
                     .execute();
             if (inserted == 0) {
@@ -50,7 +49,6 @@ public class PersonServiceImpl implements PersonService {
             int updated = dsl.update(Person.PERSON)
                     .set(Person.PERSON.FIRST_NAME, person.getFirstName())
                     .set(Person.PERSON.LAST_NAME, person.getLastName())
-                    .set(Person.PERSON.AGE, person.getAge())
                     .set(Person.PERSON.BIRTH_DATE, person.getBirthDate())
                     .where(Person.PERSON.ID.eq(person.getId()))
                     .execute();
@@ -75,7 +73,6 @@ public class PersonServiceImpl implements PersonService {
                     .id(rec.getId())
                     .firstName(rec.getFirstName())
                     .lastName(rec.getLastName())
-                    .age(rec.getAge())
                     .birthDate(rec.getBirthDate())
                     .build();
             log.info("Fetched {}", dto.toString());
@@ -110,7 +107,6 @@ public class PersonServiceImpl implements PersonService {
                                 .id(record.getId())
                                 .firstName(record.getFirstName())
                                 .lastName(record.getLastName())
-                                .age(record.getAge())
                                 .birthDate(record.getBirthDate())
                                 .build();
                     }

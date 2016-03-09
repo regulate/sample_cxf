@@ -1,7 +1,5 @@
 package cxf.sample.ui;
 
-import static cxf.sample.ui.Style.*;
-
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.event.FieldEvents;
 import com.vaadin.event.SelectionEvent;
@@ -14,14 +12,16 @@ import com.vaadin.ui.themes.ValoTheme;
 import cxf.sample.api.dto.PersonDTO;
 import cxf.sample.api.rs.PersonService;
 import cxf.sample.api.ws.HelloService;
+import cxf.sample.ui.entity.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+
+import static cxf.sample.ui.Style.*;
 
 /**
  * Created by IPotapchuk on 2/29/2016.
@@ -85,7 +85,7 @@ public class PersonsView extends CssLayout implements View {
             public void postCommit(FieldGroup.CommitEvent commitEvent) throws FieldGroup.CommitException {
                 PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
                 personService.addOrUpdate(person);
-                refresh(person);
+                refresh(new Person(person));
             }
         });
 
@@ -109,7 +109,7 @@ public class PersonsView extends CssLayout implements View {
             @Override
             public void buttonClick(Button.ClickEvent event) {
                 PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
-                remove(person);
+                remove(new Person(person));
             }
         });
 
@@ -222,13 +222,13 @@ public class PersonsView extends CssLayout implements View {
         form.toggleIf(false);
     }
 
-    private void refresh(PersonDTO person) {
+    private void refresh(Person person) {
         grid.refresh(person);
         grid.scrollTo(person);
     }
 
     public void showPersons() {
-        grid.setPersons(personService.retrieveAll().getPersons());
+        grid.setPersons(personService.retrieveAll());
     }
 
     public void cancel() {
@@ -237,7 +237,7 @@ public class PersonsView extends CssLayout implements View {
         form.toggleIf(true);
     }
 
-    public void remove(PersonDTO person) {
+    public void remove(Person person) {
         cancel();
         grid.remove(person);
         personService.remove(person.getId());

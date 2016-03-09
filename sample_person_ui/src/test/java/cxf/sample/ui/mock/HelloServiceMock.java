@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Qualifier("wsMock")
-@Profile("test")
 public class HelloServiceMock implements HelloService {
 
     @Override

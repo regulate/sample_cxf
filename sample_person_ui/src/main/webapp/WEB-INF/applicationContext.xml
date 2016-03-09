@@ -9,13 +9,12 @@
 		http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/osgi
-        http://www.springframework.org/schema/osgi/spring-osgi.xsd"
-        profile="osgi">
+        http://www.springframework.org/schema/osgi/spring-osgi.xsd">
 
     <context:component-scan base-package="cxf.sample.ui"/>
 
     <osgi:reference id="helloServiceClient" interface="cxf.sample.api.ws.HelloService"
-                    filter="(service.type=ws-client)"/>
-    <osgi:reference id="personService" interface="cxf.sample.api.rs.PersonService"/>
+                    filter="(service.type=ws-client)" timeout="5000"/>
+    <osgi:reference id="personService" interface="cxf.sample.api.rs.PersonService" timeout="5000"/>
 
 </beans>

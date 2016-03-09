@@ -21,7 +21,6 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 @Service
 @Qualifier("rsMock")
-@Profile("test")
 public class PersonServiceMock implements PersonService {
 
     private static final Logger log = LoggerFactory.getLogger(PersonServiceMock.class);
@@ -47,18 +46,10 @@ public class PersonServiceMock implements PersonService {
         return id.incrementAndGet();
     }
 
-    public static int calcAge(Date birthDate) {
-        Calendar cur = Calendar.getInstance();
-        Calendar past = Calendar.getInstance();
-        past.setTime(birthDate);
-        return cur.get(Calendar.YEAR) - past.get(Calendar.YEAR);
-    }
-
     @Override
     public boolean addOrUpdate(PersonDTO person) {
         if (person.getId() == null) {
             person.setId(getNextId());
-            person.setAge(calcAge(person.getBirthDate()));
             persons.add(person);
         } else {
             persons.set(persons.indexOf(retrieve(person.getId())), person);

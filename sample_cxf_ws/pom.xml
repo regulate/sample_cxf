@@ -8,7 +8,6 @@
 
     <properties>
         <osgi.export>cxf.sample.ws.impl</osgi.export>
-        <!--<osgi.import.pkg>*</osgi.import.pkg>-->
     </properties>
 
     <parent>
@@ -23,22 +22,22 @@
             <groupId>cxf.sample</groupId>
             <artifactId>sample_cxf_ws_api</artifactId>
             <version>${project.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

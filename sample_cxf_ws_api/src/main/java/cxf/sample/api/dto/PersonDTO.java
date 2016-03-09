@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.sql.Date;
+import java.util.Calendar;
 
 /**
  * Created by IPotapchuk on 2/16/2016.
@@ -19,7 +20,6 @@ public class PersonDTO {
     @XmlElement private Long    id;
     @XmlElement private String  firstName;
     @XmlElement private String  lastName;
-    @XmlElement private Integer age;
     @XmlJavaTypeAdapter(DateFormatterAdapter.class) private Date birthDate;
 
     public PersonDTO() {
@@ -29,7 +29,6 @@ public class PersonDTO {
         setId(builder.id);
         setFirstName(builder.firstName);
         setLastName(builder.lastName);
-        setAge(builder.age);
         setBirthDate(builder.birthDate);
     }
 
@@ -57,14 +56,6 @@ public class PersonDTO {
         this.lastName = lastName;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
     public Date getBirthDate() {
         return birthDate;
     }
@@ -87,7 +78,6 @@ public class PersonDTO {
         if (id  != null ? !id.equals(personDTO.id)   : personDTO.id  != null) return false;
         if (!firstName.equals(personDTO.firstName)) return false;
         if (!lastName.equals(personDTO.lastName)) return false;
-        if (age != null ? !age.equals(personDTO.age) : personDTO.age != null) return false;
         return birthDate.equals(personDTO.birthDate);
 
     }
@@ -97,7 +87,6 @@ public class PersonDTO {
         int result = id != null ? id.hashCode() : 0;
         result = 31 * result + firstName.hashCode();
         result = 31 * result + lastName.hashCode();
-        result = 31 * result + (age != null ? age.hashCode() : 0);
         result = 31 * result + birthDate.hashCode();
         return result;
     }
@@ -108,7 +97,6 @@ public class PersonDTO {
                "id="           + id        +
                ", firstName='" + firstName + '\'' +
                ", lastName='"  + lastName  + '\'' +
-               ", age="        + age       +
                ", birthDate="  + birthDate +
                '}';
     }
@@ -117,7 +105,6 @@ public class PersonDTO {
         private Long    id;
         private String  firstName;
         private String  lastName;
-        private Integer age;
         private Date    birthDate;
 
         public Builder() {
@@ -135,11 +122,6 @@ public class PersonDTO {
 
         public Builder lastName(String val) {
             lastName = val;
-            return this;
-        }
-
-        public Builder age(Integer val) {
-            age = val;
             return this;
         }
 
