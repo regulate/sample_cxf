@@ -1,10 +1,8 @@
-package cxf.sample.ui;
+package cxf.sample.ui.components;
 
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.event.FieldEvents;
 import com.vaadin.event.SelectionEvent;
-import com.vaadin.navigator.View;
-import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.Page;
 import com.vaadin.ui.*;
@@ -12,12 +10,15 @@ import com.vaadin.ui.themes.ValoTheme;
 import cxf.sample.api.dto.PersonDTO;
 import cxf.sample.api.rs.PersonService;
 import cxf.sample.api.ws.HelloService;
+import cxf.sample.ui.Messages;
 import cxf.sample.ui.entity.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.vaadin.dialogs.ConfirmDialog;
+import org.vaadin.dialogs.DefaultConfirmDialogFactory;
 
 import javax.annotation.PostConstruct;
 
@@ -28,7 +29,7 @@ import static cxf.sample.ui.Style.*;
  */
 @Component
 @Scope("prototype")
-public class PersonsView extends CssLayout implements View {
+public class PersonsView extends CssLayout {
 
     private static final Logger log       = LoggerFactory.getLogger(PersonsView.class);
     public  static final String VIEW_NAME = "Persons";
@@ -42,7 +43,7 @@ public class PersonsView extends CssLayout implements View {
         EDIT("Edit"), ADD("Add");
 
         SaveMode(String caption) {
-            this.caption =caption;
+            this.caption = caption;
         }
 
         private String caption;
@@ -55,8 +56,9 @@ public class PersonsView extends CssLayout implements View {
     @PostConstruct
     public void init() {
         setupAppearance();
+        setupConfirmDialog();
         setupListeners();
-        showPersons();
+        grid.refresh(personService.retrieveAll());
     }
 
     private void setupAppearance() {
@@ -68,13 +70,6 @@ public class PersonsView extends CssLayout implements View {
 
     private void setupListeners() {
 
-        form.getCancelButton().addClickListener(new Button.ClickListener() {
-            @Override
-            public void buttonClick(Button.ClickEvent event) {
-                cancel();
-            }
-        });
-
         form.getFieldGroup().addCommitHandler(new FieldGroup.CommitHandler() {
             @Override
             public void preCommit(FieldGroup.CommitEvent commitEvent) throws FieldGroup.CommitException {
@@ -84,8 +79,15 @@ public class PersonsView extends CssLayout implements View {
             @Override
             public void postCommit(FieldGroup.CommitEvent commitEvent) throws FieldGroup.CommitException {
                 PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
+                log.debug("Going to update/add: {}", person);
                 personService.addOrUpdate(person);
-                refresh(new Person(person));
+            }
+        });
+
+        form.getCancelButton().addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent event) {
+                cancel();
             }
         });
 
@@ -94,13 +96,15 @@ public class PersonsView extends CssLayout implements View {
             public void buttonClick(Button.ClickEvent event) {
                 try {
                     form.getFieldGroup().commit();
+                    if(form.getSaveButton().getCaption().equals(SaveMode.ADD.getCaption())){
+                        notification(ValoTheme.NOTIFICATION_SUCCESS, Messages.SUCCESS_ADD, null);
+                    } else {
+                        notification(ValoTheme.NOTIFICATION_SUCCESS, Messages.SUCCESS_EDIT, null);
+                    }
                     form.toggleIf(true);
                 } catch (FieldGroup.CommitException e) {
                     log.error("Validation error", e);
-                    Notification n = new Notification(
-                            "Some of fields contain errors!", Notification.Type.ERROR_MESSAGE);
-                    n.setDelayMsec(1800);
-                    n.show(getUI().getPage());
+                    notification(ValoTheme.NOTIFICATION_ERROR, Messages.ERROR_FIELDS, null);
                 }
             }
         });
@@ -108,19 +112,38 @@ public class PersonsView extends CssLayout implements View {
         form.getDeleteButton().addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
-                PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
-                remove(new Person(person));
+                final Person person = form.getFieldGroup().getItemDataSource().getBean();
+                ConfirmDialog.show(UI.getCurrent(), Messages.DELETE_DIAL_CAPT,
+                        Messages.DELETE_DIAL_CONT(person), "Ok", "Cancel", new ConfirmDialog.Listener() {
+                            @Override
+                            public void onClose(ConfirmDialog dialog) {
+                                if(dialog.isConfirmed()) {
+                                    log.debug("Remove operation confirmed");
+                                    remove(person);
+                                    grid.refresh(personService.retrieveAll());
+                                } else {
+                                    log.debug("Remove operation is NOT confirmed");
+                                    form.toggleIf(false);
+                                }
+                            }
+                        }
+                );
+            }
+        });
+
+        form.setChangeHandler(new PersonForm.ChangeHandler() {
+            @Override
+            public void onChange() {
+                grid.refresh(personService.retrieveAll());
             }
         });
 
         form.getGreetButton().addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent event) {
-                PersonDTO person = form.getFieldGroup().getItemDataSource().getBean();
-                Notification n = new Notification(
-                        "Greeting: "+helloService.sayHi(person.fullName()), Notification.Type.TRAY_NOTIFICATION);
-                n.setDelayMsec(2000);
-                n.show(getUI().getPage());
+                Person person = form.getFieldGroup().getItemDataSource().getBean();
+                notification(ValoTheme.NOTIFICATION_CLOSABLE,
+                        "Greeting: " + helloService.sayHi(person.fullName()), 3000);
             }
         });
 
@@ -128,17 +151,37 @@ public class PersonsView extends CssLayout implements View {
             @Override
             public void select(SelectionEvent event) {
                 PersonDTO person = grid.getSelectedRow();
-                if (person != null)
+                if (person != null) {
                     prepareSaving(person, SaveMode.EDIT);
-                else
+                } else {
+                    form.toggleIf(true);
                     grid.getSelectionModel().reset();
+                }
             }
         });
+
     }
 
-    @Override
-    public void enter(ViewChangeListener.ViewChangeEvent event) {
-//        nothing to add
+    private void setupConfirmDialog(){
+        ConfirmDialog.Factory df = new DefaultConfirmDialogFactory() {
+
+            @Override
+            public ConfirmDialog create(
+                    String caption, String message, String okCaption,
+                    String cancelCaption, String notOkCaption) {
+
+                ConfirmDialog d = super.create(caption, message, okCaption,
+                        cancelCaption, notOkCaption);
+                // Find the buttons and change the order
+                Button ok = d.getOkButton();
+                ok.setStyleName(ValoTheme.BUTTON_DANGER);
+                Button cancel = d.getCancelButton();
+                cancel.setStyleName(ValoTheme.BUTTON_PRIMARY);
+                cancel.focus();
+                return d;
+            }
+        };
+        ConfirmDialog.setFactory(df);
     }
 
     private VerticalLayout buildGridWithBar() {
@@ -155,13 +198,13 @@ public class PersonsView extends CssLayout implements View {
 
     private HorizontalLayout buildTopBar() {
         final TextField filter = new TextField();
-        filter.setInputPrompt("Filter");
+        filter.setInputPrompt(Messages.INP_PR_FILTER);
         filter.setImmediate(true);
         filter.addTextChangeListener(new FieldEvents.TextChangeListener() {
             @Override
             public void textChange(FieldEvents.TextChangeEvent event) {
                 form.toggleIf(true);
-                grid.addFilter(event.getText());
+                grid.filter(event.getText());
             }
         });
         filter.setStyleName(FILTER_TEXTFIELD());
@@ -195,13 +238,6 @@ public class PersonsView extends CssLayout implements View {
         return topBar;
     }
 
-    private void setUriFragment(String urlFragment) {
-        if (urlFragment == null) urlFragment = "";
-
-        Page page = UI.getCurrent().getPage();
-        page.setUriFragment(VIEW_NAME.toLowerCase() + "/" + urlFragment, false);
-    }
-
     public void prepareSaving(PersonDTO person, SaveMode mode) {
         final String fragment = (person == null) ? "new" : person.getId().toString();
         boolean enabled = false;
@@ -222,13 +258,11 @@ public class PersonsView extends CssLayout implements View {
         form.toggleIf(false);
     }
 
-    private void refresh(Person person) {
-        grid.refresh(person);
-        grid.scrollTo(person);
-    }
+    private void setUriFragment(String urlFragment) {
+        if (urlFragment == null) urlFragment = "";
 
-    public void showPersons() {
-        grid.setPersons(personService.retrieveAll());
+        Page page = UI.getCurrent().getPage();
+        page.setUriFragment(VIEW_NAME.toLowerCase() + "/" + urlFragment, false);
     }
 
     public void cancel() {
@@ -238,9 +272,18 @@ public class PersonsView extends CssLayout implements View {
     }
 
     public void remove(Person person) {
+        log.debug("Going to remove {}", person);
         cancel();
-        grid.remove(person);
         personService.remove(person.getId());
+    }
+
+    public static void notification(String styleName, String caption, Integer delay){
+        final int def = 2000;
+        if(delay==null) delay = def;
+        Notification n = new Notification(caption);
+        n.setDelayMsec(delay);
+        n.setStyleName(styleName);
+        n.show(UI.getCurrent().getPage());
     }
 
 }

@@ -12,7 +12,8 @@ public enum Style {
     PERSON_FORM("person-form"),
     PERSON_FORM_WRAPPER("person-form-wrapper"),
     FORM_LAYOUT("form-layout"),
-    VISIBLE("visible");
+    VISIBLE("visible"),
+    DIALOG("dialog");
 
     Style(String styleName) {
         this.styleName = styleName;
@@ -58,6 +59,10 @@ public enum Style {
 
     public static String VISIBLE() {
         return VISIBLE.getStyleName();
+    }
+
+    public static String DIALOG() {
+        return DIALOG.getStyleName();
     }
 
     @Override

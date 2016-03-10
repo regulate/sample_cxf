@@ -75,6 +75,10 @@
                     <artifactId>spring-vaadin-integration</artifactId>
                     <scope>provided</scope>
                 </dependency>
+                <dependency>
+                    <groupId>org.vaadin.addon</groupId>
+                    <artifactId>confirmdialog</artifactId>
+                </dependency>
                 <!-- VAADIN END -->
                 <!-- LOGGING -->
                 <dependency>
@@ -136,6 +140,10 @@
                 <dependency>
                     <groupId>ru.xpoft.vaadin</groupId>
                     <artifactId>spring-vaadin-integration</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.vaadin.addon</groupId>
+                    <artifactId>confirmdialog</artifactId>
                 </dependency>
                 <!-- VAADIN END -->
                 <!-- LOGGING -->
@@ -303,9 +311,8 @@
                         <Export-Package>${osgi.export}</Export-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                         <Web-ContextPath>test</Web-ContextPath>
-                        <Bundle-ClassPath>.,WEB-INF/classes</Bundle-ClassPath>
-                        <!--<Embed-Directory>WEB-INF/lib</Embed-Directory>-->
-                        <!--<Embed-Dependency>*;scope=compile|runtime;inline=false;artifactId=!asm</Embed-Dependency>-->
+                        <Bundle-ClassPath>.,WEB-INF/classes,WEB-INF/lib</Bundle-ClassPath>
+                        <!--<Embed-Dependency>*;scope=compile|runtime</Embed-Dependency>-->
                         <!--<Embed-Transitive>false</Embed-Transitive>-->
                         <Implementation-Version>${project.version}</Implementation-Version>
                         <_failok></_failok>

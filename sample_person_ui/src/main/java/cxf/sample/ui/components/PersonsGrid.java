@@ -1,21 +1,20 @@
-package cxf.sample.ui;
+package cxf.sample.ui.components;
 
 import com.vaadin.data.Container;
-import com.vaadin.data.util.BeanItem;
 import com.vaadin.data.util.BeanItemContainer;
-import com.vaadin.data.util.MethodProperty;
 import com.vaadin.data.util.converter.StringToDateConverter;
 import com.vaadin.data.util.filter.Or;
 import com.vaadin.data.util.filter.SimpleStringFilter;
 import com.vaadin.ui.Grid;
-import cxf.sample.api.dto.PersonDTO;
 import cxf.sample.api.dto.PersonsCollectionDTO;
 import cxf.sample.api.jaxb.DateFormatterAdapter;
 import cxf.sample.ui.entity.Person;
+import cxf.sample.ui.utils.PersonViewUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.PostConstruct;
 import java.text.ParseException;
@@ -34,7 +33,7 @@ public class PersonsGrid extends Grid {
 
     private static final Logger log = LoggerFactory.getLogger(PersonsGrid.class);
 
-    private FooterRow                    footer;
+    private FooterRow                 footer;
     private BeanItemContainer<Person> container;
 
     @PostConstruct
@@ -91,9 +90,10 @@ public class PersonsGrid extends Grid {
         footer.getCell("age").setHtml("<b>Average: " + PersonViewUtils.avgAge(getContainer().getItemIds()));
     }
 
-    public void addFilter(String filterString) {
+    public void filter(String filterString) {
         getContainer().removeAllContainerFilters();
-        if (filterString.length() > 0) {
+        if (!StringUtils.isEmpty(filterString)) {
+            log.debug("Preparing filter by: \"{}\"", filterString);
             List<Container.Filter> filters = new ArrayList<>();
             for (String field : getContainer().getContainerPropertyIds()) {
                 filters.add(new SimpleStringFilter(field, filterString, true, false));
@@ -112,32 +112,10 @@ public class PersonsGrid extends Grid {
         return (Person) super.getSelectedRow();
     }
 
-    public void setPersons(PersonsCollectionDTO persons) {
+    public void refresh(PersonsCollectionDTO persons) {
         getContainer().removeAllItems();
-        for(PersonDTO p : persons.getPersons()){
-            getContainer().addBean(new Person(p));
-        }
-    }
-
-    public void refresh(Person person) {
-        // We avoid updating the whole table through the backend here so we can
-        // get a partial update for the grid
-        log.debug("Incoming person: {}", person);
-        BeanItem<Person> item = getContainer().getItem(person);
-        boolean found = item != null;
-        log.debug("Item found in container: {}", found);
-        if (found) {
-            log.debug("Updating person in a grid: {}", person);
-            MethodProperty p = (MethodProperty) item.getItemProperty("id");
-            p.fireValueChange();
-        } else {
-            // New person
-            log.debug("Adding new person to container: {}", person);
-            getContainer().addBean(person);
-        }
-    }
-
-    public void remove(Person person) {
-        getContainer().removeItem(person);
+        getContainer().addAll(PersonViewUtils.convert(persons.getPersons()));
+        log.debug("Container was refreshed. Items total: {}", getContainer().size());
+        clearSortOrder();
     }
 }

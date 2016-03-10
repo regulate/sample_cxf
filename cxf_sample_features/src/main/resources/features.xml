@@ -65,7 +65,8 @@
         <bundle>mvn:com.vaadin/vaadin-themes/${vaadin.version}</bundle>
         <bundle>mvn:com.vaadin/vaadin-push/${vaadin.version}</bundle>
         <bundle>mvn:org.jsoup/jsoup/1.8.1</bundle>
-        <bundle>mvn:ru.xpoft.vaadin/spring-vaadin-integration/3.2</bundle>
+        <bundle>mvn:ru.xpoft.vaadin/spring-vaadin-integration/${spring.vaadin.version}</bundle>
+        <bundle>mvn:org.vaadin.addon/confirmdialog/2.1.3</bundle>
     </feature>
 
     <feature name="sample-person-ui" version="${project.version}">

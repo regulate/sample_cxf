@@ -74,6 +74,16 @@ $v-layout-spacing-horizontal: round($v-unit-size / 1.8) !default;
     }
   }
 
+  .dialog{
+    background-color: $editor-background-color;
+    color:valo-font-color($editor-background-color, 0.8);
+
+    .v-caption {
+      color: $editor-caption-font-color;
+    }
+
+  }
+
   // sidebar editor for CRUD, scrolls if there is not enough space vertically
   .person-form-wrapper {
     position: absolute;

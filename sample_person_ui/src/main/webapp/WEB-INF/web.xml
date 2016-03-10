@@ -19,8 +19,8 @@
 
     <context-param>
         <param-name>contextClass</param-name>
-        <!--<param-value>org.springframework.osgi.web.context.support.OsgiBundleXmlWebApplicationContext</param-value>-->
-        <param-value>org.springframework.web.context.support.XmlWebApplicationContext</param-value>
+        <param-value>org.springframework.osgi.web.context.support.OsgiBundleXmlWebApplicationContext</param-value>
+        <!--<param-value>org.springframework.web.context.support.XmlWebApplicationContext</param-value>-->
     </context-param>
 
     <!-- Vaadin servlet -->

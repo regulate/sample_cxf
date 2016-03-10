@@ -1,7 +1,10 @@
-package cxf.sample.ui;
+package cxf.sample.ui.utils;
 
+import cxf.sample.api.dto.PersonDTO;
 import cxf.sample.ui.entity.Person;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -18,6 +21,14 @@ public final class PersonViewUtils {
         for (Person p : persons) sum += p.getAge();
         double avg = (double) sum / persons.size();
         return String.format("%.1f", avg);
+    }
+
+    public static Collection<Person> convert(Collection<PersonDTO> personDTOs){
+        List<Person> persons = new ArrayList<>();
+        for(PersonDTO p: personDTOs){
+            persons.add(new Person(p));
+        }
+        return persons;
     }
 
 }

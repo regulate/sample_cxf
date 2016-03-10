@@ -36,6 +36,10 @@ public class Person extends PersonDTO {
         this.age = age;
     }
 
+    public String fullName(){
+        return getFirstName()+" "+getLastName();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

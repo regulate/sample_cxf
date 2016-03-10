@@ -1,26 +1,25 @@
-package cxf.sample.ui;
+package cxf.sample.ui.components;
 
 import static cxf.sample.ui.Style.*;
 
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.data.util.BeanItem;
-import com.vaadin.data.validator.DateRangeValidator;
-import com.vaadin.data.validator.StringLengthValidator;
 import com.vaadin.event.ShortcutAction;
 import com.vaadin.server.Page;
 import com.vaadin.shared.ui.datefield.Resolution;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import cxf.sample.api.dto.PersonDTO;
+import cxf.sample.ui.Messages;
 import cxf.sample.ui.entity.Person;
+import cxf.sample.ui.utils.Validation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.util.Calendar;
-import java.util.Date;
+import javax.validation.OverridesAttribute;
 
 /**
  * Created by IPotapchuk on 2/29/2016.
@@ -29,10 +28,14 @@ import java.util.Date;
 @Scope("prototype")
 public class PersonForm extends CssLayout {
 
-    private static final Logger                    log    = LoggerFactory.getLogger(PersonForm.class);
-    private              BeanFieldGroup<Person> fGroup;
+    private static final Logger log = LoggerFactory.getLogger(PersonForm.class);
 
+    private BeanFieldGroup<Person> fGroup;
     private Button cancel, save, delete, greet;
+
+    public interface ChangeHandler {
+        void onChange();
+    }
 
     @PostConstruct
     public void init() {
@@ -45,33 +48,31 @@ public class PersonForm extends CssLayout {
         root.setSpacing(true);
         root.addStyleName(FORM_LAYOUT());
 
-        StringLengthValidator validator = new StringLengthValidator("Must be 3-25 characters", 3, 25, false);
-
         TextField firstName = new TextField("First Name");
-        firstName.setInputPrompt("e.g. John");
+        firstName.setInputPrompt(Messages.INP_PR_FNAME);
         firstName.setRequired(true);
-        firstName.setRequiredError("3-25 characters");
+        firstName.setRequiredError(Messages.REQ_FNAME);
         firstName.setNullRepresentation("");
         firstName.setImmediate(true);
-        firstName.addValidator(validator);
+        firstName.addValidator(Validation.fName());
         firstName.setSizeFull();
 
         TextField lastName = new TextField("Last Name");
-        lastName.setInputPrompt("e.g. Smith");
+        lastName.setInputPrompt(Messages.INP_PR_LNAME);
         lastName.setRequired(true);
-        lastName.setRequiredError("3-25 characters");
+        lastName.setRequiredError(Messages.REQ_LNAME);
         lastName.setNullRepresentation("");
         lastName.setImmediate(true);
-        lastName.addValidator(validator);
+        lastName.addValidator(Validation.lName());
         lastName.setSizeFull();
 
         PopupDateField birthDate = new PopupDateField("Birth Date");
         birthDate.setDateFormat("yyyy-MM-dd");
         birthDate.setRequired(true);
-        birthDate.setRequiredError("Must be specified");
+        birthDate.setRequiredError(Messages.REQ_B_DATE);
         birthDate.setResolution(Resolution.DAY);
         birthDate.setTextFieldEnabled(false);
-        birthDate.addValidator(birthDateValidator());
+        birthDate.addValidator(Validation.bDate());
         birthDate.setSizeFull();
 
         fGroup = new BeanFieldGroup<>(Person.class);
@@ -85,8 +86,10 @@ public class PersonForm extends CssLayout {
 
         save = new Button();
         save.addStyleName("primary");
+        save.setClickShortcut(ShortcutAction.KeyCode.ENTER);
 
         delete = new Button("Delete");
+        delete.setClickShortcut(ShortcutAction.KeyCode.DELETE);
         delete.addStyleName(ValoTheme.BUTTON_DANGER);
 
         greet = new Button("Greet");
@@ -101,16 +104,6 @@ public class PersonForm extends CssLayout {
         root.addComponent(cancel);
 
         addComponent(root);
-    }
-
-    private DateRangeValidator birthDateValidator() {
-        final int maxAge = 130;
-        Calendar min = Calendar.getInstance();
-        min.set(Calendar.YEAR, Calendar.getInstance().get(Calendar.YEAR) - maxAge);
-        Calendar max = Calendar.getInstance();
-        max.setTime(new Date());
-        final String errorMsg = "Past date required in range " + min.get(Calendar.YEAR) + " - now";
-        return new DateRangeValidator(errorMsg, min.getTime(), max.getTime(), Resolution.YEAR);
     }
 
     public BeanFieldGroup<Person> getFieldGroup() {
@@ -166,6 +159,15 @@ public class PersonForm extends CssLayout {
 
     public boolean isShown() {
         return getStyleName().contains(VISIBLE());
+    }
+
+    public void setChangeHandler(final ChangeHandler h){
+        save.addClickListener(new Button.ClickListener() {
+            @Override
+            public void buttonClick(Button.ClickEvent event) {
+                h.onChange();
+            }
+        });
     }
 
 }

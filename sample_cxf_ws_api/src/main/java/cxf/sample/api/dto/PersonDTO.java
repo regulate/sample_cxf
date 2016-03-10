@@ -64,10 +64,6 @@ public class PersonDTO {
         this.birthDate = birthDate;
     }
 
-    public String fullName(){
-        return firstName+" "+lastName;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
